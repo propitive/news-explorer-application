@@ -1,0 +1,54 @@
+.navbar {
+  padding-left: 104px;
+  padding-right: 104px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar__buttons {
+  justify-content: space-between;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.navbar__title {
+  font-family: "Roboto Slab", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0;
+  align-self: center;
+  color: white;
+}
+
+.navbar__home {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  width: 49px;
+  padding: 0;
+  background: none;
+  margin-right: 42px;
+  border: none;
+  height: 80px;
+  border-bottom: 1px solid white;
+  color: white;
+}
+
+.navbar__signin {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  width: 176px;
+  padding: 0;
+  background: none;
+  height: 48px;
+  align-self: center;
+  border-radius: 40px;
+  color: white;
+  border-color: white;
+}
