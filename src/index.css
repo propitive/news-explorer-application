@@ -3,7 +3,9 @@
 @import url("./components/Footer/Footer.css");
 @import url("./components/Header/Header.css");
 @import url("./components/NavBar/NavBar.css");
+@import url("./components/NewsCard/NewsCard.css");
 @import url("./components/NothingFound/NothingFound.css");
+@import url("./components/Preloader/Preloader.css");
 @import url("./vendor/fonts/inter.css");
 
 body {

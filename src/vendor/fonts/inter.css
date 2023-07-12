@@ -53,3 +53,9 @@
   src: url("inter-500.woff2") format("woff2"),
     url("inter-500.woff") format("woff");
 }
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("sourcesanspro-black-webfont.woff2") format("woff2"),
+  url("sourcesanspro-black-webfont.woff") format("woff");
+}
