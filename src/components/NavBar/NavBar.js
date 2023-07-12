@@ -14,12 +14,15 @@ function NavBar() {
             NewsExplorer
           </h1>
           <div className="navbar-li__buttons">
-            <button className="navbar-li__home">Home</button>
+            <div className="navbar-li__home-container">
+              <button className="navbar-li__home">Home</button>
+              <button className="navbar-li__white-line" disabled="disabled"></button>
+            </div>
             <button className="navbar-li__saved-articles">
               Saved Articles
             </button>
             <button className="navbar-li__logout">
-              Jose <img className="navbar-li__image" src={logoutIcon} />
+              Jose <img className="navbar-li__image" src={logoutIcon} alt="Logout icon" />
             </button>
           </div>
         </section>
@@ -31,7 +34,10 @@ function NavBar() {
             NewsExplorer
           </h1>
           <div className="navbar-nli__buttons">
-            <button className="navbar-nli__home">Home</button>
+            <div className="navbar-nli__home-container">
+              <button className="navbar-nli__home">Home</button>
+              <button className="navbar-nli__white-line" disabled="disabled"></button>
+            </div>
             <button className="navbar-nli__signin">Sign in</button>
           </div>
         </section>

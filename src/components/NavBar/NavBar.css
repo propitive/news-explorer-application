@@ -17,6 +17,7 @@
   margin: 0;
   align-self: center;
   color: white;
+  cursor: pointer;
 }
 
 .navbar-nli__buttons {
@@ -24,6 +25,13 @@
   display: flex;
   align-content: center;
   flex-wrap: wrap;
+}
+
+.navbar-nli__home-container {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  position: relative;
 }
 
 .navbar-nli__home {
@@ -36,9 +44,20 @@
   background: none;
   margin-right: 42px;
   border: none;
-  height: 80px;
-  border-bottom: 3px solid white;
   color: white;
+  cursor: pointer;
+
+}
+
+.navbar-nli__white-line {
+  background: none;
+  border: none;
+  border-bottom: 3px solid white;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  width: 70px;
+  left: -10px;
 }
 
 .navbar-nli__signin {
@@ -54,6 +73,8 @@
   border-radius: 40px;
   color: white;
   border-color: white;
+  cursor: pointer;
+
 }
 
 /* "nli" stands for Not Logged In */
@@ -75,6 +96,8 @@
   margin: 0;
   align-self: center;
   color: white;
+  cursor: pointer;
+
 }
 
 .navbar-li__buttons {
@@ -82,6 +105,13 @@
   display: flex;
   align-content: center;
   flex-wrap: wrap;
+}
+
+.navbar-li__home-container {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  position: relative;
 }
 
 .navbar-li__home {
@@ -93,10 +123,21 @@
   padding: 0;
   background: none;
   margin-right: 76px;
-  border: none;
-  height: 80px;
-  border-bottom: 3px solid white;
   color: white;
+  cursor: pointer;
+  height: 24px;
+  border: none;
+}
+
+.navbar-li__white-line {
+  background: none;
+  border: none;
+  border-bottom: 3px solid white;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  width: 70px;
+  left: -12px;
 }
 
 .navbar-li__saved-articles {
@@ -109,8 +150,11 @@
   background: none;
   margin-right: 64px;
   border: none;
-  height: 80px;
   color: #b6bcbf;
+  cursor: pointer;
+  height: 24px;
+  align-self: center;
+
 }
 
 .navbar-li__logout {
@@ -128,6 +172,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
+
 }
 
 .navbar-li__image {

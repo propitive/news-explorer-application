@@ -10,7 +10,7 @@ import CurrentUserContext from "../../context/CurrentUserContext";
 import "./App.css";
 
 function App() {
-  const [currentUser, setUser] = useState(null);
+  const [currentUser, setUser] = useState(true);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
