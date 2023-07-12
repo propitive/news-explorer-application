@@ -1,4 +1,6 @@
+import About from "../About/About";
 import Header from "../Header/Header";
+import NothingFound from "../NothingFound/NothingFound";
 import "./App.css";
 
 function App() {
@@ -6,6 +8,8 @@ function App() {
     <div className="page">
       <div className="page__wrapper">
         <Header />
+        <NothingFound />
+        <About />
       </div>
     </div>
   );

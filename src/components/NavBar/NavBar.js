@@ -1,4 +1,4 @@
-function Navbar() {
+function NavBar() {
   return (
     <section className="navbar">
       <h1 className="navbar__title">NewsExplorer</h1>
@@ -10,4 +10,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default NavBar;

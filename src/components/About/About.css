@@ -1,0 +1,32 @@
+.about {
+    padding-left: 104px;
+    padding-right: 104px;
+    gap: 56px;
+    height: 624px;
+    display: flex;
+    align-items: center;
+}
+
+.about__picture {
+    height: 464px;
+    width: 464px;
+    border-radius: 50%;
+}
+
+.about__content {}
+
+.about__title {
+    margin: 0 0 24px;
+    font-family: "Roboto Slab", Arial, sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 46px;
+}
+
+.about__paragraphs {
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}

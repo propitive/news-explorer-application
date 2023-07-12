@@ -1,10 +1,9 @@
-import Navbar from "../NavBar/NavBar";
-import headerBackground from "../../images/headerBackground.svg";
+import NavBar from "../NavBar/NavBar";
 
 function Header() {
   return (
     <header className="header">
-      <Navbar />
+      <NavBar />
       <div className="header__content">
         <h1 className="header__title">What's going on in the world?</h1>
         <h2 className="header__subtitle">
