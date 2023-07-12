@@ -1,19 +1,15 @@
-.navbar {
+/* "nli" stands for Not Logged In */
+
+.navbar-nli {
   padding-left: 104px;
   padding-right: 104px;
   height: 80px;
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px rgb(220, 220, 220, 0.5) solid;
 }
 
-.navbar__buttons {
-  justify-content: space-between;
-  display: flex;
-  align-content: center;
-  flex-wrap: wrap;
-}
-
-.navbar__title {
+.navbar-nli__title {
   font-family: "Roboto Slab", Arial, sans-serif;
   font-size: 20px;
   font-weight: 700;
@@ -23,7 +19,14 @@
   color: white;
 }
 
-.navbar__home {
+.navbar-nli__buttons {
+  justify-content: space-between;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.navbar-nli__home {
   font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
   font-weight: 500;
@@ -34,11 +37,11 @@
   margin-right: 42px;
   border: none;
   height: 80px;
-  border-bottom: 1px solid white;
+  border-bottom: 3px solid white;
   color: white;
 }
 
-.navbar__signin {
+.navbar-nli__signin {
   font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
   font-weight: 500;
@@ -51,4 +54,82 @@
   border-radius: 40px;
   color: white;
   border-color: white;
+}
+
+/* "nli" stands for Not Logged In */
+
+.navbar-li {
+  padding-left: 104px;
+  padding-right: 104px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px rgb(220, 220, 220, 0.5) solid;
+}
+
+.navbar-li__title {
+  font-family: "Roboto Slab", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0;
+  align-self: center;
+  color: white;
+}
+
+.navbar-li__buttons {
+  justify-content: space-between;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.navbar-li__home {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  width: 49px;
+  padding: 0;
+  background: none;
+  margin-right: 76px;
+  border: none;
+  height: 80px;
+  border-bottom: 3px solid white;
+  color: white;
+}
+
+.navbar-li__saved-articles {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  width: 116px;
+  padding: 0;
+  background: none;
+  margin-right: 64px;
+  border: none;
+  height: 80px;
+  color: #b6bcbf;
+}
+
+.navbar-li__logout {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 0 20px 0;
+  background: none;
+  height: 48px;
+  align-self: center;
+  border-radius: 40px;
+  color: white;
+  border-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-li__image {
+  margin-left: 10px;
 }
