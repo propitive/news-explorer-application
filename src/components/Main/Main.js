@@ -1,15 +1,15 @@
-import NewsCard from "../NewsCard/NewsCard";
 import NothingFound from "../NothingFound/NothingFound"
 import Preloader from "../Preloader/Preloader"
+import SearchResults from "../SearchResults/SearchResults";
 
-function Main(isLoading) {
+function Main({isLoading, visible, showMoreItems}) {
     return (
         <>
             {/* <NothingFound /> */}
             {isLoading.isLoading === true && (
                 <Preloader />
             )}
-            <NewsCard />
+            <SearchResults visible={visible} showMoreItems={showMoreItems} />
         </>
     )
 }
