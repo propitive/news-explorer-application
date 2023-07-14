@@ -1,9 +1,9 @@
-.header {
+.header-home {
   background-image: url("../../images/headerBackground.svg");
   height: 576px;
 }
 
-.header__content {
+.header-home__content {
   flex-direction: column;
   display: flex;
   width: 608px;
@@ -12,7 +12,7 @@
   margin-left: auto;
 }
 
-.header__title {
+.header-home__title {
   color: white;
   font-family: "Roboto Slab", Arial, sans-serif;
   font-size: 60px;
@@ -20,7 +20,7 @@
   line-height: 64px;
 }
 
-.header__subtitle {
+.header-home__subtitle {
   color: white;
   font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
@@ -28,17 +28,17 @@
   line-height: 24px;
 }
 
-.header__search-wrap {
+.header-home__search-wrap {
 }
 
-.header__search-wrap__box {
+.header-home__search-wrap__box {
   margin-left: auto;
   margin-right: auto;
   width: 608px;
   position: relative;
 }
 
-.header__search-wrap__text {
+.header-home__search-wrap__text {
   height: 64px;
   border: 0;
   width: 608px;
@@ -51,7 +51,7 @@
   color: black;
 }
 
-.header__search-wrap__button {
+.header-home__search-wrap__button {
   height: 64px;
   padding: 0;
   border: 0;

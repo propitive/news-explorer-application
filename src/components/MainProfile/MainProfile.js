@@ -1,17 +1,17 @@
 import NothingFound from "../NothingFound/NothingFound"
 import Preloader from "../Preloader/Preloader"
-import SearchResults from "../SearchResults/SearchResults";
+import SearchResultsProfile from "../../SearchResultsProfile/SearchResultsProfile";
 
-function Main({isLoading, visible, showMoreItems}) {
+function MainProfile({isLoading, visible, showMoreItems}) {
     return (
         <>
             {/* <NothingFound /> */}
             {isLoading.isLoading === true && (
                 <Preloader />
             )}
-            <SearchResults visible={visible} showMoreItems={showMoreItems} />
+            <SearchResultsProfile visible={visible} showMoreItems={showMoreItems} />
         </>
     )
 }
 
-export default Main;
+export default MainProfile;

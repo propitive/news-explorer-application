@@ -1,0 +1,101 @@
+.navbar-profile {
+    padding-left: 104px;
+    padding-right: 104px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px rgb(220, 220, 220, 0.5) solid;
+  }
+  
+  .navbar-profile__title {
+    font-family: "Roboto Slab", Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    margin: 0;
+    align-self: center;
+    color: black;
+    cursor: pointer;
+  
+  }
+  
+  .navbar-profile__buttons {
+    justify-content: space-between;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .navbar-profile__home-container {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    position: relative;
+  }
+  
+  .navbar-profile__home {
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    width: 49px;
+    padding: 0;
+    background: none;
+    margin-right: 76px;
+    color: black;
+    cursor: pointer;
+    height: 24px;
+    border: none;
+  }
+  
+  .navbar-profile__white-line {
+    background: none;
+    border: none;
+    border-bottom: 3px solid black;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    width: 70px;
+    left: -12px;
+  }
+  
+  .navbar-profile__saved-articles {
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    width: 116px;
+    padding: 0;
+    background: none;
+    margin-right: 64px;
+    border: none;
+    color: black;
+    cursor: pointer;
+    height: 24px;
+    align-self: center;
+  
+  }
+  
+  .navbar-profile__logout {
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    padding: 0 20px 0;
+    background: none;
+    height: 48px;
+    align-self: center;
+    border-radius: 40px;
+    color: black;
+    border-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  
+  }
+  
+  .navbar-profile__image {
+    margin-left: 10px;
+  }
+  
