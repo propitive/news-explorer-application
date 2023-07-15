@@ -26,6 +26,10 @@ function App() {
     setVisible((prevValue) => prevValue + 3);
   };
 
+  const handleVisibleReset = () => {
+    setVisible(3);
+  };
+
   const handleBookmark = () => {};
 
   useEffect(() => {
@@ -42,6 +46,7 @@ function App() {
                 isLoading={isLoading}
                 visible={visible}
                 showMoreItems={showMoreItems}
+                handleVisibleReset={handleVisibleReset}
               />
             </Route>
             <Route path="/">
