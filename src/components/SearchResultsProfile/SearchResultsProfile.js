@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import NewsCard from "../components/NewsCard/NewsCard";
-import { cardItems } from "../utils/constants";
-import trashIcon from "../images/trash.svg"
-import CurrentUserContext from "../context/CurrentUserContext";
+import NewsCard from "../NewsCard/NewsCard";
+import { cardItems } from "../../utils/constants";
+import trashIcon from "../../images/trash.svg";
+import CurrentUserContext from "../../context/CurrentUserContext";
 
 function SearchResultsProfile({ visible, showMoreItems }) {
-    const currentUser = React.useContext(CurrentUserContext);
+  const currentUser = React.useContext(CurrentUserContext);
 
   const searchCardsClassname =
     visible === 3 ? "search__cards" : "search__cards__active";
@@ -31,10 +31,12 @@ function SearchResultsProfile({ visible, showMoreItems }) {
             <h3 className="card__publisher">{card.source.name}</h3>
             <div
               className={`${
-                isHovering === index ? "card__signin" : "card__signin__hidden"
+                isHovering === index
+                  ? "card-profile__signin"
+                  : "card__signin__hidden"
               }`}
             >
-              <h3>Sign in to save articles</h3>
+              <h3>Remove from saved</h3>
             </div>
             <div>
               <button className="card__button">
@@ -46,8 +48,8 @@ function SearchResultsProfile({ visible, showMoreItems }) {
                 ></img>
               </button>
             </div>
-            <div>
-                <h3>Nature</h3>
+            <div className="card__subtitle">
+              <h3 className="card__subititle-content">Tech</h3>
             </div>
           </div>
         ))}

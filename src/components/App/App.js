@@ -4,44 +4,54 @@ import { Route, Switch } from "react-router-dom";
 import About from "../About/About";
 import Footer from "../Footer/Footer";
 import HeaderHome from "../HeaderHome/HeaderHome";
-import HeaderProfile from "../HeaderProfile/HeaderProfile"
+import HeaderProfile from "../HeaderProfile/HeaderProfile";
+import Home from "../Home/Home";
 import MainHome from "../MainHome/MainHome";
 import MainProfile from "../MainProfile/MainProfile";
 import NavBar from "../NavBar/NavBar";
+import Profile from "../Profile/Profile";
 
 import CurrentUserContext from "../../context/CurrentUserContext";
 
 import "./App.css";
+import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
 
 function App() {
   const [currentUser, setUser] = useState("Jose");
   const [isLoading, setIsLoading] = useState(false);
-  const [newsCards, setNewsCards] = useState([])
-  const [visible, setVisible] = useState(3)
+  const [newsCards, setNewsCards] = useState([]);
+  const [visible, setVisible] = useState(3);
 
   const showMoreItems = () => {
-    setVisible((prevValue) => prevValue + 3)
-}
+    setVisible((prevValue) => prevValue + 3);
+  };
 
-const handleBookmark = () => {
+  const handleBookmark = () => {};
 
-}
-
-useEffect(() => {
-  setVisible(3)
-}, [])
+  useEffect(() => {
+    setVisible(3);
+  }, []);
 
   return (
-    <CurrentUserContext.Provider value={`${currentUser}`}>
+    <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
         <div className="page__wrapper">
-          <HeaderHome />
-          <MainHome isLoading={isLoading} visible={visible} showMoreItems={showMoreItems} />
-          {visible === 3 && (
-            <About />
-          )}
-          {/* <HeaderProfile />
-          <MainProfile isLoading={isLoading} visible={visible} showMoreItems={showMoreItems} /> */}
+          <Switch>
+            <Route path="/saved-articles">
+              <Profile
+                isLoading={isLoading}
+                visible={visible}
+                showMoreItems={showMoreItems}
+              />
+            </Route>
+            <Route path="/">
+              <Home
+                isLoading={isLoading}
+                visible={visible}
+                showMoreItems={showMoreItems}
+              />
+            </Route>
+          </Switch>
           <Footer />
         </div>
       </div>

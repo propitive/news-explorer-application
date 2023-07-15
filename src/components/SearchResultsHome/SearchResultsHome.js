@@ -6,7 +6,7 @@ import notBookmarked from "../../images/notBookmarked.svg";
 import CurrentUserContext from "../../context/CurrentUserContext";
 
 function SearchResultsHome({ visible, showMoreItems }) {
-    const currentUser = React.useContext(CurrentUserContext);
+  const currentUser = React.useContext(CurrentUserContext);
 
   const searchCardsClassname =
     visible === 3 ? "search__cards" : "search__cards__active";
@@ -39,12 +39,16 @@ function SearchResultsHome({ visible, showMoreItems }) {
             </div>
             <div>
               <button className="card__button">
-                <img
-                  className="card__bookmark"
-                  src={notBookmarked}
-                  onMouseEnter={() => setIsHovering(index)}
-                  onMouseLeave={() => setIsHovering(-1)}
-                ></img>
+                {currentUser === null ? (
+                  <img
+                    className="card__bookmark"
+                    src={notBookmarked}
+                    onMouseEnter={() => setIsHovering(index)}
+                    onMouseLeave={() => setIsHovering(-1)}
+                  ></img>
+                ) : (
+                  <img className="card__bookmark" src={notBookmarked}></img>
+                )}
               </button>
             </div>
           </div>
