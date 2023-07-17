@@ -2,10 +2,10 @@ import HeaderHome from "../HeaderHome/HeaderHome";
 import MainHome from "../MainHome/MainHome";
 import About from "../About/About";
 
-function Home({ isLoading, visible, showMoreItems }) {
+function Home({ isLoading, visible, showMoreItems, handleSignInClick }) {
   return (
     <>
-      <HeaderHome />
+      <HeaderHome handleSignInClick={handleSignInClick} />
       <MainHome
         isLoading={isLoading}
         visible={visible}

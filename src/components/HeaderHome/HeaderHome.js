@@ -1,9 +1,9 @@
 import NavBar from "../NavBar/NavBar";
 
-function HeaderHome() {
+function HeaderHome({ handleSignInClick }) {
   return (
     <header className="header-home">
-      <NavBar />
+      <NavBar handleSignInClick={handleSignInClick} />
       <div className="header-home__content">
         <h1 className="header-home__title">What's going on in the world?</h1>
         <h2 className="header-home__subtitle">

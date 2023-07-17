@@ -21,16 +21,31 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [newsCards, setNewsCards] = useState([]);
   const [visible, setVisible] = useState(3);
+  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false)
+  const [isSigninModalOpen, setIsSigninModalOpen] = useState(false)
+  const [authError, setAuthError] = useState("")
 
-  const showMoreItems = () => {
-    setVisible((prevValue) => prevValue + 3);
-  };
+  const handleBookmark = () => {};
+
+  const handleRegister = () => {}
+
+  const handleRegisterClick = () => {
+    setIsRegisterModalOpen(true)
+  }
+
+  const handleSignIn = () => {}
+
+  const handleSignInClick = () => {
+    setIsSigninModalOpen(true)
+  }
 
   const handleVisibleReset = () => {
     setVisible(3);
   };
 
-  const handleBookmark = () => {};
+  const showMoreItems = () => {
+    setVisible((prevValue) => prevValue + 3);
+  };
 
   useEffect(() => {
     setVisible(3);
@@ -54,10 +69,35 @@ function App() {
                 isLoading={isLoading}
                 visible={visible}
                 showMoreItems={showMoreItems}
+                handleSignInClick={handleSignInClick}
               />
             </Route>
           </Switch>
           <Footer />
+          {isRegisterModalOpen && (
+        <RegisterModal 
+          isOpen={isRegisterModalOpen}
+          onClose={() => setIsRegisterModalOpen(false)}
+          onRegister={handleRegister}
+          authError={authError}
+          switchToSignIn={() => {
+            setIsRegisterModalOpen(false)
+            setIsSigninModalOpen(true)
+          }}
+        />
+      )}
+      {isSignInModalOpen && (
+        <SignInModal 
+          isOpen={isSigninModalOpen}
+          onClose={() => setIsSigninModalOpen(false)}
+          onSignIn={handleSignIn}
+          authError={authError}
+          switchToRegister={() => {
+            setIsSigninModalOpen(false)
+            setIsRegisterModal(true)
+          }}
+        />
+      )}
         </div>
       </div>
     </CurrentUserContext.Provider>

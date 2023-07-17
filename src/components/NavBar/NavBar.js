@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import CurrentUserContext from "../../context/CurrentUserContext";
-
 import logoutIcon from "../../images/logoutIcon.svg";
 import { Link } from "react-router-dom";
+import SignInModal from "../SignInModal/SignInModal";
+import RegisterModal from "../RegisterModal/RegisterModal";
 
-function NavBar() {
+function NavBar({ handleSignInClick }) {
   const currentUser = React.useContext(CurrentUserContext);
 
   return (
@@ -29,7 +30,7 @@ function NavBar() {
                 disabled="disabled"
               ></button>
             </div>
-            <button className="navbar-nli__signin">Sign in</button>
+            <button className="navbar-nli__signin" onClick={handleSignInClick} >Sign in</button>
           </div>
         </section>
       ) : (
