@@ -1,5 +1,5 @@
 .search {
-    width: 1440px;
+    width: 100%;
     background: #F5F6F7;
     display: flex;
     flex-direction: column;
@@ -17,9 +17,8 @@ margin: 80px 0 64px 104px;
 .search__cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 16px 16px;
-    margin: 0 0 0 104px;
     padding: 0;
 }
 
@@ -40,4 +39,8 @@ margin: 80px 0 64px 104px;
     border: none;
     border-radius: 35px;
     background: #E8E8E8;
+}
+
+@media screen and (max-width: 1380) {
+    
 }

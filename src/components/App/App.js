@@ -26,7 +26,7 @@ function App() {
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
   const [isSignInModalOpen, setIsSignInModalOpen] = useState(false);
   const [authError, setAuthError] = useState("");
-  const [isSuccessfulModalOpen, setIsSuccessfulModalOpen] = useState(true);
+  const [isSuccessfulModalOpen, setIsSuccessfulModalOpen] = useState(false);
 
   const handleBookmark = () => {};
 
@@ -105,6 +105,10 @@ function App() {
             <SuccessfulModal
               isOpen={isSuccessfulModalOpen}
               onClose={() => setIsSuccessfulModalOpen(false)}
+              switchToSignIn={() => {
+                setIsSuccessfulModalOpen(false);
+                setIsSignInModalOpen(true);
+              }}
             />
           )}
         </div>
