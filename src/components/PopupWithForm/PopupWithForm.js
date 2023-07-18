@@ -7,21 +7,20 @@ function PopupWithForm({
   isOpen,
   onClose,
   isValid,
-  additionalClass,
 }) {
   const buttonClassName = isValid
     ? "modal__button-submit modal__button-submit-valid"
-    : "modal__button-submit"
+    : "modal__button-submit";
 
-    const handleCloseOnOverlayClick = (event) => {
-      if (event.target === event.currentTarget) {
-        onClose()
-      }
+  const handleCloseOnOverlayClick = (event) => {
+    if (event.target === event.currentTarget) {
+      onClose();
     }
+  };
 
   return (
     <div
-      className={`modal ${isOpen ? "modal__open" : ""} ${additionalClass}`}
+      className={`modal ${isOpen ? "modal__open" : ""}`}
       onClick={handleCloseOnOverlayClick}
     >
       <form className="modal__form" name={name} onSubmit={onSubmit}>

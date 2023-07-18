@@ -7,8 +7,12 @@
 @import url("./components//NavBarProfile/NavBarProfile.css");
 @import url("./components/NewsCard/NewsCard.css");
 @import url("./components/NothingFound/NothingFound.css");
+@import url("./components/PopupWithForm/PopupWithForm.css");
 @import url("./components/Preloader/Preloader.css");
+@import url("./components/RegisterModal/RegisterModal.css");
 @import url("./components/SearchResultsHome/SearchResultsHome.css");
+@import url("./components/SignInModal/SignInModal.css");
+@import url("./components/SuccessfulModal/SuccessfulModal.css");
 @import url("./vendor/fonts/inter.css");
 
 body {

@@ -10,34 +10,37 @@ import MainHome from "../MainHome/MainHome";
 import MainProfile from "../MainProfile/MainProfile";
 import NavBar from "../NavBar/NavBar";
 import Profile from "../Profile/Profile";
+import RegisterModal from "../RegisterModal/RegisterModal";
+import SignInModal from "../SignInModal/SignInModal";
+import SuccessfulModal from "../SuccessfulModal/SuccessfulModal";
 
 import CurrentUserContext from "../../context/CurrentUserContext";
 
 import "./App.css";
-import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
 
 function App() {
-  const [currentUser, setUser] = useState("Jose");
+  const [currentUser, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [newsCards, setNewsCards] = useState([]);
   const [visible, setVisible] = useState(3);
-  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false)
-  const [isSigninModalOpen, setIsSigninModalOpen] = useState(false)
-  const [authError, setAuthError] = useState("")
+  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
+  const [isSignInModalOpen, setIsSignInModalOpen] = useState(false);
+  const [authError, setAuthError] = useState("");
+  const [isSuccessfulModalOpen, setIsSuccessfulModalOpen] = useState(true);
 
   const handleBookmark = () => {};
 
-  const handleRegister = () => {}
+  const handleRegister = () => {};
 
   const handleRegisterClick = () => {
-    setIsRegisterModalOpen(true)
-  }
+    setIsRegisterModalOpen(true);
+  };
 
-  const handleSignIn = () => {}
+  const handleSignIn = () => {};
 
   const handleSignInClick = () => {
-    setIsSigninModalOpen(true)
-  }
+    setIsSignInModalOpen(true);
+  };
 
   const handleVisibleReset = () => {
     setVisible(3);
@@ -75,29 +78,35 @@ function App() {
           </Switch>
           <Footer />
           {isRegisterModalOpen && (
-        <RegisterModal 
-          isOpen={isRegisterModalOpen}
-          onClose={() => setIsRegisterModalOpen(false)}
-          onRegister={handleRegister}
-          authError={authError}
-          switchToSignIn={() => {
-            setIsRegisterModalOpen(false)
-            setIsSigninModalOpen(true)
-          }}
-        />
-      )}
-      {isSignInModalOpen && (
-        <SignInModal 
-          isOpen={isSigninModalOpen}
-          onClose={() => setIsSigninModalOpen(false)}
-          onSignIn={handleSignIn}
-          authError={authError}
-          switchToRegister={() => {
-            setIsSigninModalOpen(false)
-            setIsRegisterModal(true)
-          }}
-        />
-      )}
+            <RegisterModal
+              isOpen={isRegisterModalOpen}
+              onClose={() => setIsRegisterModalOpen(false)}
+              onRegister={handleRegister}
+              authError={authError}
+              switchToSignIn={() => {
+                setIsRegisterModalOpen(false);
+                setIsSignInModalOpen(true);
+              }}
+            />
+          )}
+          {isSignInModalOpen && (
+            <SignInModal
+              isOpen={isSignInModalOpen}
+              onClose={() => setIsSignInModalOpen(false)}
+              onSignIn={handleSignIn}
+              authError={authError}
+              switchToRegister={() => {
+                setIsSignInModalOpen(false);
+                setIsRegisterModalOpen(true);
+              }}
+            />
+          )}
+          {isSuccessfulModalOpen && (
+            <SuccessfulModal
+              isOpen={isSuccessfulModalOpen}
+              onClose={() => setIsSuccessfulModalOpen(false)}
+            />
+          )}
         </div>
       </div>
     </CurrentUserContext.Provider>

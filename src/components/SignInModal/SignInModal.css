@@ -1,0 +1,109 @@
+.signin__email-label {
+  width: 440px;
+  border: none;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  border-bottom: 20px;
+  padding: 0;
+  color: #2f71e5;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.signin__email-label-invalid {
+  width: 440px;
+  border: none;
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  border-bottom: 20px;
+  padding: 0;
+  color: red;
+}
+
+.signin__email-input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 9px 0 9px;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.signin__email-input-invalid {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 9px 0 9px;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.signin__password-label {
+  width: 440px;
+  border: none;
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  border-bottom: 20px;
+  padding-bottom: 9px;
+  padding-top: 13px;
+  color: #2f71e5;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.signin__password-input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 9px 0 9px;
+  color: #000;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 39px;
+}
+
+.signin__email-validation-valid {
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0;
+  visibility: hidden;
+}
+
+.signin__email-validation-invalid {
+  color: #f00;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.signin__switch {
+  margin: 0;
+  position: absolute;
+  bottom: 28px;
+  left: 220px;
+  color: #000;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.signin__switch-signup {
+  color: blue;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}

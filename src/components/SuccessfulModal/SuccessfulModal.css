@@ -1,0 +1,25 @@
+.success {
+  width: 430px;
+  height: 182px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  position: relative;
+}
+
+.success__text {
+  color: #000;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  margin: 43px auto 14px 36px;
+}
+
+.success__signin {
+  color: #2f71e5;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0 auto auto 36px;
+}

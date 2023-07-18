@@ -1,0 +1,95 @@
+.register__email-label {
+  width: 440px;
+  border: none;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  border-bottom: 20px;
+  padding: 0;
+  color: #2f71e5;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.register__email-input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 9px 0 9px;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 31px;
+}
+
+.register__password-label {
+  width: 440px;
+  border: none;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  border-bottom: 20px;
+  padding: 0;
+  color: #2f71e5;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.register__password-input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 9px 0 9px;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 31px;
+}
+
+.register__name-label {
+  width: 440px;
+  border: none;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  border-bottom: 20px;
+  padding: 0;
+  color: #2f71e5;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.register__name-input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 9px 0 9px;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 17px;
+}
+
+.register__email-validation-valid {
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0 0 8px;
+  visibility: hidden;
+  text-align: center;
+}
+
+.register__email-validation-invalid {
+  color: #f00;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0 0 8px;
+  text-align: center;
+}

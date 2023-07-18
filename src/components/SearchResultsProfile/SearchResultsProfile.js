@@ -16,7 +16,7 @@ function SearchResultsProfile({ visible, showMoreItems }) {
     <div className="search">
       <h2 className="search__title">Search results</h2>
       <ul className={searchCardsClassname}>
-        {cardItems.articles.slice(0, visible).map((card, index) => (
+        {cardItems.articles.map((card, index) => (
           <div className="card" key={index}>
             <img
               className="card__image"
@@ -54,11 +54,6 @@ function SearchResultsProfile({ visible, showMoreItems }) {
           </div>
         ))}
       </ul>
-      {visible === 3 && (
-        <button className="search__button" onClick={showMoreItems}>
-          Show more
-        </button>
-      )}
     </div>
   );
 }
