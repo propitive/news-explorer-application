@@ -1,46 +1,82 @@
 .search {
-    width: 100%;
-    background: #F5F6F7;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  background: #f5f6f7;
+  display: flex;
+  flex-direction: column;
 }
 
 .search__title {
-    color: #1A1B22;
-    font-family: "Roboto Slab", Arial, sans-serif;
-font-size: 40px;
-font-weight: 400;
-line-height: 46px; 
-margin: 80px 0 64px 104px;
+  color: #1a1b22;
+  font-family: "Roboto Slab", Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 46px;
+  width: 1232px;
+  margin: 80px auto 64px;
 }
 
 .search__cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px 16px;
-    padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 16px;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .search__cards__active {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 16px 16px;
-    margin: 0 0 62px 104px;
-    padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 16px;
+  padding: 0;
 }
 
 .search__button {
-    width: 288px;
-    height: 64px;
-    margin: 64px auto 80px;
-    padding: 0;
-    border: none;
-    border-radius: 35px;
-    background: #E8E8E8;
+  width: 288px;
+  height: 64px;
+  margin: 64px auto 80px;
+  padding: 0;
+  border: none;
+  border-radius: 35px;
+  background: #e8e8e8;
 }
 
-@media screen and (max-width: 1380) {
-    
+.search__container {
+  max-width: calc(100% - 80px);
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 1327px) {
+  .search__container {
+    max-width: calc(100% - 110px);
+  }
+  .search__title {
+    margin: 40px auto 32px;
+    width: 901.989px;
+  }
+}
+
+@media screen and (max-width: 1027px) {
+  .search__container {
+    max-width: calc(100% - 80px);
+  }
+  .search__title {
+    margin: 40px auto 32px;
+    width: 901.989px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .search__title {
+    margin: 40px auto 32px;
+    width: 703.977px;
+  }
+  .search__button {
+    margin: 32px auto 40px;
+  }
 }
