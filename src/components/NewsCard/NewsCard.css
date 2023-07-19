@@ -209,3 +209,19 @@
     margin: 0 16px 16px;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .card {
+    background-color: pink;
+    width: 188px;
+    height: 352.5px;
+  }
+}
+
+@media screen and (max-width: 693px) {
+  .card {
+    background-color: purple;
+    width: 288px;
+    height: 440px;
+  }
+}

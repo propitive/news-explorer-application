@@ -179,3 +179,17 @@
 .navbar-li__image {
   margin-left: 10px;
 }
+
+@media screen and (max-width: 1327px) {
+
+}
+
+@media screen and (max-width: 1000px) {
+  .navbar-nli {
+    padding: 0 40px 0;
+    height: 66px;
+  }
+  .navbar-nli__white-line {
+    bottom: 8px;
+  }
+}
