@@ -51,3 +51,48 @@
   width: 24px;
   margin: auto 0 auto 40px;
 }
+
+@media screen and (max-width: 1327px) {
+  .footer {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .footer {
+    flex-direction: column-reverse;
+    height: 176px;
+    padding: 0 40px 0;
+    position: relative;
+    gap: 0;
+  }
+  .footer__links {
+    flex-direction: column;
+  }
+  .footer__home {
+    text-align: start;
+    margin: 20px 0 20px;
+    width: 100%;
+  }
+  .footer__practicum,
+  .footer__practicum:visited,
+  .footer__practicum:hover,
+  .footer__practicum:active {
+    text-align: start;
+    margin: 0;
+    width: 100%;
+  }
+  .footer__github {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .footer {
+      padding-left: 16px;
+      padding-right: 16px;
+  }
+}

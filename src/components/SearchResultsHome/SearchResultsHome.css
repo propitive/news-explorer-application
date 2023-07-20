@@ -44,7 +44,7 @@
 }
 
 .search__container {
-  max-width: calc(100% - 80px);
+  max-width: calc(100% - 78px);
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -53,7 +53,7 @@
 
 @media screen and (max-width: 1327px) {
   .search__container {
-    max-width: calc(100% - 100px);
+    max-width: calc(100% - 102px);
   }
   .search__title {
     margin: 40px auto 32px;
@@ -81,9 +81,23 @@
   }
 }
 
+@media screen and (max-width: 800px) {
+  .search__title {
+    width: 596px;
+  }
+}
+
 @media screen and (max-width: 693px) {
   .search__container {
     max-width: calc(100% - 100px);
   }
+  .search__title {
+    width: 288px;
+  }
 }
 
+@media screen and (max-width: 450px) {
+  .search__container {
+    max-width: calc(100% - 32px);
+  }
+}
