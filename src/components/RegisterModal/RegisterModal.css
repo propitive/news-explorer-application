@@ -93,3 +93,82 @@
   margin: 0 0 8px;
   text-align: center;
 }
+
+.register__switch {
+  margin: 0;
+  position: absolute;
+  bottom: 28px;
+  left: 220px;
+  color: #000;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.register__switch-signup {
+  color: blue;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 693px) {
+  .modal__form {
+    top: 56px;
+    width: 100%;
+    padding: 17px 0 0;
+    height: 100%;
+    justify-content: flex-start;
+  }
+  .modal__title {
+    margin: 0 auto 18px 17px;
+  }
+  .modal__button-submit {
+    background-color: #e6e8eb;
+    margin: 0 17px 0;
+    width: auto;
+  }
+  .modal__button-submit-valid {
+    background-color: #2f71e5;
+    color: white;
+  }
+  .modal__button-close {
+    width: 24px;
+    height: 24px;
+    top: -38px;
+    right: 16px;
+  }
+  .register__email-label {
+    margin: 0 17px 0;
+  }
+  .register__email-input {
+    margin: 0 17px 0;
+  }
+  .signin__email-input-invalid {
+    margin: 0 17px 0;
+  }
+  .register__password-label {
+    margin: 30px 17px 0;
+  } 
+  .register__password-input {
+    margin: 0 17px 0;
+  }
+  .register__name-label {
+    margin: 30px 17px 0;
+  }
+  .register__email-validation-valid {
+    margin: 10px 0 8px;
+  }
+  .register__email-validation-invalid {
+    margin: 10px 0 8px;
+  }
+  .register__name-input {
+    margin: 0 17px 0;
+  }
+  .register__switch {
+    top: 405px;
+    height: 20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

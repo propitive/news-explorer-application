@@ -86,8 +86,8 @@ function RegisterModal({ isOpen, onClose, onRegister, switchToSignIn }) {
         placeholder="Username"
       />
       <h2 className={emailValidationClassName}>This email is not available</h2>
-      <p className="signin__switch" onClick={switchToSignIn}>
-        or <span className="signin__switch-signup">Sign in</span>
+      <p className="register__switch" onClick={switchToSignIn}>
+        or <span className="register__switch-signup">Sign in</span>
       </p>
     </PopupWithForm>
   );

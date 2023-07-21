@@ -99,7 +99,7 @@ function NavBar({ handleSignInClick }) {
           </div>
           <div className="menu-home__bottom">
             <h2 className="menu-home__home">Home</h2>
-            <button className="menu-home__signin">Sign in</button>
+            <button className="menu-home__signin" onClick={handleSignInClick} >Sign in</button>
           </div>
         </section>
       )}
