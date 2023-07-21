@@ -110,6 +110,18 @@
   cursor: pointer;
 }
 
+.navbar-li__toggle-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  height: 24px;
+  width: 24px;
+  background: none;
+  border: none;
+  padding: 0;
+  visibility: hidden;
+}
+
 .navbar-li__buttons {
   justify-content: space-between;
   display: flex;
@@ -197,14 +209,14 @@
   width: 100%;
 }
 
-.menu-home__top {
+.menu-nli__top {
   height: 66px;
   background: black;
   border-bottom: 1px rgb(220, 220, 220, 0.5) solid;
   position: relative;
 }
 
-.menu-home__title {
+.menu-nli__title {
   font-family: "Roboto Slab", Arial, sans-serif;
   font-size: 20px;
   font-weight: 700;
@@ -217,7 +229,7 @@
   padding-top: 16px;
 }
 
-.menu-home__close-icon {
+.menu-nli__close-icon {
   height: 24px;
   width: 24px;
   background: none;
@@ -228,7 +240,7 @@
   cursor: pointer;
 }
 
-.menu-home__bottom {
+.menu-nli__bottom {
   height: 164px;
   background: black;
   display: flex;
@@ -237,13 +249,13 @@
   padding: 0 16px 0;
 }
 
-.menu-home__home {
+.menu-nli__home {
   margin: 0;
   color: white;
   padding: 20px 0 20px;
 }
 
-.menu-home__signin {
+.menu-nli__signin {
   font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
   font-weight: 500;
@@ -270,6 +282,18 @@
   }
   .navbar-nli__white-line {
     bottom: 8px;
+  }
+  .navbar-li {
+    padding: 0 40px 0;
+  }
+}
+
+@media screen and (max-width: 693px) {
+  .navbar-li__toggle-button {
+    visibility: visible;
+  }
+  .navbar-li__buttons {
+    visibility: hidden;
   }
 }
 

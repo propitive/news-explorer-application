@@ -9,13 +9,21 @@ import RegisterModal from "../RegisterModal/RegisterModal";
 
 function NavBar({ handleSignInClick }) {
   const currentUser = React.useContext(CurrentUserContext);
-  const [isMenuHomeToggled, setIsMenuProfileToggled] = useState(false);
+  const [isMenuNliToggled, setIsMenuNliToggled] = useState(false);
+  const [isMenuLiToggled, setIsMenuLiToggled] = useState(false);
 
-  const handleToggleMenuHomeAppear = () => {
-    setIsMenuProfileToggled(true);
+  const handleToggleMenuNliAppear = () => {
+    setIsMenuNliToggled(true);
   };
-  const handleToggleMenuHomeDisappear = () => {
-    setIsMenuProfileToggled(false);
+  const handleToggleMenuNliDisappear = () => {
+    setIsMenuNliToggled(false);
+  };
+
+  const handleToggleMenuLiAppear = () => {
+    setIsMenuLiToggled(true);
+  };
+  const handleToggleMenuLiDisappear = () => {
+    setIsMenuLiToggled(false);
   };
 
   return (
@@ -30,7 +38,7 @@ function NavBar({ handleSignInClick }) {
           <img
             className="navbar-nli__toggle-button"
             src={toggleButtonWhite}
-            onClick={handleToggleMenuHomeAppear}
+            onClick={handleToggleMenuNliAppear}
           />
 
           <div className="navbar-nli__buttons">
@@ -57,6 +65,12 @@ function NavBar({ handleSignInClick }) {
           <h1 className="navbar-li__title" id="home">
             NewsExplorer
           </h1>
+
+          <img
+            className="navbar-li__toggle-button"
+            src={toggleButtonWhite}
+            onClick={handleToggleMenuLiAppear}
+          />
 
           <div className="navbar-li__buttons">
             <div className="navbar-li__home-container">
@@ -87,19 +101,39 @@ function NavBar({ handleSignInClick }) {
           </div>
         </section>
       )}
-      {isMenuHomeToggled && (
+      {isMenuNliToggled && (
         <section className="menu">
-          <div className="menu-home__top">
-            <h1 className="menu-home__title">NewsExplorer</h1>
+          <div className="menu-nli__top">
+            <h1 className="menu-nli__title">NewsExplorer</h1>
             <img
-              className="menu-home__close-icon"
+              className="menu-nli__close-icon"
               src={closeButton}
-              onClick={handleToggleMenuHomeDisappear}
+              onClick={handleToggleMenuNliDisappear}
             />
           </div>
-          <div className="menu-home__bottom">
-            <h2 className="menu-home__home">Home</h2>
-            <button className="menu-home__signin" onClick={handleSignInClick} >Sign in</button>
+          <div className="menu-nli__bottom">
+            <h2 className="menu-nli__home">Home</h2>
+            <button className="menu-nli__signin" onClick={handleSignInClick}>
+              Sign in
+            </button>
+          </div>
+        </section>
+      )}
+      {isMenuLiToggled && (
+        <section className="menu">
+          <div className="menu-nli__top">
+            <h1 className="menu-nli__title">NewsExplorer</h1>
+            <img
+              className="menu-nli__close-icon"
+              src={closeButton}
+              onClick={handleToggleMenuLiDisappear}
+            />
+          </div>
+          <div className="menu-nli__bottom">
+            <h2 className="menu-nli__home">Home</h2>
+            <button className="menu-nli__signin" onClick={handleSignInClick}>
+              Sign in
+            </button>
           </div>
         </section>
       )}
