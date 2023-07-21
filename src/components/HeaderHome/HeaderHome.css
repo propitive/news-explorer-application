@@ -34,9 +34,6 @@
   line-height: 24px;
 }
 
-.header-home__search-wrap {
-}
-
 .header-home__search-wrap__box {
   margin-left: auto;
   margin-right: auto;
@@ -95,7 +92,7 @@
     width: 424px;
   }
   .header-home__search-wrap__button {
-    right: -2px
+    right: -2px;
   }
 }
 

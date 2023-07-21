@@ -57,6 +57,10 @@
   line-height: 20px;
   letter-spacing: 0.4px;
   text-transform: uppercase;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .card__button {
@@ -264,5 +268,8 @@
     line-height: 22px;
     height: 87px;
     -webkit-line-clamp: 4;
+  }
+  .card__publisher {
+    width: 250px;
   }
 }
