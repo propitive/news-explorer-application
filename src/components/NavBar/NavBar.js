@@ -1,12 +1,22 @@
 import React, { useState } from "react";
 import CurrentUserContext from "../../context/CurrentUserContext";
 import logoutIcon from "../../images/logoutIcon.svg";
+import toggleButtonWhite from "../../images/toggle-button-white.svg";
+import closeButton from "../../images/close-button.svg";
 import { Link } from "react-router-dom";
 import SignInModal from "../SignInModal/SignInModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 
 function NavBar({ handleSignInClick }) {
   const currentUser = React.useContext(CurrentUserContext);
+  const [isMenuHomeToggled, setIsMenuProfileToggled] = useState(false);
+
+  const handleToggleMenuHomeAppear = () => {
+    setIsMenuProfileToggled(true);
+  };
+  const handleToggleMenuHomeDisappear = () => {
+    setIsMenuProfileToggled(false);
+  };
 
   return (
     <>
@@ -16,6 +26,12 @@ function NavBar({ handleSignInClick }) {
           <h1 className="navbar-nli__title" id="home">
             NewsExplorer
           </h1>
+
+          <img
+            className="navbar-nli__toggle-button"
+            src={toggleButtonWhite}
+            onClick={handleToggleMenuHomeAppear}
+          />
 
           <div className="navbar-nli__buttons">
             <div className="navbar-nli__home-container">
@@ -30,7 +46,9 @@ function NavBar({ handleSignInClick }) {
                 disabled="disabled"
               ></button>
             </div>
-            <button className="navbar-nli__signin" onClick={handleSignInClick} >Sign in</button>
+            <button className="navbar-nli__signin" onClick={handleSignInClick}>
+              Sign in
+            </button>
           </div>
         </section>
       ) : (
@@ -66,6 +84,22 @@ function NavBar({ handleSignInClick }) {
                 alt="Logout icon"
               />
             </button>
+          </div>
+        </section>
+      )}
+      {isMenuHomeToggled && (
+        <section className="menu">
+          <div className="menu-home__top">
+            <h1 className="menu-home__title">NewsExplorer</h1>
+            <img
+              className="menu-home__close-icon"
+              src={closeButton}
+              onClick={handleToggleMenuHomeDisappear}
+            />
+          </div>
+          <div className="menu-home__bottom">
+            <h2 className="menu-home__home">Home</h2>
+            <button className="menu-home__signin">Sign in</button>
           </div>
         </section>
       )}
