@@ -95,3 +95,9 @@
 .navbar-profile__image {
   margin-left: 10px;
 }
+
+@media screen and (max-width: 1000px) {
+  .navbar-profile {
+    padding: 0 40px 0;
+  }
+}

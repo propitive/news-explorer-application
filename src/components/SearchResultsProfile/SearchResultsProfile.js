@@ -14,46 +14,48 @@ function SearchResultsProfile({ visible, showMoreItems }) {
 
   return (
     <div className="search">
-      <h2 className="search__title">Search results</h2>
-      <ul className={searchCardsClassname}>
-        {cardItems.articles.map((card, index) => (
-          <div className="card" key={index}>
-            <img
-              className="card__image"
-              src={card.urlToImage}
-              alt={card.title}
-            />
-            <h3 className="card__date">{card.publishedAt.slice(0, 9)}</h3>
-            <h2 className="card__title">{card.title}</h2>
-            <h3 className="card__paragraph" id="js-toclamp">
-              {card.description}
-            </h3>
-            <h3 className="card__publisher">{card.source.name}</h3>
-            <div
-              className={`${
-                isHovering === index
-                  ? "card-profile__signin"
-                  : "card__signin__hidden"
-              }`}
-            >
-              <h3>Remove from saved</h3>
+      <div className="search__container">
+        <h2 className="search__title">Search results</h2>
+        <ul className={searchCardsClassname}>
+          {cardItems.articles.map((card, index) => (
+            <div className="card" key={index}>
+              <img
+                className="card__image"
+                src={card.urlToImage}
+                alt={card.title}
+              />
+              <h3 className="card__date">{card.publishedAt.slice(0, 9)}</h3>
+              <h2 className="card__title">{card.title}</h2>
+              <h3 className="card__paragraph" id="js-toclamp">
+                {card.description}
+              </h3>
+              <h3 className="card__publisher">{card.source.name}</h3>
+              <div
+                className={`${
+                  isHovering === index
+                    ? "card-profile__signin"
+                    : "card__signin__hidden"
+                }`}
+              >
+                <h3>Remove from saved</h3>
+              </div>
+              <div>
+                <button className="card__button">
+                  <img
+                    className="card__bookmark"
+                    src={trashIcon}
+                    onMouseEnter={() => setIsHovering(index)}
+                    onMouseLeave={() => setIsHovering(-1)}
+                  ></img>
+                </button>
+              </div>
+              <div className="card__subtitle">
+                <h3 className="card__subititle-content">Tech</h3>
+              </div>
             </div>
-            <div>
-              <button className="card__button">
-                <img
-                  className="card__bookmark"
-                  src={trashIcon}
-                  onMouseEnter={() => setIsHovering(index)}
-                  onMouseLeave={() => setIsHovering(-1)}
-                ></img>
-              </button>
-            </div>
-            <div className="card__subtitle">
-              <h3 className="card__subititle-content">Tech</h3>
-            </div>
-          </div>
-        ))}
-      </ul>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
