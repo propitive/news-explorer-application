@@ -26,6 +26,8 @@ function NavBar({ handleSignInClick }) {
     setIsMenuLiToggled(false);
   };
 
+  const handleLogOut = () => {};
+
   return (
     <>
       {currentUser === null ? (
@@ -121,18 +123,29 @@ function NavBar({ handleSignInClick }) {
       )}
       {isMenuLiToggled && (
         <section className="menu">
-          <div className="menu-nli__top">
-            <h1 className="menu-nli__title">NewsExplorer</h1>
+          <div className="menu-li__top">
+            <h1 className="menu-li__title">NewsExplorer</h1>
             <img
-              className="menu-nli__close-icon"
+              className="menu-li__close-icon"
               src={closeButton}
               onClick={handleToggleMenuLiDisappear}
             />
           </div>
-          <div className="menu-nli__bottom">
-            <h2 className="menu-nli__home">Home</h2>
-            <button className="menu-nli__signin" onClick={handleSignInClick}>
-              Sign in
+          <div className="menu-li__bottom">
+            <h2 className="menu-li__home">Home</h2>
+            <Link
+              to="/saved-articles"
+              style={{ textDecoration: "none", alignSelf: "flex-start" }}
+            >
+              <h2 className="menu-li__saved-articles">Saved Articles</h2>
+            </Link>
+            <button className="menu-li__signout" onClick={handleLogOut}>
+              {`${currentUser}`}{" "}
+              <img
+                className="navbar-li__image"
+                src={logoutIcon}
+                alt="Logout icon"
+              />
             </button>
           </div>
         </section>

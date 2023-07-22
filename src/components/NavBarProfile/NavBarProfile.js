@@ -96,7 +96,7 @@ function NavBarProfile({ handleVisibleReset }) {
               </button>
             </Link>
             <h2 className="menu-profile__saved">Saved Articles</h2>
-            <button className="menu-profile__signin">
+            <button className="menu-profile__signout">
               {currentUser}
               <img
                 className="navbar-profile__image"

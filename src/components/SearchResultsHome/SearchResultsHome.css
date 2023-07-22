@@ -41,7 +41,7 @@
   border: none;
   border-radius: 35px;
   background: #e8e8e8;
-  cursor: crosshair;
+  cursor: pointer;
   z-index: 2;
 }
 
