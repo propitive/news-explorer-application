@@ -71,6 +71,27 @@
   color: white;
 }
 
+.header-home__search-wrap__button:hover {
+  background: #347eff;
+}
+
+.header-home__search-wrap__button-clicked {
+  height: 64px;
+  padding: 0;
+  border: 0;
+  background: #2a65cc;
+  width: 168px;
+  position: absolute;
+  right: 18px;
+  border-radius: 35px;
+  top: 0;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  color: white;
+}
+
 @media screen and (max-width: 1000px) {
   .header-home {
     height: 400px;
@@ -92,6 +113,9 @@
     width: 424px;
   }
   .header-home__search-wrap__button {
+    right: -2px;
+  }
+  .header-home__search-wrap__button-clicked {
     right: -2px;
   }
 }
@@ -119,6 +143,10 @@
     width: 93.5%;
   }
   .header-home__search-wrap__button {
+    width: 100%;
+    position: relative;
+  }
+  .header-home__search-wrap__button-clicked {
     width: 100%;
     position: relative;
   }

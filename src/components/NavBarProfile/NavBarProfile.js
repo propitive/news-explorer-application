@@ -6,7 +6,7 @@ import toggleButtonBlack from "../../images/toggle-button-black.svg";
 import closeButton from "../../images/close-button.svg";
 import { Link } from "react-router-dom";
 
-function NavBarProfile({ handleVisibleReset }) {
+function NavBarProfile({ handleVisibleReset, handleSignOutClick }) {
   const currentUser = React.useContext(CurrentUserContext);
   const [isMenuHomeToggled, setIsMenuProfileToggled] = useState(false);
 
@@ -16,8 +16,6 @@ function NavBarProfile({ handleVisibleReset }) {
   const handleToggleMenuHomeDisappear = () => {
     setIsMenuProfileToggled(false);
   };
-
-  const handleLogOut = () => {};
 
   return (
     <>
@@ -59,7 +57,10 @@ function NavBarProfile({ handleVisibleReset }) {
           <button className="navbar-profile__saved-articles">
             Saved Articles
           </button>
-          <button className="navbar-profile__logout">
+          <button
+            className="navbar-profile__logout"
+            onClick={handleSignOutClick}
+          >
             {currentUser}
             <img
               className="navbar-profile__image"
@@ -96,7 +97,10 @@ function NavBarProfile({ handleVisibleReset }) {
               </button>
             </Link>
             <h2 className="menu-profile__saved">Saved Articles</h2>
-            <button className="menu-profile__signout">
+            <button
+              className="menu-profile__signout"
+              onClick={handleSignOutClick}
+            >
               {currentUser}
               <img
                 className="navbar-profile__image"

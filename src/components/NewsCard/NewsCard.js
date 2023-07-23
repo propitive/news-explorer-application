@@ -50,7 +50,7 @@ function NewsCard(card, index) {
       <h3 className="card__paragraph" id="js-toclamp">
         {card.card.description}
       </h3>
-      <h3 className="card__publisher">{card.card.source.name.split(" ")[0]}</h3>
+      <h3 className="card__publisher">{card.card.source.name}</h3>
       <div className={cardSigninClassname}>
         <h3>Sign in to save articles</h3>
       </div>

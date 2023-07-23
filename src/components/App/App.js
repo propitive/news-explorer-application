@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useHistory } from "react-router-dom";
 
 import About from "../About/About";
+import Api from "../../utils/NewsApi";
 import Footer from "../Footer/Footer";
 import HeaderHome from "../HeaderHome/HeaderHome";
 import HeaderProfile from "../HeaderProfile/HeaderProfile";
@@ -17,18 +18,50 @@ import SuccessfulModal from "../SuccessfulModal/SuccessfulModal";
 import CurrentUserContext from "../../context/CurrentUserContext";
 
 import "./App.css";
+import NothingFound from "../NothingFound/NothingFound";
 
 function App() {
-  const [currentUser, setUser] = useState("Jose");
+  const [currentUser, setUser] = useState("jose");
   const [isLoading, setIsLoading] = useState(false);
-  const [newsCards, setNewsCards] = useState([]);
+  const [newsCards, setNewsCards] = useState({});
   const [visible, setVisible] = useState(3);
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
   const [isSignInModalOpen, setIsSignInModalOpen] = useState(false);
   const [authError, setAuthError] = useState("");
   const [isSuccessfulModalOpen, setIsSuccessfulModalOpen] = useState(false);
+  const [isNothingFound, setIsNothingFound] = useState(false);
+
+  const history = useHistory();
 
   const handleBookmark = () => {};
+
+  const handleSetIsNotFound = (x) => {
+    setIsNothingFound(false);
+    if (x.length === 0) {
+      setIsNothingFound(true);
+    } else {
+      setIsNothingFound(false);
+    }
+  };
+
+  const handleFetchArticles = (input) => {
+    setIsNothingFound(false);
+    setIsLoading(true);
+    Api.search({ input })
+      .then((data) => {
+        console.log(data.articles);
+        setNewsCards(data.articles);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
+        setIsLoading(false);
+        console.log(newsCards);
+        handleSetIsNotFound(newsCards);
+        console.log(isNothingFound);
+      });
+  };
 
   const handleRegister = () => {};
 
@@ -40,6 +73,11 @@ function App() {
 
   const handleSignInClick = () => {
     setIsSignInModalOpen(true);
+  };
+
+  const handleSignOutClick = () => {
+    setUser(null);
+    history.push("/");
   };
 
   const handleVisibleReset = () => {
@@ -54,6 +92,10 @@ function App() {
     setVisible(3);
   }, []);
 
+  useEffect(() => {}, [setNewsCards]);
+
+  console.log(newsCards);
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
@@ -65,6 +107,7 @@ function App() {
                 visible={visible}
                 showMoreItems={showMoreItems}
                 handleVisibleReset={handleVisibleReset}
+                handleSignOutClick={handleSignOutClick}
               />
             </Route>
             <Route path="/">
@@ -73,6 +116,10 @@ function App() {
                 visible={visible}
                 showMoreItems={showMoreItems}
                 handleSignInClick={handleSignInClick}
+                handleSignOutClick={handleSignOutClick}
+                handleFetchArticles={handleFetchArticles}
+                newsCards={newsCards}
+                isNothingFound={isNothingFound}
               />
             </Route>
           </Switch>

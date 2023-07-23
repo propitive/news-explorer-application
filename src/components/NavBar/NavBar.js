@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CurrentUserContext from "../../context/CurrentUserContext";
 import logoutIcon from "../../images/logoutIcon.svg";
 import toggleButtonWhite from "../../images/toggle-button-white.svg";
@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import SignInModal from "../SignInModal/SignInModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 
-function NavBar({ handleSignInClick }) {
+function NavBar({ handleSignInClick, handleSignOutClick }) {
   const currentUser = React.useContext(CurrentUserContext);
   const [isMenuNliToggled, setIsMenuNliToggled] = useState(false);
   const [isMenuLiToggled, setIsMenuLiToggled] = useState(false);
@@ -26,7 +26,9 @@ function NavBar({ handleSignInClick }) {
     setIsMenuLiToggled(false);
   };
 
-  const handleLogOut = () => {};
+  useEffect(() => {
+    currentUser === null ? setIsMenuLiToggled(false) : setIsMenuLiToggled(true);
+  }, currentUser);
 
   return (
     <>
@@ -92,7 +94,7 @@ function NavBar({ handleSignInClick }) {
                 Saved Articles
               </button>
             </Link>
-            <button className="navbar-li__logout">
+            <button className="navbar-li__logout" onClick={handleSignOutClick}>
               {`${currentUser}`}{" "}
               <img
                 className="navbar-li__image"
@@ -139,7 +141,7 @@ function NavBar({ handleSignInClick }) {
             >
               <h2 className="menu-li__saved-articles">Saved Articles</h2>
             </Link>
-            <button className="menu-li__signout" onClick={handleLogOut}>
+            <button className="menu-li__signout" onClick={handleSignOutClick}>
               {`${currentUser}`}{" "}
               <img
                 className="navbar-li__image"

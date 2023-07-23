@@ -40,9 +40,13 @@
   padding: 0;
   border: none;
   border-radius: 35px;
-  background: #e8e8e8;
+  background: #ffffff;
   cursor: pointer;
   z-index: 2;
+}
+
+.search__button:hover {
+  background: #e8e8e8;
 }
 
 .search__container {
@@ -55,7 +59,7 @@
 
 @media screen and (max-width: 1327px) {
   .search__container {
-    max-width: calc(100% - 102px);
+    max-width: calc(100% - 103px);
   }
   .search__title {
     margin: 40px auto 32px;

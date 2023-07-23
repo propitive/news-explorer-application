@@ -110,6 +110,7 @@
   font-family: "Inter", Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 693px) {
@@ -149,7 +150,7 @@
   }
   .register__password-label {
     margin: 30px 17px 0;
-  } 
+  }
   .register__password-input {
     margin: 0 17px 0;
   }
