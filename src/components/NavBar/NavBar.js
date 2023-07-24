@@ -26,9 +26,18 @@ function NavBar({ handleSignInClick, handleSignOutClick }) {
     setIsMenuLiToggled(false);
   };
 
-  useEffect(() => {
-    currentUser === null ? setIsMenuLiToggled(false) : setIsMenuLiToggled(true);
-  }, currentUser);
+  const handleMenuLiSignout = () => {
+    handleToggleMenuLiDisappear()
+    handleSignOutClick()
+  }
+
+  // useEffect(() => {
+  //   currentUser === null ? setIsMenuLiToggled(false) : setIsMenuLiToggled(true);
+  // }, currentUser);
+
+  // useEffect(() => {
+  //   setIsMenuNliToggled(false)
+  // }, [])
 
   return (
     <>
@@ -141,7 +150,7 @@ function NavBar({ handleSignInClick, handleSignOutClick }) {
             >
               <h2 className="menu-li__saved-articles">Saved Articles</h2>
             </Link>
-            <button className="menu-li__signout" onClick={handleSignOutClick}>
+            <button className="menu-li__signout" onClick={handleMenuLiSignout}>
               {`${currentUser}`}{" "}
               <img
                 className="navbar-li__image"

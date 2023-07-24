@@ -69,6 +69,7 @@
   font-weight: 500;
   line-height: 24px;
   color: white;
+  cursor: pointer;
 }
 
 .header-home__search-wrap__button:hover {

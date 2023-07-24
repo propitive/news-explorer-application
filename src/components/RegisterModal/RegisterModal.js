@@ -40,11 +40,11 @@ function RegisterModal({ isOpen, onClose, onRegister, switchToSignIn }) {
     setIsNameValid(true);
   }, []);
 
-  //   const emailValidationClassName = isEmailValid
-  //     ? "register__email-validation-valid"
-  //     : "register__email-validation-invalid"
+    const emailValidationClassName = isEmailValid
+      ? "register__email-validation-valid"
+      : "register__email-validation-invalid"
 
-  const emailValidationClassName = "register__email-validation-invalid";
+  // const emailValidationClassName = "register__email-validation-invalid";
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -66,6 +66,8 @@ function RegisterModal({ isOpen, onClose, onRegister, switchToSignIn }) {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Email"
+        minLength={1}
+        maxLength={30}
         required
       />
       <label className="register__password-label">Password</label>
@@ -75,6 +77,8 @@ function RegisterModal({ isOpen, onClose, onRegister, switchToSignIn }) {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Password"
+        minLength={4}
+        maxLength={35}
         required
       />
       <label className="register__name-label">Username</label>
@@ -84,6 +88,9 @@ function RegisterModal({ isOpen, onClose, onRegister, switchToSignIn }) {
         value={name}
         onChange={(e) => setName(e.target.value)}
         placeholder="Username"
+        minLength={1}
+        maxLength={30}
+        required
       />
       <h2 className={emailValidationClassName}>This email is not available</h2>
       <p className="register__switch" onClick={switchToSignIn}>
