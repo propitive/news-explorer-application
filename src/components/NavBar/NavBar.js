@@ -46,22 +46,11 @@ function NavBar({ handleSignInClick, handleSignOutClick }) {
   //   setIsMenuNliToggled(false)
   // }, [])
 
-  useEffect(() => {
-    const close = (e) => {
-      if (e.keyCode === 27) {
-        setIsMenuLiToggled(false);
-        setIsMenuNliToggled(false);
-      }
-    };
-    window.addEventListener("keydown", close);
-    return () => window.removeEventListener("keydown", close);
-  }, []);
-
   return (
     <>
       {currentUser === null ? (
         // "nli" stands for Not Logged In
-        <section className="navbar-nli" onClick={handleCloseOnOverlayClick}>
+        <section className="navbar-nli">
           <h1 className="navbar-nli__title" id="home">
             NewsExplorer
           </h1>
@@ -92,7 +81,7 @@ function NavBar({ handleSignInClick, handleSignOutClick }) {
         </section>
       ) : (
         // li stands for Logged in
-        <section className="navbar-li" onClick={handleCloseOnOverlayClick}>
+        <section className="navbar-li">
           <h1 className="navbar-li__title" id="home">
             NewsExplorer
           </h1>

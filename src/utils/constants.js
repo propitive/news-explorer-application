@@ -104,6 +104,65 @@ const cardItems = {
   ],
 };
 
+function formattedDateToday() {
+  const d = new Date();
+  const dayFirstCalc = d.getDate();
+
+  const handleDayOutput = (days) => {
+    if (days >= 10) {
+      return dayFirstCalc;
+    } else {
+      return `0${dayFirstCalc}`;
+    }
+  };
+  const day = handleDayOutput(dayFirstCalc);
+
+  const monthOf = d.getMonth() + 1;
+  const handleMonthOutput = (month) => {
+    if (month >= 10) {
+      return monthOf;
+    } else {
+      return `0${monthOf}`;
+    }
+  };
+  const month = handleMonthOutput(monthOf);
+
+  let result = "";
+  result += d.getFullYear() + "-" + month + "-" + day;
+  return result;
+}
+
+function formattedDateSevenDaysAgo() {
+  const d = new Date();
+  const last = new Date(d.getTime() - 7 * 24 * 60 * 60 * 1000);
+  const dayFirstCalc = last.getDate();
+
+  const handleDayOutput = (days) => {
+    if (days >= 10) {
+      return dayFirstCalc;
+    } else {
+      return `0${dayFirstCalc}`;
+    }
+  };
+  const day = handleDayOutput(dayFirstCalc);
+
+  const monthOf = d.getMonth() + 1;
+  const handleMonthOutput = (month) => {
+    if (month >= 10) {
+      return monthOf;
+    } else {
+      return `0${monthOf}`;
+    }
+  };
+  const month = handleMonthOutput(monthOf);
+
+  let result = "";
+  result += d.getFullYear() + "-" + month + "-" + day;
+  return result;
+}
+
 module.exports = {
   cardItems,
+  formattedDateToday,
+  formattedDateSevenDaysAgo,
 };

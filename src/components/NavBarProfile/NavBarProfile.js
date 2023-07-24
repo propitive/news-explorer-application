@@ -17,6 +17,12 @@ function NavBarProfile({ handleVisibleReset, handleSignOutClick }) {
     setIsMenuProfileToggled(false);
   };
 
+  const handleCloseOnOverlayClick = (event) => {
+    if (event.target === event.currentTarget) {
+      setIsMenuProfileToggled(false);
+    }
+  };
+
   return (
     <>
       <section className="navbar-profile">
@@ -71,7 +77,7 @@ function NavBarProfile({ handleVisibleReset, handleSignOutClick }) {
         </div>
       </section>
       {isMenuHomeToggled && (
-        <section className="menu">
+        <section className="menu" onClick={handleCloseOnOverlayClick}>
           <div className="menu-profile__top">
             <h1 className="menu-profile__title">NewsExplorer</h1>
             <img
