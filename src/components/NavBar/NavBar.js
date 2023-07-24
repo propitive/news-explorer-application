@@ -26,15 +26,33 @@ function NavBar({ handleSignInClick, handleSignOutClick }) {
     setIsMenuLiToggled(false);
   };
 
+  const handleCloseOnOverlayClick = (event) => {
+    if (event.target === event.currentTarget) {
+      setIsMenuLiToggled(false);
+      setIsMenuNliToggled(false);
+    }
+  };
+
   useEffect(() => {
     currentUser === null ? setIsMenuLiToggled(false) : setIsMenuLiToggled(true);
   }, currentUser);
+
+  useEffect(() => {
+    const close = (e) => {
+      if (e.keyCode === 27) {
+        setIsMenuLiToggled(false);
+        setIsMenuNliToggled(false);
+      }
+    };
+    window.addEventListener("keydown", close);
+    return () => window.removeEventListener("keydown", close);
+  }, []);
 
   return (
     <>
       {currentUser === null ? (
         // "nli" stands for Not Logged In
-        <section className="navbar-nli">
+        <section className="navbar-nli" onClick={handleCloseOnOverlayClick}>
           <h1 className="navbar-nli__title" id="home">
             NewsExplorer
           </h1>
@@ -65,7 +83,7 @@ function NavBar({ handleSignInClick, handleSignOutClick }) {
         </section>
       ) : (
         // li stands for Logged in
-        <section className="navbar-li">
+        <section className="navbar-li" onClick={handleCloseOnOverlayClick}>
           <h1 className="navbar-li__title" id="home">
             NewsExplorer
           </h1>
@@ -106,7 +124,7 @@ function NavBar({ handleSignInClick, handleSignOutClick }) {
         </section>
       )}
       {isMenuNliToggled && (
-        <section className="menu">
+        <section className="menu" onClick={handleCloseOnOverlayClick}>
           <div className="menu-nli__top">
             <h1 className="menu-nli__title">NewsExplorer</h1>
             <img
@@ -124,7 +142,7 @@ function NavBar({ handleSignInClick, handleSignOutClick }) {
         </section>
       )}
       {isMenuLiToggled && (
-        <section className="menu">
+        <section className="menu" onClick={handleCloseOnOverlayClick}>
           <div className="menu-li__top">
             <h1 className="menu-li__title">NewsExplorer</h1>
             <img
