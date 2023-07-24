@@ -207,6 +207,7 @@
   }
   .menu-profile__bottom {
     height: auto;
+    gap: 20px;
   }
   .menu-profile__home {
     padding: 0;
@@ -230,8 +231,9 @@
     background: none;
     width: 310px;
     height: 32px;
-    margin-top: 23px;
-    margin-bottom: 40px;
+    /* margin-top: 0;
+    margin-bottom: 17px; */
+    margin: 0 0 17px 0;
     font-family: "Roboto", Arial, sans-serif;
     font-size: 18px;
     font-style: normal;

@@ -60,9 +60,9 @@ function SignInModal({ isOpen, onClose, onSignIn, switchToRegister }) {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Enter email"
-        required
         minLength={1}
         maxLength={30}
+        required
       />
       <h2 className={emailValidationClassName}>Invalid email address</h2>
       <label className="signin__password-label">Password</label>
@@ -72,9 +72,9 @@ function SignInModal({ isOpen, onClose, onSignIn, switchToRegister }) {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Enter password"
-        required
         minLength={4}
         maxLength={35}
+        required
       />
       <p className="signin__switch" onClick={switchToRegister}>
         or <span className="signin__switch-signup">Sign up</span>
