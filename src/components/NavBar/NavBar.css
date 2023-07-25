@@ -371,6 +371,14 @@
 }
 
 @media screen and (max-width: 693px) {
+  .navbar-li {
+    padding: 0 16px 0;
+    height: 55px;
+  }
+  .navbar-nli {
+    padding: 0 16px 0;
+    height: 55px;
+  }
   .navbar-li__toggle-button {
     visibility: visible;
   }

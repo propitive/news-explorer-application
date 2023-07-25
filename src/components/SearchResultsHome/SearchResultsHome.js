@@ -10,6 +10,7 @@ function SearchResultsHome({ visible, showMoreItems, newsCards }) {
   const searchCardsClassname =
     visible === 3 ? "search__cards" : "search__cards__active";
   const [isHovering, setIsHovering] = useState(-1);
+  console.log(newsCards);
 
   return (
     <>

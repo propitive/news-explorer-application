@@ -189,9 +189,18 @@
 }
 
 @media screen and (max-width: 693px) {
+  .navbar-profile {
+    padding: 0;
+    height: 55px;
+    justify-content: flex-start;
+    position: relative;
+  }
   .navbar-profile__title {
     width: 117px;
     height: 24px;
+    position: absolute;
+    top: 16px;
+    left: 16px;
   }
   .navbar-profile__toggle-button {
     visibility: visible;
