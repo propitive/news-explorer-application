@@ -147,7 +147,6 @@
   .card {
     height: 417px;
     width: 290px;
-    background-color: green;
   }
   .card__image {
     height: 192px;
@@ -198,7 +197,6 @@
   .card {
     height: 420px;
     width: 224px;
-    background-color: blue;
   }
   .card__image {
     height: 150px;
@@ -262,7 +260,6 @@
 
 @media screen and (max-width: 800px) {
   .card {
-    background-color: pink;
     width: 188px;
     height: 270px;
   }
@@ -304,7 +301,6 @@
 
 @media screen and (max-width: 693px) {
   .card {
-    background-color: purple;
     width: 288px;
     height: 440px;
   }
