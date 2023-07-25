@@ -2,9 +2,6 @@ import { formattedDateToday, formattedDateSevenDaysAgo } from "./constants";
 const BASE_URL = "https://nomoreparties.co/news/v2";
 const apiKey = "f711c2fb93b14f3ca93a138e0ff635fe";
 
-console.log("Today is: " + formattedDateToday());
-console.log("Seven days ago was: " + formattedDateSevenDaysAgo());
-
 const from = formattedDateSevenDaysAgo();
 const to = formattedDateToday();
 

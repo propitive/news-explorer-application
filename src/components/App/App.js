@@ -49,7 +49,6 @@ function App() {
     setIsLoading(true);
     Api.search({ input })
       .then((data) => {
-        console.log(data.articles);
         setNewsCards(data.articles);
       })
       .catch((error) => {
@@ -57,9 +56,7 @@ function App() {
       })
       .finally(() => {
         setIsLoading(false);
-        console.log(newsCards);
         handleSetIsNotFound(newsCards);
-        console.log(isNothingFound);
       });
   };
 
@@ -93,8 +90,6 @@ function App() {
   }, []);
 
   useEffect(() => {}, [setNewsCards]);
-
-  console.log(newsCards);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>

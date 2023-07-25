@@ -1,4 +1,3 @@
-import NothingFound from "../NothingFound/NothingFound";
 import Preloader from "../Preloader/Preloader";
 import SearchResultsHome from "../SearchResultsHome/SearchResultsHome";
 
@@ -11,7 +10,6 @@ function MainHome({
 }) {
   return (
     <>
-      {/* {isNothingFound === true && <NothingFound />} */}
       {isLoading === true && <Preloader />}
       {isLoading === false && (
         <SearchResultsHome

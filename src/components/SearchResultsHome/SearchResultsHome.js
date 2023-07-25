@@ -8,7 +8,6 @@ import NothingFound from "../NothingFound/NothingFound";
 
 function SearchResultsHome({ visible, showMoreItems, newsCards }) {
   const currentUser = React.useContext(CurrentUserContext);
-  console.log(newsCards);
 
   const searchCardsClassname =
     visible === 3 ? "search__cards" : "search__cards__active";

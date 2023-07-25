@@ -38,14 +38,6 @@ function NavBar({ handleSignInClick, handleSignOutClick }) {
     handleSignOutClick();
   };
 
-  // useEffect(() => {
-  //   currentUser === null ? setIsMenuLiToggled(false) : setIsMenuLiToggled(true);
-  // }, currentUser);
-
-  // useEffect(() => {
-  //   setIsMenuNliToggled(false)
-  // }, [])
-
   return (
     <>
       {currentUser === null ? (

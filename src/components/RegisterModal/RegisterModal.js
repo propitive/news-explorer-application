@@ -40,11 +40,9 @@ function RegisterModal({ isOpen, onClose, onRegister, switchToSignIn }) {
     setIsNameValid(true);
   }, []);
 
-    const emailValidationClassName = isEmailValid
-      ? "register__email-validation-valid"
-      : "register__email-validation-invalid"
-
-  // const emailValidationClassName = "register__email-validation-invalid";
+  const emailValidationClassName = isEmailValid
+    ? "register__email-validation-valid"
+    : "register__email-validation-invalid";
 
   function handleSubmit(e) {
     e.preventDefault();

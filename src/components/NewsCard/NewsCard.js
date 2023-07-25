@@ -4,15 +4,12 @@ import dogOnTree from "../../images/dogOnTree.png";
 import notBookmarked from "../../images/notBookmarked.svg";
 
 function NewsCard(card, index) {
-  console.log(index === 1);
   const [isHovering, setIsHovering] = useState(-1);
 
   const cardSigninClassname = `card__signin ${
     isHovering === card.index ? "" : "hidden"
   }`;
   const cardPublisherArray = card.card.source.name.split(" ");
-  const cardPublisher = cardPublisherArray[0];
-  console.log(cardPublisher);
 
   const renderNotBookmarked = () => {
     return (
@@ -39,7 +36,6 @@ function NewsCard(card, index) {
 
   return (
     <div className="card">
-      {console.log(card.card.source.name.split(" ")[0])}
       <img
         className="card__image"
         src={card.card.urlToImage}
