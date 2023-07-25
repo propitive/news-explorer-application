@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import NavBar from "../NavBar/NavBar";
+import NavBarHome from "../NavBarHome/NavBarHome";
 
 function HeaderHome({
   handleSignInClick,
@@ -24,7 +24,7 @@ function HeaderHome({
 
   return (
     <header className="header-home">
-      <NavBar
+      <NavBarHome
         handleSignInClick={handleSignInClick}
         handleSignOutClick={handleSignOutClick}
       />

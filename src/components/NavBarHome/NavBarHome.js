@@ -49,6 +49,7 @@ function NavBar({ handleSignInClick, handleSignOutClick }) {
             className="navbar-nli__toggle-button"
             src={toggleButtonWhite}
             onClick={handleToggleMenuNliAppear}
+            alt="hamburger toggle button icon"
           />
 
           <div className="navbar-nli__buttons">
@@ -80,6 +81,7 @@ function NavBar({ handleSignInClick, handleSignOutClick }) {
             className="navbar-li__toggle-button"
             src={toggleButtonWhite}
             onClick={handleToggleMenuLiAppear}
+            alt="hamburger toggle button icon"
           />
 
           <div className="navbar-li__buttons">
@@ -119,6 +121,7 @@ function NavBar({ handleSignInClick, handleSignOutClick }) {
               className="menu-nli__close-icon"
               src={closeButton}
               onClick={handleToggleMenuNliDisappear}
+              alt="icon to close modal"
             />
           </div>
           <div className="menu-nli__bottom">
@@ -137,6 +140,7 @@ function NavBar({ handleSignInClick, handleSignOutClick }) {
               className="menu-li__close-icon"
               src={closeButton}
               onClick={handleToggleMenuLiDisappear}
+              alt="icon to close modal"
             />
           </div>
           <div className="menu-li__bottom">

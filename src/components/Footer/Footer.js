@@ -14,10 +14,11 @@ function Footer() {
           className="footer__practicum"
           href="https://tripleten.com/"
           target="_blank"
+          rel="noreferrer"
         >
           Practicum
         </a>
-        <a href="https://github.com/propitive" target="_blank">
+        <a href="https://github.com/propitive" target="_blank" rel="noreferrer">
           <img
             className="footer__github"
             src={githubIcon}

@@ -44,6 +44,7 @@ function SearchResultsProfile({ visible }) {
                     src={trashIcon}
                     onMouseEnter={() => setIsHovering(index)}
                     onMouseLeave={() => setIsHovering(-1)}
+                    alt="icon of bookmark"
                   ></img>
                 </button>
               </div>

@@ -40,6 +40,7 @@ function NavBarProfile({ handleVisibleReset, handleSignOutClick }) {
           className="navbar-profile__toggle-button"
           src={toggleButtonBlack}
           onClick={handleToggleMenuHomeAppear}
+          alt="hamburger toggle button icon"
         />
 
         <div className="navbar-profile__buttons">
@@ -84,6 +85,7 @@ function NavBarProfile({ handleVisibleReset, handleSignOutClick }) {
               className="menu-profile__close-icon"
               src={closeButton}
               onClick={handleToggleMenuHomeDisappear}
+              alt="icon to close modal"
             />
           </div>
           <div className="menu-profile__bottom">

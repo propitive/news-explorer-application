@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import notBookmarked from "../../images/notBookmarked.svg";
 import CurrentUserContext from "../../context/CurrentUserContext";
 import NothingFound from "../NothingFound/NothingFound";
 import { handleDateFormat } from "../../utils/constants";
@@ -11,7 +10,16 @@ function SearchResultsHome({ visible, showMoreItems, newsCards }) {
   const searchCardsClassname =
     visible === 3 ? "search__cards" : "search__cards__active";
   const [isHovering, setIsHovering] = useState(-1);
-  console.log(newsCards);
+
+  const handleBookMarkButtonClick = (evt) => {
+    if (evt.target.classList.contains("card__button-active")) {
+      evt.target.classList.remove("card__button-active");
+      evt.target.classList.add("card__button-inactive");
+    } else {
+      evt.target.classList.add("card__button-active");
+      evt.target.classList.remove("card__button-inactive");
+    }
+  };
 
   return (
     <>
@@ -21,12 +29,12 @@ function SearchResultsHome({ visible, showMoreItems, newsCards }) {
             <h2 className="search__title">Search results</h2>
             <ul className={searchCardsClassname}>
               {newsCards.slice(0, visible).map((card, index) => (
-                <Link
-                  to={{ pathname: `${card.url}` }}
-                  style={{ textDecoration: "none", alignSelf: "center" }}
-                  target="_blank"
-                >
-                  <div className="card" key={index}>
+                <div className="card" key={index}>
+                  <Link
+                    to={{ pathname: `${card.url}` }}
+                    style={{ textDecoration: "none", alignSelf: "center" }}
+                    target="_blank"
+                  >
                     <img
                       className="card__image"
                       src={card.urlToImage}
@@ -49,25 +57,28 @@ function SearchResultsHome({ visible, showMoreItems, newsCards }) {
                     >
                       <h3>Sign in to save articles</h3>
                     </div>
-                    <div>
-                      <button className="card__button">
-                        {currentUser === null ? (
-                          <img
-                            className="card__bookmark"
-                            src={notBookmarked}
-                            onMouseEnter={() => setIsHovering(index)}
-                            onMouseLeave={() => setIsHovering(-1)}
-                          ></img>
-                        ) : (
-                          <img
-                            className="card__bookmark"
-                            src={notBookmarked}
-                          ></img>
-                        )}
-                      </button>
-                    </div>
+                  </Link>
+                  <div>
+                    <button
+                      className="card__button card__button-inactive"
+                      onClick={
+                        currentUser !== null
+                          ? handleBookMarkButtonClick
+                          : undefined
+                      }
+                      onMouseEnter={
+                        currentUser === null
+                          ? () => setIsHovering(index)
+                          : undefined
+                      }
+                      onMouseLeave={
+                        currentUser === null
+                          ? () => setIsHovering(-1)
+                          : undefined
+                      }
+                    ></button>
                   </div>
-                </Link>
+                </div>
               ))}
             </ul>
             {visible === 3 && (

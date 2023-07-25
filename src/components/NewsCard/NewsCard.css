@@ -76,17 +76,20 @@
   padding: 0;
   border-radius: 10px;
   cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.card__bookmark {
-  height: 30px;
-  width: 30px;
-  padding-top: 2px;
-  opacity: 0.4;
+.card__button-inactive {
+  background-image: url("../../images/bookmarkGray.svg");
 }
 
-.card__bookmark:hover {
-  opacity: 1;
+.card__button-inactive:hover {
+  background-image: url("../../images/bookmarkBlack.svg");
+}
+
+.card__button-active {
+  background-image: url("../../images/bookmarkBlue.svg");
 }
 
 .card__signin {
@@ -96,6 +99,7 @@
   width: 182px;
   height: 40px;
   background-color: white;
+  color: black;
   font-family: "Roboto", Arial, sans-serif;
   font-size: 12px;
   font-weight: 500;
