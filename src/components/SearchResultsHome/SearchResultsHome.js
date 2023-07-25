@@ -21,6 +21,18 @@ function SearchResultsHome({ visible, showMoreItems, newsCards }) {
     }
   };
 
+  // const handleBookmarkClick = (evt) => {
+  //   const bookmarkButton = evt.target.parentElement.querySelector('.card__bookmark');
+
+  //   if (bookmarkButton.classList.contains('card__bookmark-active')) {
+  //     handleDeleteArticle()
+  //     bookmarkButton.classList.remove('card__bookmark-active');
+  //   } else {
+  //     handleSaveArticle(card)
+  //     bookmarkButton.classList.add('card__bookmark-active');
+  //   }
+  // }
+
   return (
     <>
       {newsCards.length > 0 && (
