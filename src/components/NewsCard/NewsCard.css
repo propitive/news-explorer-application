@@ -89,6 +89,10 @@
   opacity: 1;
 }
 
+.card__bookmark-active {
+  background-image: url("../../images/bookmarked.svg");
+}
+
 .card__signin {
   position: absolute;
   top: 24px;
