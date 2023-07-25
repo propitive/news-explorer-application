@@ -6,7 +6,7 @@ import {
   SignInPasswordValidation,
 } from "../../utils/validation";
 
-function SignInModal({ isOpen, onClose, onSignIn, switchToRegister }) {
+function SignInModal({ isOpen, onClose, switchToRegister }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isFormValid, setIsFormValid] = useState(false);

@@ -1,7 +1,4 @@
-import React, { useEffect, useState } from "react";
-import NewsCard from "../NewsCard/NewsCard";
-import { cardItems } from "../../utils/constants";
-import bookmarked from "../../images/bookmarked.svg";
+import React, { useState } from "react";
 import notBookmarked from "../../images/notBookmarked.svg";
 import CurrentUserContext from "../../context/CurrentUserContext";
 import NothingFound from "../NothingFound/NothingFound";

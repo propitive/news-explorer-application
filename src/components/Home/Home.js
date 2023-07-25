@@ -10,7 +10,6 @@ function Home({
   handleSignOutClick,
   handleFetchArticles,
   newsCards,
-  isNothingFound,
 }) {
   return (
     <>
@@ -24,7 +23,6 @@ function Home({
         visible={visible}
         showMoreItems={showMoreItems}
         newsCards={newsCards}
-        isNothingFound={isNothingFound}
       />
       {visible === 3 && <About />}
     </>

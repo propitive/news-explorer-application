@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from "react";
-import NewsCard from "../NewsCard/NewsCard";
+import React, { useState } from "react";
 import { cardItems } from "../../utils/constants";
 import trashIcon from "../../images/trash.svg";
-import CurrentUserContext from "../../context/CurrentUserContext";
 
-function SearchResultsProfile({ visible, showMoreItems }) {
-  const currentUser = React.useContext(CurrentUserContext);
-
+function SearchResultsProfile({ visible }) {
   const searchCardsClassname =
     visible === 3 ? "search__cards" : "search__cards__active";
-  const [newsCards, setNewsCards] = useState([]);
   const [isHovering, setIsHovering] = useState(-1);
 
   return (

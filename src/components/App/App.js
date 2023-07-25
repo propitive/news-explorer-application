@@ -1,15 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Route, Switch, useHistory } from "react-router-dom";
 
-import About from "../About/About";
 import Api from "../../utils/NewsApi";
 import Footer from "../Footer/Footer";
-import HeaderHome from "../HeaderHome/HeaderHome";
-import HeaderProfile from "../HeaderProfile/HeaderProfile";
 import Home from "../Home/Home";
-import MainHome from "../MainHome/MainHome";
-import MainProfile from "../MainProfile/MainProfile";
-import NavBar from "../NavBar/NavBar";
 import Profile from "../Profile/Profile";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import SignInModal from "../SignInModal/SignInModal";
@@ -18,10 +12,9 @@ import SuccessfulModal from "../SuccessfulModal/SuccessfulModal";
 import CurrentUserContext from "../../context/CurrentUserContext";
 
 import "./App.css";
-import NothingFound from "../NothingFound/NothingFound";
 
 function App() {
-  const [currentUser, setUser] = useState("jose");
+  const [currentUser, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [newsCards, setNewsCards] = useState({});
   const [visible, setVisible] = useState(3);
@@ -32,8 +25,6 @@ function App() {
   const [isNothingFound, setIsNothingFound] = useState(false);
 
   const history = useHistory();
-
-  const handleBookmark = () => {};
 
   const handleSetIsNotFound = (x) => {
     setIsNothingFound(false);
@@ -59,14 +50,6 @@ function App() {
         handleSetIsNotFound(newsCards);
       });
   };
-
-  const handleRegister = () => {};
-
-  const handleRegisterClick = () => {
-    setIsRegisterModalOpen(true);
-  };
-
-  const handleSignIn = () => {};
 
   const handleSignInClick = () => {
     setIsSignInModalOpen(true);
@@ -100,7 +83,6 @@ function App() {
               <Profile
                 isLoading={isLoading}
                 visible={visible}
-                showMoreItems={showMoreItems}
                 handleVisibleReset={handleVisibleReset}
                 handleSignOutClick={handleSignOutClick}
               />
@@ -114,7 +96,6 @@ function App() {
                 handleSignOutClick={handleSignOutClick}
                 handleFetchArticles={handleFetchArticles}
                 newsCards={newsCards}
-                isNothingFound={isNothingFound}
               />
             </Route>
           </Switch>
@@ -123,7 +104,6 @@ function App() {
             <RegisterModal
               isOpen={isRegisterModalOpen}
               onClose={() => setIsRegisterModalOpen(false)}
-              onRegister={handleRegister}
               authError={authError}
               switchToSignIn={() => {
                 setIsRegisterModalOpen(false);
@@ -135,7 +115,6 @@ function App() {
             <SignInModal
               isOpen={isSignInModalOpen}
               onClose={() => setIsSignInModalOpen(false)}
-              onSignIn={handleSignIn}
               authError={authError}
               switchToRegister={() => {
                 setIsSignInModalOpen(false);

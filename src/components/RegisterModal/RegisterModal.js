@@ -7,7 +7,7 @@ import {
   RegisterNameValidation,
 } from "../../utils/validation";
 
-function RegisterModal({ isOpen, onClose, onRegister, switchToSignIn }) {
+function RegisterModal({ isOpen, onClose, switchToSignIn }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

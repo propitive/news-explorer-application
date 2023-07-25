@@ -1,6 +1,5 @@
 import { useState } from "react";
 import bookmarked from "../../images/bookmarked.svg";
-import dogOnTree from "../../images/dogOnTree.png";
 import notBookmarked from "../../images/notBookmarked.svg";
 
 function NewsCard(card, index) {
@@ -9,7 +8,6 @@ function NewsCard(card, index) {
   const cardSigninClassname = `card__signin ${
     isHovering === card.index ? "" : "hidden"
   }`;
-  const cardPublisherArray = card.card.source.name.split(" ");
 
   const renderNotBookmarked = () => {
     return (
