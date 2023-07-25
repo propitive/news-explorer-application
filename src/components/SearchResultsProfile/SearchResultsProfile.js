@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { cardItems } from "../../utils/constants";
 import trashIcon from "../../images/trash.svg";
+import { handleDateFormat } from "../../utils/constants";
 
 function SearchResultsProfile({ visible }) {
   const searchCardsClassname =
@@ -19,7 +20,9 @@ function SearchResultsProfile({ visible }) {
                 src={card.urlToImage}
                 alt={card.title}
               />
-              <h3 className="card__date">{card.publishedAt.slice(0, 9)}</h3>
+              <h3 className="card__date">
+                {handleDateFormat(card.publishedAt.slice(0, 10))}
+              </h3>
               <h2 className="card__title">{card.title}</h2>
               <h3 className="card__paragraph" id="js-toclamp">
                 {card.description}

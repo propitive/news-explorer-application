@@ -48,6 +48,7 @@ function App() {
       .finally(() => {
         setIsLoading(false);
         handleSetIsNotFound(newsCards);
+        setVisible(3);
       });
   };
 

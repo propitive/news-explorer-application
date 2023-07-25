@@ -161,8 +161,36 @@ function formattedDateSevenDaysAgo() {
   return result;
 }
 
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "Sebtember",
+  "October",
+  "November",
+  "December",
+];
+
+const handleDateFormat = (unformattedDate) => {
+  const dia = unformattedDate.slice(8, 10);
+  const mes = unformattedDate.slice(5, 7);
+  const ano = unformattedDate.slice(0, 4);
+
+  const handleFindMonth = (monthNumber) => {
+    return months[monthNumber - 1];
+  };
+
+  return `${handleFindMonth(mes)} ${dia}, ${ano}`;
+};
+
 module.exports = {
   cardItems,
   formattedDateToday,
   formattedDateSevenDaysAgo,
+  handleDateFormat,
 };

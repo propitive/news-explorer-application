@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import notBookmarked from "../../images/notBookmarked.svg";
 import CurrentUserContext from "../../context/CurrentUserContext";
 import NothingFound from "../NothingFound/NothingFound";
+import { handleDateFormat } from "../../utils/constants";
 
 function SearchResultsHome({ visible, showMoreItems, newsCards }) {
   const currentUser = React.useContext(CurrentUserContext);
@@ -24,7 +25,9 @@ function SearchResultsHome({ visible, showMoreItems, newsCards }) {
                     src={card.urlToImage}
                     alt={card.title}
                   />
-                  <h3 className="card__date">{card.publishedAt.slice(0, 9)}</h3>
+                  <h3 className="card__date">
+                    {handleDateFormat(card.publishedAt.slice(0, 10))}
+                  </h3>
                   <h2 className="card__title">{card.title}</h2>
                   <h3 className="card__paragraph" id="js-toclamp">
                     {card.description}
