@@ -102,11 +102,11 @@
   }
 }
 
-@media screen and (max-width: 767px) {
+/* @media screen and (max-width: 767px) {
   .search__title {
     width: 585px;
   }
-}
+} */
 
 @media screen and (max-width: 682px) {
   .search__title {
