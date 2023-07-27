@@ -47,6 +47,8 @@
     }
     .about__title {
         margin: 40px 0 24px;
+        font-size: 30px;
+        line-height: 40px;
     }
     .about__paragraphs {
     }
