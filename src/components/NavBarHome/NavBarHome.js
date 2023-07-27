@@ -52,8 +52,8 @@ function NavBar({ handleSignInClick, handleSignOutClick }) {
             alt="hamburger toggle button icon"
           />
 
-          <div className="navbar-nli__buttons">
-            <div className="navbar-nli__home-container">
+          <ul className="navbar-nli__buttons">
+            <li className="navbar-nli__home-container">
               <Link
                 to="/"
                 style={{ textDecoration: "none", alignSelf: "center" }}
@@ -64,11 +64,11 @@ function NavBar({ handleSignInClick, handleSignOutClick }) {
                 className="navbar-nli__white-line"
                 disabled="disabled"
               ></button>
-            </div>
+            </li>
             <button className="navbar-nli__signin" onClick={handleSignInClick}>
               Sign in
             </button>
-          </div>
+          </ul>
         </section>
       ) : (
         // li stands for Logged in
@@ -84,8 +84,8 @@ function NavBar({ handleSignInClick, handleSignOutClick }) {
             alt="hamburger toggle button icon"
           />
 
-          <div className="navbar-li__buttons">
-            <div className="navbar-li__home-container">
+          <ul className="navbar-li__buttons">
+            <li className="navbar-li__home-container">
               <Link to="/">
                 <button className="navbar-li__home">Home</button>
               </Link>
@@ -93,7 +93,7 @@ function NavBar({ handleSignInClick, handleSignOutClick }) {
                 className="navbar-li__white-line"
                 disabled="disabled"
               ></button>
-            </div>
+            </li>
             <Link
               to="/saved-articles"
               style={{ textDecoration: "none", alignSelf: "center" }}
@@ -110,7 +110,7 @@ function NavBar({ handleSignInClick, handleSignOutClick }) {
                 alt="Logout icon"
               />
             </button>
-          </div>
+          </ul>
         </section>
       )}
       {isMenuNliToggled && (
@@ -143,13 +143,13 @@ function NavBar({ handleSignInClick, handleSignOutClick }) {
               alt="icon to close modal"
             />
           </div>
-          <div className="menu-li__bottom">
-            <h2 className="menu-li__home">Home</h2>
+          <ul className="menu-li__bottom">
+            <li className="menu-li__home">Home</li>
             <Link
               to="/saved-articles"
               style={{ textDecoration: "none", alignSelf: "flex-start" }}
             >
-              <h2 className="menu-li__saved-articles">Saved Articles</h2>
+              <li className="menu-li__saved-articles">Saved Articles</li>
             </Link>
             <button className="menu-li__signout" onClick={handleMenuLiSignout}>
               {`${currentUser}`}{" "}
@@ -159,7 +159,7 @@ function NavBar({ handleSignInClick, handleSignOutClick }) {
                 alt="Logout icon"
               />
             </button>
-          </div>
+          </ul>
         </section>
       )}
     </>

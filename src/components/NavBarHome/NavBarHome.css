@@ -309,6 +309,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 0 16px 0;
+  margin: 0;
 }
 
 .menu-li__home {
@@ -320,6 +321,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: 56px;
+  list-style-type: none;
 }
 
 .menu-li__saved-articles {
@@ -331,6 +333,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: 56px;
+  list-style-type: none;
 }
 
 .menu-li__signout {
@@ -370,7 +373,7 @@
   }
 }
 
-@media screen and (max-width: 693px) {
+@media screen and (max-width: 682px) {
   .navbar-li {
     padding: 0 16px 0;
     height: 55px;
@@ -387,6 +390,9 @@
   }
   .menu {
     visibility: visible;
+  }
+  .navbar-nli__white-line {
+    bottom: 12px;
   }
 }
 
