@@ -9,8 +9,8 @@ function About() {
         alt="Selfie of Jose Maldonado"
       />
       <div className="about__content">
-        <h2 className="about__title">About the author</h2>
-        <h3 className="about__paragraphs">
+        <p className="about__title">About the author</p>
+        <p className="about__paragraphs">
           In a galaxy far far away... Just kidding, unfortunately, I am no Jedi!
           My name is Jose Maldonado, I am an aspiring software engineer
           currently working in the IT industry. I am confident with HTML, CSS,
@@ -21,7 +21,7 @@ function About() {
           way. Moreover, the mentorship of industry veterans along with the
           difficult challenges I have had to overcome have drastically increased
           my ability to push through adversity and always find the solution.{" "}
-        </h3>
+        </p>
       </div>
     </section>
   );

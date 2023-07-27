@@ -1,27 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
 import NavBarHome from "../NavBarHome/NavBarHome";
+import SearchForm from "../SearchForm/SearchForm";
 
 function HeaderHome({
   handleSignInClick,
   handleSignOutClick,
   handleFetchArticles,
 }) {
-  const [isButtonClicked, setIsButtonClicked] = useState(false);
-  const [isQuery, setIsQuery] = useState("");
-
-  const buttonClassName = isButtonClicked
-    ? "header-home__search-wrap__button-clicked"
-    : "header-home__search-wrap__button";
-
-  const handleButtonClick = () => {
-    setIsButtonClicked(true);
-    setTimeout(function () {
-      setIsButtonClicked(false);
-    }, 100);
-    handleFetchArticles(`${isQuery.toLowerCase()}`);
-  };
-
   return (
     <header className="header-home">
       <NavBarHome
@@ -36,19 +22,7 @@ function HeaderHome({
             account.
           </h2>
         </div>
-        <div className="header-home__search-wrap">
-          <div className="header-home__search-wrap__box">
-            <input
-              className="header-home__search-wrap__text"
-              placeholder="Search..."
-              onChange={(e) => setIsQuery(e.target.value)}
-              value={isQuery}
-            />
-            <button className={buttonClassName} onClick={handleButtonClick}>
-              Search
-            </button>
-          </div>
-        </div>
+        <SearchForm handleFetchArticles={handleFetchArticles} />
       </div>
     </header>
   );

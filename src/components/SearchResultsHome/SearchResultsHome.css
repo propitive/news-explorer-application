@@ -31,6 +31,7 @@
   justify-content: center;
   gap: 16px 16px;
   padding: 0;
+  margin-bottom: 80px;
 }
 
 .search__button {
@@ -43,6 +44,10 @@
   background: #ffffff;
   cursor: pointer;
   z-index: 2;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
 }
 
 .search__button:hover {
@@ -65,6 +70,9 @@
     margin: 40px auto 32px;
     width: 901.989px;
   }
+  .search__cards__active {
+    margin-bottom: 64px;
+  }
 }
 
 @media screen and (max-width: 1027px) {
@@ -80,25 +88,38 @@
 @media screen and (max-width: 1000px) {
   .search__title {
     margin: 40px auto 32px;
-    width: 703.977px;
+    width: 688px;
   }
   .search__button {
     margin: 32px auto 40px;
   }
-}
-
-@media screen and (max-width: 800px) {
-  .search__title {
-    width: 596px;
+  .search__cards__active {
+    margin-bottom: 32px;
+    gap: 8px 8px;
+  }
+  .search__cards {
+    gap: 8px 8px;
   }
 }
 
-@media screen and (max-width: 693px) {
+@media screen and (max-width: 767px) {
+  .search__title {
+    width: 585px;
+  }
+}
+
+@media screen and (max-width: 682px) {
+  .search__title {
+    width: 288px;
+  }
+  .search__cards__active {
+    gap: 16px 16px;
+  }
   .search__container {
     max-width: calc(100% - 100px);
   }
-  .search__title {
-    width: 288px;
+  .search__cards__active {
+    margin-bottom: 13px;
   }
 }
 

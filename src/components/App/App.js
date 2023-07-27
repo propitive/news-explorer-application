@@ -14,7 +14,7 @@ import CurrentUserContext from "../../context/CurrentUserContext";
 import "./App.css";
 
 function App() {
-  const [currentUser, setUser] = useState(null);
+  const [currentUser, setUser] = useState("jose");
   const [isLoading, setIsLoading] = useState(false);
   const [newsCards, setNewsCards] = useState({});
   const [visible, setVisible] = useState(3);

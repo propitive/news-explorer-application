@@ -113,7 +113,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 693px) {
+@media screen and (max-width: 640px) {
   .modal__form {
     top: 56px;
     width: 100%;

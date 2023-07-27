@@ -21,25 +21,13 @@ function SearchResultsHome({ visible, showMoreItems, newsCards }) {
     }
   };
 
-  // const handleBookmarkClick = (evt) => {
-  //   const bookmarkButton = evt.target.parentElement.querySelector('.card__bookmark');
-
-  //   if (bookmarkButton.classList.contains('card__bookmark-active')) {
-  //     handleDeleteArticle()
-  //     bookmarkButton.classList.remove('card__bookmark-active');
-  //   } else {
-  //     handleSaveArticle(card)
-  //     bookmarkButton.classList.add('card__bookmark-active');
-  //   }
-  // }
-
   return (
     <>
       {newsCards.length > 0 && (
         <div className="search">
           <div className="search__container">
             <h2 className="search__title">Search results</h2>
-            <ul className={searchCardsClassname}>
+            <section className={searchCardsClassname}>
               {newsCards.slice(0, visible).map((card, index) => (
                 <div className="card" key={index}>
                   <Link
@@ -92,7 +80,7 @@ function SearchResultsHome({ visible, showMoreItems, newsCards }) {
                   </div>
                 </div>
               ))}
-            </ul>
+            </section>
             {visible === 3 && (
               <button className="search__button" onClick={showMoreItems}>
                 Show more
