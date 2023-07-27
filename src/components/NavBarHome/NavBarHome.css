@@ -397,4 +397,7 @@
   .navbar-nli__buttons {
     visibility: hidden;
   }
+  .navbar-li__saved-articles {
+    width: 10px;
+  }
 }

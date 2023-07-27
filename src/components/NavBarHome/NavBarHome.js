@@ -41,9 +41,9 @@ function NavBar({ handleSignInClick, handleSignOutClick }) {
       {currentUser === null ? (
         // "nli" stands for Not Logged In
         <section className="navbar-nli">
-          <h1 className="navbar-nli__title" id="home">
+          <h2 className="navbar-nli__title" id="home">
             NewsExplorer
-          </h1>
+          </h2>
 
           <img
             className="navbar-nli__toggle-button"
@@ -73,9 +73,9 @@ function NavBar({ handleSignInClick, handleSignOutClick }) {
       ) : (
         // li stands for Logged in
         <section className="navbar-li">
-          <h1 className="navbar-li__title" id="home">
+          <h2 className="navbar-li__title" id="home">
             NewsExplorer
-          </h1>
+          </h2>
 
           <img
             className="navbar-li__toggle-button"
@@ -116,7 +116,7 @@ function NavBar({ handleSignInClick, handleSignOutClick }) {
       {isMenuNliToggled && (
         <section className="menu" onClick={handleCloseOnOverlayClick}>
           <div className="menu-nli__top">
-            <h1 className="menu-nli__title">NewsExplorer</h1>
+            <h2 className="menu-nli__title">NewsExplorer</h2>
             <img
               className="menu-nli__close-icon"
               src={closeButton}
@@ -135,7 +135,7 @@ function NavBar({ handleSignInClick, handleSignOutClick }) {
       {isMenuLiToggled && (
         <section className="menu" onClick={handleCloseOnOverlayClick}>
           <div className="menu-li__top">
-            <h1 className="menu-li__title">NewsExplorer</h1>
+            <h2 className="menu-li__title">NewsExplorer</h2>
             <img
               className="menu-li__close-icon"
               src={closeButton}

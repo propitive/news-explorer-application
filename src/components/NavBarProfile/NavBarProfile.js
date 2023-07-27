@@ -27,13 +27,13 @@ function NavBarProfile({ handleVisibleReset, handleSignOutClick }) {
     <>
       <section className="navbar-profile">
         <Link to="/" style={{ textDecoration: "none", alignSelf: "center" }}>
-          <h1
+          <h2
             className="navbar-profile__title"
             onClick={handleVisibleReset}
             id="home"
           >
             NewsExplorer
-          </h1>
+          </h2>
         </Link>
 
         <img
@@ -80,7 +80,7 @@ function NavBarProfile({ handleVisibleReset, handleSignOutClick }) {
       {isMenuHomeToggled && (
         <section className="menu" onClick={handleCloseOnOverlayClick}>
           <div className="menu-profile__top">
-            <h1 className="menu-profile__title">NewsExplorer</h1>
+            <h2 className="menu-profile__title">NewsExplorer</h2>
             <img
               className="menu-profile__close-icon"
               src={closeButton}

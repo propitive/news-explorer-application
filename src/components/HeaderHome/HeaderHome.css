@@ -124,6 +124,8 @@
 @media screen and (max-width: 520px) {
   .header-home {
     height: 536px;
+    background-image: url("../../images/headerBackgroundMobile.svg");
+    background-size: cover;
   }
   .header-home__content {
     max-width: calc(100% - 32px);
