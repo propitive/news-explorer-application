@@ -88,7 +88,7 @@
 @media screen and (max-width: 1000px) {
   .search__title {
     margin: 40px auto 32px;
-    width: 688px;
+    width: 642px;
   }
   .search__button {
     margin: 32px auto 40px;
@@ -102,11 +102,15 @@
   }
 }
 
-/* @media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .search__title {
-    width: 585px;
+    width: 608px;
   }
-} */
+  .search__cards {
+    width: 601px;
+    justify-content: flex-start;
+  }
+}
 
 @media screen and (max-width: 682px) {
   .search__title {
@@ -120,6 +124,10 @@
   }
   .search__cards__active {
     margin-bottom: 13px;
+  }
+  .search__cards {
+    justify-content: center;
+    width: auto;
   }
 }
 
