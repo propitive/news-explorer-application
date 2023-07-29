@@ -1,0 +1,369 @@
+.card {
+  width: 400px;
+  height: 576px;
+  position: relative;
+  background: white;
+  border-radius: 15px;
+}
+
+.card__image {
+  width: 400px;
+  height: 272px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card__date {
+  margin: 20px 0 0 24px;
+  color: #b6bcbf;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.card__title {
+  margin: 12px 24px 16px;
+  color: #1a1b22;
+  font-family: "Roboto Slab", Arial, sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 30px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.card__paragraph {
+  width: 352px;
+  height: 110px;
+  margin: 16px 24px 18px;
+  text-overflow: ellipsis;
+  color: var(--main-primary, #1a1b22);
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.card__publisher {
+  width: 350px;
+  height: 20px;
+  margin: 0 auto 24px 24px;
+  color: #b6bcbf;
+  font-family: "Roboto Slab", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.card__button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card__button-inactive {
+  background-image: url("../../images/bookmarkGray.svg");
+}
+
+.card__button-inactive:hover {
+  background-image: url("../../images/bookmarkBlack.svg");
+}
+
+.card__button-active {
+  background-image: url("../../images/bookmarkBlue.svg");
+}
+
+.card__signin {
+  position: absolute;
+  top: 24px;
+  right: 70px;
+  width: 182px;
+  height: 40px;
+  background-color: white;
+  color: black;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.card-profile__signin {
+  position: absolute;
+  top: 24px;
+  right: 70px;
+  width: 159px;
+  height: 40px;
+  background-color: white;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.card__signin__hidden {
+  visibility: hidden;
+}
+
+.card__subtitle {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background: white;
+  height: 40px;
+  padding: 0 10px;
+  display: flex;
+  border-radius: 5px;
+}
+
+.card__subititle-content {
+  margin: 0;
+  align-self: center;
+  color: #000;
+  text-align: center;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+@media screen and (max-width: 1327px) {
+  .card {
+    height: 417px;
+    width: 290px;
+  }
+  .card__image {
+    height: 192px;
+    width: 290px;
+  }
+  .card__date {
+    height: 24px;
+    width: 144px;
+    margin: 4px 0 4px 16px;
+  }
+  .card__title {
+    height: 49px;
+    width: 256px;
+    margin: 8px 0 8px 16px;
+    font-size: 22px;
+    line-height: 24px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .card__paragraph {
+    height: 88px;
+    width: 258px;
+    margin: 0 16px 12px;
+    -webkit-line-clamp: 4;
+  }
+  .card__publisher {
+    height: 20px;
+    width: 255px;
+    margin-left: 16px;
+  }
+  .card-profile__signin {
+    width: 129px;
+    top: 68px;
+    right: 23px;
+    font-size: 11px;
+  }
+  .card__signin {
+    width: 144px;
+    top: 68px;
+    right: 23px;
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .card {
+    height: 420px;
+    width: 224px;
+  }
+  .card__image {
+    height: 150px;
+    width: 224px;
+  }
+  .card__date {
+    height: 24px;
+    width: 144px;
+    margin: 16px 0 12px 18px;
+  }
+  .card__title {
+    height: 73px;
+    width: 192px;
+    margin: 12px 0 10px 16px;
+    font-size: 22px;
+    line-height: 24px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+  .card__subtitle {
+    top: 13px;
+    left: 13px;
+    height: 35px;
+  }
+  .card__paragraph {
+    height: 88px;
+    width: 192px;
+    margin: 0 16px 12px;
+    -webkit-line-clamp: 4;
+  }
+  .card__publisher {
+    height: 20px;
+    width: 185px;
+    margin: 0 16px 16px;
+  }
+  .card__button {
+    width: 35px;
+    height: 35px;
+    top: 13px;
+    right: 13px;
+  }
+  .card__bookmark {
+    width: 25px;
+    height: 25px;
+  }
+  .card-profile__signin {
+    width: 129px;
+    top: 53px;
+    right: 10px;
+    height: 35px;
+  }
+  .card__signin {
+    width: 149px;
+    top: 53px;
+    right: 10px;
+    height: 35px;
+  }
+}
+
+/* @media screen and (max-width: 767px) {
+  .card {
+    width: 188px;
+    height: 270px;
+  }
+  .card__image {
+    height: 128px;
+    width: 188px;
+  }
+  .card__date {
+    margin: 0 0 0 18px;
+    font-size: 14px;
+  }
+  .card__title {
+    height: 74px;
+    width: 147px;
+    margin: 0 0 0 16px;
+    font-size: 22px;
+    -webkit-line-clamp: 3;
+  }
+  .card__paragraph {
+    height: 0;
+  }
+  .card__publisher {
+    height: 20px;
+    width: 150px;
+  }
+  .card-profile__signin {
+    width: 117px;
+    top: 53px;
+    right: 10px;
+    font-size: 10px;
+  }
+  .card__signin {
+    width: 131px;
+    top: 53px;
+    right: 10px;
+    font-size: 10px;
+  }
+} */
+
+@media screen and (max-width: 682px) {
+  .card {
+    width: 288px;
+    height: 440px;
+  }
+  .card__image {
+    width: 288px;
+    height: 196px;
+  }
+  .card__date {
+    margin: 16px auto 10px 16px;
+    font-size: 18px;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    line-height: 24px;
+  }
+  .card__title {
+    width: 256px;
+    font-size: 22px;
+    line-height: 24px;
+    margin: 0 auto 10px 16px;
+    height: 51px;
+    -webkit-line-clamp: 2;
+  }
+  .card__paragraph {
+    width: 250px;
+    font-size: 16px;
+    line-height: 22px;
+    height: 87px;
+    -webkit-line-clamp: 4;
+  }
+  .card__publisher {
+    width: 250px;
+    height: 20px;
+  }
+  .card__button {
+    width: 40px;
+    height: 40px;
+  }
+  .card__bookmark {
+    height: 30px;
+    width: 30px;
+  }
+  .card-profile__signin {
+    top: 58px;
+    right: 14px;
+    width: 159px;
+    font-size: 12px;
+    height: 40px;
+  }
+  .card__signin {
+    top: 58px;
+    right: 14px;
+    width: 159px;
+    font-size: 12px;
+    height: 40px;
+  }
+  .card__subtitle {
+    height: 40px;
+  }
+}

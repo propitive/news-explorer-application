@@ -1,0 +1,54 @@
+import { useEffect } from "react";
+
+function PopupWithForm({
+  title,
+  name,
+  buttonText,
+  onSubmit,
+  children,
+  isOpen,
+  onClose,
+  isValid,
+}) {
+  const buttonClassName = isValid
+    ? "modal__button-submit modal__button-submit-valid"
+    : "modal__button-submit";
+
+  const handleCloseOnOverlayClick = (event) => {
+    if (event.target === event.currentTarget) {
+      onClose();
+    }
+  };
+
+  useEffect(() => {
+    const close = (e) => {
+      if (e.keyCode === 27) {
+        onClose();
+      }
+    };
+    window.addEventListener("keydown", close);
+    return () => window.removeEventListener("keydown", close);
+  }, []);
+
+  return (
+    <div
+      className={`modal ${isOpen ? "modal__open" : ""}`}
+      onClick={handleCloseOnOverlayClick}
+    >
+      <form className="modal__form" name={name} onSubmit={onSubmit}>
+        <h2 className="modal__title">{title}</h2>
+        {children}
+        <button className={buttonClassName} type="submit" disabled={!isValid}>
+          {buttonText || "Submit"}
+        </button>
+        <button
+          className="modal__button-close"
+          type="button"
+          onClick={onClose}
+        ></button>
+      </form>
+    </div>
+  );
+}
+
+export default PopupWithForm;

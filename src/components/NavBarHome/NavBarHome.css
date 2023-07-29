@@ -1,0 +1,409 @@
+/* "nli" stands for Not Logged In */
+
+.navbar-nli {
+  padding-left: 104px;
+  padding-right: 104px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px rgb(220, 220, 220, 0.5) solid;
+  position: relative;
+}
+
+.navbar-nli__title {
+  font-family: "Roboto Slab", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0;
+  align-self: center;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar-nli__toggle-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  height: 24px;
+  width: 24px;
+  background: none;
+  border: none;
+  padding: 0;
+  visibility: hidden;
+}
+
+.navbar-nli__buttons {
+  justify-content: space-between;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.navbar-nli__home-container {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  position: relative;
+}
+
+.navbar-nli__home {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  width: 49px;
+  padding: 0;
+  background: none;
+  margin-right: 42px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar-nli__white-line {
+  background: none;
+  border: none;
+  border-bottom: 3px solid white;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  width: 70px;
+  left: -10px;
+}
+
+.navbar-nli__signin {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  width: 176px;
+  padding: 0;
+  background: none;
+  height: 48px;
+  align-self: center;
+  border-radius: 40px;
+  color: white;
+  border-color: white;
+  cursor: pointer;
+}
+
+/* "nli" stands for Not Logged In */
+
+.navbar-li {
+  padding-left: 104px;
+  padding-right: 104px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px rgb(220, 220, 220, 0.5) solid;
+}
+
+.navbar-li__title {
+  font-family: "Roboto Slab", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0;
+  align-self: center;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar-li__toggle-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  height: 24px;
+  width: 24px;
+  background: none;
+  border: none;
+  padding: 0;
+  visibility: hidden;
+}
+
+.navbar-li__buttons {
+  justify-content: space-between;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.navbar-li__home-container {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  position: relative;
+}
+
+.navbar-li__home {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  width: 49px;
+  padding: 0;
+  background: none;
+  margin-right: 76px;
+  color: white;
+  cursor: pointer;
+  height: 24px;
+  border: none;
+}
+
+.navbar-li__white-line {
+  background: none;
+  border: none;
+  border-bottom: 3px solid white;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  width: 70px;
+  left: -12px;
+}
+
+.navbar-li__saved-articles {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  width: 116px;
+  padding: 0;
+  background: none;
+  margin-right: 64px;
+  border: none;
+  color: #b6bcbf;
+  cursor: pointer;
+  height: 24px;
+  align-self: center;
+}
+
+.navbar-li__logout {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 0 20px 0;
+  background: none;
+  height: 48px;
+  align-self: center;
+  border-radius: 40px;
+  color: white;
+  border-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.navbar-li__image {
+  margin-left: 10px;
+}
+
+.menu {
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  visibility: hidden;
+}
+
+.menu-nli__top {
+  height: 66px;
+  background: black;
+  border-bottom: 1px rgb(220, 220, 220, 0.5) solid;
+  position: relative;
+}
+
+.menu-nli__title {
+  font-family: "Roboto Slab", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0;
+  align-self: center;
+  color: white;
+  cursor: pointer;
+  margin-left: 16px;
+  padding-top: 16px;
+}
+
+.menu-nli__close-icon {
+  height: 24px;
+  width: 24px;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+}
+
+.menu-nli__bottom {
+  height: 164px;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 16px 0;
+}
+
+.menu-nli__home {
+  margin: 0;
+  color: white;
+  padding: 20px 0 20px;
+}
+
+.menu-nli__signin {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 0;
+  background: none;
+  height: 48px;
+  align-self: center;
+  border-radius: 40px;
+  color: white;
+  border-color: white;
+  cursor: pointer;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.menu-li__top {
+  height: 66px;
+  background: black;
+  border-bottom: 1px rgb(220, 220, 220, 0.5) solid;
+  position: relative;
+}
+
+.menu-li__title {
+  font-family: "Roboto Slab", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0;
+  align-self: center;
+  color: white;
+  margin-left: 16px;
+  padding-top: 16px;
+}
+
+.menu-li__close-icon {
+  height: 24px;
+  width: 24px;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+}
+
+.menu-li__bottom {
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 16px 0;
+  margin: 0;
+}
+
+.menu-li__home {
+  margin: 20px 0 0;
+  color: white;
+  padding: 0;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 56px;
+  list-style-type: none;
+}
+
+.menu-li__saved-articles {
+  margin: 0 0 20px;
+  color: white;
+  padding: 0;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 56px;
+  list-style-type: none;
+}
+
+.menu-li__signout {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 0;
+  background: none;
+  height: 48px;
+  align-self: center;
+  border-radius: 40px;
+  color: white;
+  border-color: white;
+  cursor: pointer;
+  margin-bottom: 30px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1327px) {
+}
+
+@media screen and (max-width: 1000px) {
+  .navbar-nli {
+    padding: 0 40px 0;
+    height: 66px;
+  }
+  .navbar-nli__white-line {
+    bottom: 8px;
+  }
+  .navbar-li {
+    padding: 0 40px 0;
+  }
+}
+
+@media screen and (max-width: 682px) {
+  .navbar-li {
+    padding: 0 16px 0;
+    height: 55px;
+  }
+  .navbar-nli {
+    padding: 0 16px 0;
+    height: 55px;
+  }
+  .navbar-li__toggle-button {
+    visibility: visible;
+  }
+  .navbar-li__buttons {
+    visibility: hidden;
+  }
+  .menu {
+    visibility: visible;
+  }
+  .navbar-nli__white-line {
+    bottom: 12px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .navbar-nli__toggle-button {
+    visibility: visible;
+  }
+  .navbar-nli__buttons {
+    visibility: hidden;
+  }
+  .navbar-li__saved-articles {
+    width: 10px;
+  }
+}

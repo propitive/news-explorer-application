@@ -1,0 +1,138 @@
+.search {
+  width: 100%;
+  background: #f5f6f7;
+  display: flex;
+  flex-direction: column;
+}
+
+.search__title {
+  color: #1a1b22;
+  font-family: "Roboto Slab", Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 46px;
+  width: 1232px;
+  margin: 80px auto 64px;
+}
+
+.search__cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 16px;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search__cards__active {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 16px;
+  padding: 0;
+  margin-bottom: 80px;
+}
+
+.search__button {
+  width: 288px;
+  height: 64px;
+  margin: 64px auto 80px;
+  padding: 0;
+  border: none;
+  border-radius: 35px;
+  background: #ffffff;
+  cursor: pointer;
+  z-index: 2;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.search__button:hover {
+  background: #e8e8e8;
+}
+
+.search__container {
+  max-width: calc(100% - 78px);
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 1327px) {
+  .search__container {
+    max-width: calc(100% - 103px);
+  }
+  .search__title {
+    margin: 40px auto 32px;
+    width: 901.989px;
+  }
+  .search__cards__active {
+    margin-bottom: 64px;
+  }
+}
+
+@media screen and (max-width: 1027px) {
+  .search__container {
+    max-width: calc(100% - 80px);
+  }
+  .search__title {
+    margin: 40px auto 32px;
+    width: 901.989px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .search__title {
+    margin: 40px auto 32px;
+    width: 642px;
+  }
+  .search__button {
+    margin: 32px auto 40px;
+  }
+  .search__cards__active {
+    margin-bottom: 32px;
+    gap: 8px 8px;
+  }
+  .search__cards {
+    gap: 8px 8px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .search__title {
+    width: 608px;
+  }
+  .search__cards {
+    width: 601px;
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 682px) {
+  .search__title {
+    width: 288px;
+  }
+  .search__cards__active {
+    gap: 16px 16px;
+  }
+  .search__container {
+    max-width: calc(100% - 100px);
+  }
+  .search__cards__active {
+    margin-bottom: 13px;
+  }
+  .search__cards {
+    justify-content: center;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .search__container {
+    max-width: calc(100% - 32px);
+  }
+}
