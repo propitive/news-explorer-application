@@ -266,47 +266,6 @@
   }
 }
 
-/* @media screen and (max-width: 767px) {
-  .card {
-    width: 188px;
-    height: 270px;
-  }
-  .card__image {
-    height: 128px;
-    width: 188px;
-  }
-  .card__date {
-    margin: 0 0 0 18px;
-    font-size: 14px;
-  }
-  .card__title {
-    height: 74px;
-    width: 147px;
-    margin: 0 0 0 16px;
-    font-size: 22px;
-    -webkit-line-clamp: 3;
-  }
-  .card__paragraph {
-    height: 0;
-  }
-  .card__publisher {
-    height: 20px;
-    width: 150px;
-  }
-  .card-profile__signin {
-    width: 117px;
-    top: 53px;
-    right: 10px;
-    font-size: 10px;
-  }
-  .card__signin {
-    width: 131px;
-    top: 53px;
-    right: 10px;
-    font-size: 10px;
-  }
-} */
-
 @media screen and (max-width: 682px) {
   .card {
     width: 288px;
