@@ -1,5 +1,6 @@
 @import url("./components/About/About.css");
 @import url("./components/App/App.css");
+@import url("./components/ErrorMessage/ErrorMessage.css");
 @import url("./components/Footer/Footer.css");
 @import url("./components/HeaderHome/HeaderHome.css");
 @import url("./components/HeaderProfile/HeaderProfile.css");

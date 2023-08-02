@@ -73,7 +73,7 @@
   font-family: "Inter", Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
-  margin-bottom: 17px;
+  margin-bottom: 39px;
 }
 
 .register__email-validation-valid {
@@ -164,7 +164,7 @@
     margin: 10px 0 8px;
   }
   .register__name-input {
-    margin: 0 17px 0;
+    margin: 0 17px 23px;
   }
   .register__switch {
     top: 405px;

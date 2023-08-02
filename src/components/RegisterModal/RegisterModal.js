@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+import React from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import { useForm } from "../../hooks/useForm";
 import {
   RegisterValidation,
   RegisterEmailValidation,
@@ -7,42 +9,37 @@ import {
   RegisterNameValidation,
 } from "../../utils/validation";
 
-function RegisterModal({ isOpen, onClose, switchToSignIn }) {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [isFormValid, setIsFormValid] = useState(false);
-  const [isEmailValid, setIsEmailValid] = useState(false);
-  const [isPasswordValid, setIsPasswordValid] = useState(false);
-  const [isNameValid, setIsNameValid] = useState(false);
+function RegisterModal({ isOpen, onClose, switchToSignIn, isActive }) {
+  const {
+    values,
+    handleChange,
+    setValues,
+    isFormValid,
+    setIsFormValid,
+    isInvalid,
+  } = useForm({
+    email: "",
+    password: "",
+    name: "",
+  });
 
-  useEffect(() => {
-    /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/gim.test(email);
+  React.useEffect(() => {
+    if (isActive) {
+      setValues({
+        email: "",
+        password: "",
+        name: "",
+      });
+    }
+  }, [isActive, setValues]);
 
-    setIsFormValid(RegisterValidation(email, password, name));
-  }, [email, password, name]);
-
-  useEffect(() => {
-    setIsEmailValid(RegisterEmailValidation(email));
-  }, [email]);
-
-  useEffect(() => {
-    setIsPasswordValid(RegisterPasswordValidation(password));
-  }, [password]);
-
-  useEffect(() => {
-    setIsNameValid(RegisterNameValidation(name));
-  }, [name]);
-
-  useEffect(() => {
-    setIsPasswordValid(true);
-    setIsEmailValid(true);
-    setIsNameValid(true);
-  }, []);
-
-  const emailValidationClassName = isEmailValid
-    ? "register__email-validation-valid"
-    : "register__email-validation-invalid";
+  React.useEffect(() => {
+    if (Object.values(isInvalid).every((item) => item === false)) {
+      setIsFormValid(true);
+    } else {
+      setIsFormValid(false);
+    }
+  }, [isInvalid, setIsFormValid]);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -57,40 +54,67 @@ function RegisterModal({ isOpen, onClose, switchToSignIn }) {
       buttonText="Sign up"
       isValid={isFormValid}
     >
-      <label className="register__email-label">Email</label>
+      <label className="register__email-label" htmlFor="email">
+        Email
+      </label>
       <input
         className="register__email-input"
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
+        id="email"
+        value={values.email}
+        name="email"
+        pattern="[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}"
+        autoComplete="off"
+        placeholder="Enter email"
+        onChange={handleChange}
         minLength={1}
         maxLength={30}
         required
       />
+      {isInvalid.email && (
+        <ErrorMessage
+          errorMessage={"Invalid email address"}
+          className={"error-message error-message__register-email"}
+        />
+      )}
       <label className="register__password-label">Password</label>
       <input
         className="register__password-input"
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password"
+        id="password"
+        value={values.password}
+        name="password"
+        autoComplete="off"
+        placeholder="Enter password"
+        onChange={handleChange}
         minLength={4}
         maxLength={35}
         required
       />
+      {isInvalid.password && (
+        <ErrorMessage
+          errorMessage={"Invalid password"}
+          className={"error-message error-message__register-password"}
+        />
+      )}
       <label className="register__name-label">Username</label>
       <input
         className="register__name-input"
         type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder="Username"
+        id="name"
+        name="name"
+        value={values.name}
+        autoComplete="off"
+        placeholder="Enter your username"
+        onChange={handleChange}
         minLength={1}
         maxLength={30}
         required
       />
-      <h2 className={emailValidationClassName}>This email is not available</h2>
+      {isInvalid.name && (
+        <ErrorMessage
+          errorMessage={"Invalid username"}
+          className={"error-message error-message__register-username"}
+        />
+      )}
       <p className="register__switch" onClick={switchToSignIn}>
         or <span className="register__switch-signup">Sign in</span>
       </p>

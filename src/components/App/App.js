@@ -110,6 +110,7 @@ function App() {
                 setIsRegisterModalOpen(false);
                 setIsSignInModalOpen(true);
               }}
+              isActive={true}
             />
           )}
           {isSignInModalOpen && (
@@ -121,6 +122,7 @@ function App() {
                 setIsSignInModalOpen(false);
                 setIsRegisterModalOpen(true);
               }}
+              isActive={true}
             />
           )}
           {isSuccessfulModalOpen && (

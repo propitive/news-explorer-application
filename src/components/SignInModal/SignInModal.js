@@ -1,44 +1,42 @@
-import { useEffect, useState } from "react";
+import React from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
+import { useForm } from "../../hooks/useForm";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import {
   SignInValidation,
   SignInEmailValidation,
   SignInPasswordValidation,
 } from "../../utils/validation";
 
-function SignInModal({ isOpen, onClose, switchToRegister }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [isFormValid, setIsFormValid] = useState(false);
-  const [isEmailValid, setIsEmailValid] = useState(false);
-  const [isPasswordValid, setIsPasswordValid] = useState(false);
+function SignInModal({ isOpen, onClose, switchToRegister, isActive }) {
+  const {
+    values,
+    handleChange,
+    setValues,
+    isFormValid,
+    setIsFormValid,
+    isInvalid,
+  } = useForm({
+    email: "",
+    password: "",
+  });
 
-  useEffect(() => {
-    /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/gim.test(email);
+  React.useEffect(() => {
+    if (Object.values(isInvalid).every((item) => item === false)) {
+      setIsFormValid(true);
+    } else {
+      setIsFormValid(false);
+    }
+  }, [isInvalid, setIsFormValid]);
 
-    setIsFormValid(SignInValidation(email, password));
-  }, [email, password]);
-
-  useEffect(() => {
-    setIsPasswordValid(SignInPasswordValidation(password));
-  }, [password]);
-
-  useEffect(() => {
-    setIsEmailValid(SignInEmailValidation(email));
-  }, [email]);
-
-  useEffect(() => {
-    setIsPasswordValid(false);
-    setIsEmailValid(true);
-  }, []);
-
-  const emailInputClassName = isEmailValid
-    ? "signin__email-input"
-    : "signin__email-input-invalid";
-
-  const emailValidationClassName = isEmailValid
-    ? "signin__email-validation-valid"
-    : "signin__email-validation-invalid";
+  React.useEffect(() => {
+    if (isActive) {
+      setValues({
+        email: "",
+        password: "",
+      });
+    }
+  }, [isActive, setValues]);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -55,27 +53,45 @@ function SignInModal({ isOpen, onClose, switchToRegister }) {
     >
       <label className="signin__email-label">Email</label>
       <input
-        className={emailInputClassName}
-        type="text"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        className="signin__email-input"
+        type="email"
+        id="email"
+        value={values.email}
+        name="email"
+        pattern="[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}"
+        autoComplete="off"
         placeholder="Enter email"
+        onChange={handleChange}
         minLength={1}
         maxLength={30}
         required
       />
-      <h2 className={emailValidationClassName}>Invalid email address</h2>
+      {isInvalid.email && (
+        <ErrorMessage
+          errorMessage={"Invalid email address"}
+          className={"error-message error-message__signin-email"}
+        />
+      )}
       <label className="signin__password-label">Password</label>
       <input
         className="signin__password-input"
         type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        id="password"
+        value={values.password}
+        name="password"
+        autoComplete="off"
         placeholder="Enter password"
+        onChange={handleChange}
         minLength={4}
         maxLength={35}
         required
       />
+      {isInvalid.password && (
+        <ErrorMessage
+          errorMessage={"Invalid password"}
+          className={`error-message error-message__signin-password`}
+        />
+      )}
       <p className="signin__switch" onClick={switchToRegister}>
         or <span className="signin__switch-signup">Sign up</span>
       </p>
