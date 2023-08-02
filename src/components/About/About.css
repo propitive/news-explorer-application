@@ -14,9 +14,6 @@
   margin-bottom: 80px;
 }
 
-.about__content {
-}
-
 .about__title {
   margin: 0 0 24px;
   font-family: "Roboto Slab", Arial, sans-serif;
@@ -53,8 +50,6 @@
     margin: 0 0 16px;
     font-size: 30px;
     line-height: 40px;
-  }
-  .about__paragraphs {
   }
 }
 
