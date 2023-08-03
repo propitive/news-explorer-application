@@ -9,7 +9,13 @@ import {
   RegisterNameValidation,
 } from "../../utils/validation";
 
-function RegisterModal({ isOpen, onClose, switchToSignIn, isActive }) {
+function RegisterModal({
+  isOpen,
+  onClose,
+  switchToSignIn,
+  isActive,
+  handleRegister,
+}) {
   const {
     values,
     handleChange,
@@ -43,6 +49,7 @@ function RegisterModal({ isOpen, onClose, switchToSignIn, isActive }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    handleRegister(values);
   }
 
   return (

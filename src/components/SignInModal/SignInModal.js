@@ -8,7 +8,13 @@ import {
   SignInPasswordValidation,
 } from "../../utils/validation";
 
-function SignInModal({ isOpen, onClose, switchToRegister, isActive }) {
+function SignInModal({
+  isOpen,
+  onClose,
+  switchToRegister,
+  isActive,
+  handleLogin,
+}) {
   const {
     values,
     handleChange,
@@ -39,6 +45,7 @@ function SignInModal({ isOpen, onClose, switchToRegister, isActive }) {
   }, [isActive, setValues]);
 
   function handleSubmit(e) {
+    handleLogin(values);
     e.preventDefault();
   }
 
