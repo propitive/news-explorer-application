@@ -31,14 +31,12 @@ function App() {
 
   const history = useHistory();
   const token = localStorage.getItem("jwt");
-  console.log(token);
 
   useEffect(() => {
     if (token) {
       setIsCheckingToken(true);
       MainApi.getUser(token)
         .then((data) => {
-          console.log(data);
           setUser(data.data.name);
           handleCloseModals();
         })
@@ -112,6 +110,7 @@ function App() {
     setIsLoading(true);
     Api.search({ input })
       .then((data) => {
+        console.log(data);
         setNewsCards(data.articles);
       })
       .catch((error) => {
