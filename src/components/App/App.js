@@ -28,6 +28,7 @@ function App() {
   const [savedNewsArticles, setSavedNewsArticles] = useState([]);
   const [selectedArticleId, setSelectedArticleId] = useState(null);
   const [isCheckingToken, setIsCheckingToken] = useState(true);
+  const [keyword, setKeyword] = useState(null);
 
   const history = useHistory();
   const token = localStorage.getItem("jwt");
@@ -38,6 +39,7 @@ function App() {
       MainApi.getUser(token)
         .then((data) => {
           setUser(data.data.name);
+          getUserArticles(token);
           handleCloseModals();
         })
         .catch((err) => {
@@ -55,43 +57,65 @@ function App() {
     }
   }, [token]);
 
+  const getUserArticles = (token) => {
+    MainApi.getArticles(token)
+      .then((data) => {
+        setSavedNewsArticles(data.data);
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   const handleCloseModals = () => {
     setIsRegisterModalOpen(false);
     setIsSignInModalOpen(false);
     setIsSuccessfulModalOpen(false);
   };
 
-  const handleDeleteArticle = () => {
-    MainApi.deleteArticle({ selectedArticleId, token })
-      .then(() => {
-        const updatedSavedArticles = savedNewsArticles.filter(
-          (article) => article._id !== selectedArticleId
-        );
-        setSavedNewsArticles([...updatedSavedArticles]);
-        setSelectedArticleId(null);
-      })
-      .catch((err) => {
-        console.log(err);
+  const handleDeleteArticle = (card) => {
+    MainApi.getArticles(token).then((data) => {
+      console.log(data);
+      console.log(data.data.length);
+      const handleFindArticleId = data.data.some((article) => {
+        return article.link === card.link;
       });
-  };
+      const articleBeingDeleted = handleFindArticleId
+        ? data.data.find((article) => {
+            return article.link === card.link;
+          })
+        : undefined;
 
-  const getUserArticles = (token) => {
-    MainApi.getArticles(token)
-      .then((data) => {
-        setSavedNewsArticles(data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      setSelectedArticleId(articleBeingDeleted._id);
+      console.log(articleBeingDeleted._id);
+      console.log(selectedArticleId);
+      MainApi.deleteArticle(articleBeingDeleted._id, token)
+        .then(() => {
+          const updatedSavedArticles = savedNewsArticles.filter(
+            (article) => article._id !== articleBeingDeleted._id
+          );
+          setSavedNewsArticles([...updatedSavedArticles]);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    });
   };
 
   const handleSaveArticle = (card) => {
     MainApi.saveArticle(card, token)
       .then((data) => {
+        console.log(data.data);
+        console.log(...savedNewsArticles);
         setSavedNewsArticles([...savedNewsArticles, data.data]);
         setSelectedArticleId(data.data._id);
+        // console.log(
+        //   "Saved articles after saving: " + JSON.stringify(savedNewsArticles)
+        // );
       })
       .catch((err) => {
+        console.log(savedNewsArticles);
         console.log(err);
       });
   };
@@ -106,12 +130,16 @@ function App() {
   };
 
   const handleFetchArticles = (input) => {
+    const keyword = input.charAt(0).toUpperCase() + input.slice(1);
+    setKeyword(keyword);
     setIsNothingFound(false);
     setIsLoading(true);
     Api.search({ input })
       .then((data) => {
         console.log(data);
         setNewsCards(data.articles);
+        localStorage.setItem("articles", JSON.stringify(data.articles));
+        localStorage.setItem("keyword", keyword);
       })
       .catch((error) => {
         console.log(error);
@@ -124,10 +152,13 @@ function App() {
   };
 
   const handleLogin = (inputValues) => {
+    console.log("We are tying to log in now");
     MainApi.signIn(inputValues)
       .then((data) => {
+        console.log(data);
         if (data.token) {
           localStorage.setItem("jwt", data.token);
+          console.log("We are fetching articles");
           getUserArticles(data.token);
           // isReloading(data.token);
           setIsSignInModalOpen(false);
@@ -141,6 +172,8 @@ function App() {
         }
       });
   };
+
+  console.log("This should be getting logged");
 
   const handleRegister = ({ name, avatar, email, password }) => {
     MainApi.signUp({ name, avatar, email, password })
@@ -220,6 +253,10 @@ function App() {
                 handleSignOutClick={handleSignOutClick}
                 handleFetchArticles={handleFetchArticles}
                 newsCards={newsCards}
+                handleDeleteArticle={handleDeleteArticle}
+                handleSaveArticle={handleSaveArticle}
+                keyword={keyword}
+                savedNewsArticles={savedNewsArticles}
               />
             </Route>
           </Switch>

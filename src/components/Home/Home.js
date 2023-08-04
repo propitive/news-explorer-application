@@ -10,6 +10,10 @@ function Home({
   handleSignOutClick,
   handleFetchArticles,
   newsCards,
+  handleDeleteArticle,
+  handleSaveArticle,
+  keyword,
+  savedNewsArticles,
 }) {
   return (
     <>
@@ -23,6 +27,10 @@ function Home({
         visible={visible}
         showMoreItems={showMoreItems}
         newsCards={newsCards}
+        handleDeleteArticle={handleDeleteArticle}
+        handleSaveArticle={handleSaveArticle}
+        keyword={keyword}
+        savedNewsArticles={savedNewsArticles}
       />
       {visible === 3 && <About />}
     </>

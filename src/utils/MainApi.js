@@ -29,7 +29,7 @@ const MainApi = {
     return await Api.request(url, options);
   },
 
-  deleteArticle: async ({ articleId, token }) => {
+  deleteArticle: async (articleId, token) => {
     const url = `${BASE_URL}/articles/${articleId}`;
     const options = {
       method: "DELETE",

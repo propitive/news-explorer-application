@@ -24,9 +24,7 @@ function SearchResultsProfile({ visible }) {
                 {handleDateFormat(card.publishedAt.slice(0, 10))}
               </h3>
               <h2 className="card__title">{card.title}</h2>
-              <h3 className="card__paragraph" id="js-toclamp">
-                {card.description}
-              </h3>
+              <h3 className="card__paragraph">{card.description}</h3>
               <h3 className="card__publisher">{card.source.name}</h3>
               <div
                 className={`${
