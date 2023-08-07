@@ -14,7 +14,7 @@ function HeaderHome({
       <NavBarHome
         handleSignInClick={handleSignInClick}
         handleSignOutClick={handleSignOutClick}
-        handleProfileEnter
+        handleProfileEnter={handleProfileEnter}
       />
       <div className="header-home__content">
         <div className="header-home__text">

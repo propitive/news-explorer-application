@@ -241,6 +241,8 @@ function App() {
 
   useEffect(() => {}, [setNewsCards]);
 
+  console.log(isOnProfile);
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">

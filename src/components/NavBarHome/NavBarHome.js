@@ -100,7 +100,7 @@ function NavBar({ handleSignInClick, handleSignOutClick, handleProfileEnter }) {
             >
               <button
                 className="navbar-li__saved-articles"
-                onClick={() => handleProfileEnter}
+                onClick={handleProfileEnter}
               >
                 Saved Articles
               </button>

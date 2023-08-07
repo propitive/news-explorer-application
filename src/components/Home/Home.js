@@ -22,7 +22,7 @@ function Home({
         handleSignInClick={handleSignInClick}
         handleSignOutClick={handleSignOutClick}
         handleFetchArticles={handleFetchArticles}
-        handleProfileEnter
+        handleProfileEnter={handleProfileEnter}
       />
       <MainHome
         isLoading={isLoading}

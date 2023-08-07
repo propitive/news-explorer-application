@@ -35,8 +35,6 @@ function NewsCard({
   const isBookmarked = savedNewsArticles.some(
     (article) => article.link === card.link
   );
-  console.log(cardInfo);
-  console.log(card);
 
   const handleBookMarkButtonClick = (evt) => {
     if (evt.target.classList.contains("card__button-active")) {
@@ -111,7 +109,7 @@ function NewsCard({
         </div>
         {isOnProfile && (
           <div className="card__subtitle">
-            <h3 className="card__subititle-content">Tech</h3>
+            <h3 className="card__subititle-content">{cardInfo.keyword}</h3>
           </div>
         )}
       </div>
