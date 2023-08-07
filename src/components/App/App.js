@@ -190,7 +190,10 @@ function App() {
   const handleRegister = ({ name, avatar, email, password }) => {
     MainApi.signUp({ name, avatar, email, password })
       .then((res) => {
-        handleLogin({ email, password });
+        // handleLogin({ email, password });
+        setIsRegisterModalOpen(false);
+        setIsSuccessfulModalOpen(true);
+        console.log("it is going through handleRegister");
         console.log(res);
       })
       .catch((err) => {
