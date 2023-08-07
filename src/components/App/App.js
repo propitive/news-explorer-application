@@ -142,7 +142,8 @@ function App() {
   };
 
   const handleFetchArticles = (input) => {
-    const keyword = input.charAt(0).toUpperCase() + input.slice(1);
+    const keyword =
+      input.charAt(0).toUpperCase() + input.replace(/ .*/, "").slice(1);
     setKeyword(keyword);
     setIsNothingFound(false);
     setIsLoading(true);
