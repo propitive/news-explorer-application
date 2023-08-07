@@ -2,7 +2,11 @@ import React from "react";
 import NavBarProfile from "../NavBarProfile/NavBarProfile";
 import CurrentUserContext from "../../context/CurrentUserContext";
 
-function HeaderProfile({ handleVisibleReset, handleSignOutClick }) {
+function HeaderProfile({
+  handleVisibleReset,
+  handleSignOutClick,
+  handleProfileExit,
+}) {
   const currentUser = React.useContext(CurrentUserContext);
 
   return (
@@ -10,6 +14,7 @@ function HeaderProfile({ handleVisibleReset, handleSignOutClick }) {
       <NavBarProfile
         handleVisibleReset={handleVisibleReset}
         handleSignOutClick={handleSignOutClick}
+        handleProfileExit={handleProfileExit}
       />
       <h1 className="header-profile__title">Saved articles</h1>
       <h2 className="header-profile__articles">{`${currentUser}, you have 5 saved articles`}</h2>

@@ -7,12 +7,14 @@ function HeaderHome({
   handleSignInClick,
   handleSignOutClick,
   handleFetchArticles,
+  handleProfileEnter,
 }) {
   return (
     <header className="header-home">
       <NavBarHome
         handleSignInClick={handleSignInClick}
         handleSignOutClick={handleSignOutClick}
+        handleProfileEnter
       />
       <div className="header-home__content">
         <div className="header-home__text">

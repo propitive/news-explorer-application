@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import CurrentUserContext from "../../context/CurrentUserContext";
 import { handleDateFormat } from "../../utils/constants";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import trashIcon from "../../images/trash.svg";
 import MainApi from "../../utils/MainApi";
 
 function NewsCard({
@@ -11,20 +12,21 @@ function NewsCard({
   keyword,
   index,
   savedNewsArticles,
+  isOnProfile,
 }) {
   const currentUser = React.useContext(CurrentUserContext);
 
   const [isHovering, setIsHovering] = useState(-1);
 
   const card = {
-    keyword,
+    keyword: keyword || cardInfo.keyword,
     title: cardInfo.title,
-    text: cardInfo.description,
-    date: cardInfo.publishedAt,
-    source: cardInfo.source.name,
-    link: cardInfo.url,
-    image: cardInfo.urlToImage,
-    id: cardInfo._id,
+    text: cardInfo.description || cardInfo.text,
+    date: cardInfo.publishedAt || cardInfo.date,
+    source: cardInfo.source.name || cardInfo.source,
+    link: cardInfo.url || cardInfo.link,
+    image: cardInfo.urlToImage || cardInfo.image,
+    id: cardInfo._id || cardInfo.id,
   };
 
   //   const isBookmarked = handleIsBookmarked(card);
@@ -33,18 +35,18 @@ function NewsCard({
   const isBookmarked = savedNewsArticles.some(
     (article) => article.link === card.link
   );
-  console.log(savedNewsArticles);
-  console.log(isBookmarked);
+  console.log(cardInfo);
+  console.log(card);
 
   const handleBookMarkButtonClick = (evt) => {
     if (evt.target.classList.contains("card__button-active")) {
       handleDeleteArticle(card);
-      evt.target.classList.remove("card__button-active");
-      evt.target.classList.add("card__button-inactive");
+      //   evt.target.classList.remove("card__button-active");
+      //   evt.target.classList.add("card__button-inactive");
     } else {
       handleSaveArticle(card);
-      evt.target.classList.add("card__button-active");
-      evt.target.classList.remove("card__button-inactive");
+      //   evt.target.classList.add("card__button-active");
+      //   evt.target.classList.remove("card__button-inactive");
     }
   };
 
@@ -74,23 +76,44 @@ function NewsCard({
               isHovering === index ? "card__signin" : "card__signin__hidden"
             }`}
           >
-            <h3>Sign in to save articles</h3>
+            {isOnProfile ? (
+              <h3>Remove from saved</h3>
+            ) : (
+              <h3>Sign in to save articles</h3>
+            )}
           </div>
         </Link>
         <div>
-          <button
-            className={cardButtonClassname}
-            onClick={
-              currentUser !== null ? handleBookMarkButtonClick : undefined
-            }
-            onMouseEnter={
-              currentUser === null ? () => setIsHovering(index) : undefined
-            }
-            onMouseLeave={
-              currentUser === null ? () => setIsHovering(-1) : undefined
-            }
-          ></button>
+          {isOnProfile ? (
+            <button className="card__button">
+              <img
+                className="card__bookmark"
+                src={trashIcon}
+                onMouseEnter={() => setIsHovering(index)}
+                onMouseLeave={() => setIsHovering(-1)}
+                alt="icon of bookmark"
+              ></img>
+            </button>
+          ) : (
+            <button
+              className={cardButtonClassname}
+              onClick={
+                currentUser !== null ? handleBookMarkButtonClick : undefined
+              }
+              onMouseEnter={
+                currentUser === null ? () => setIsHovering(index) : undefined
+              }
+              onMouseLeave={
+                currentUser === null ? () => setIsHovering(-1) : undefined
+              }
+            ></button>
+          )}
         </div>
+        {isOnProfile && (
+          <div className="card__subtitle">
+            <h3 className="card__subititle-content">Tech</h3>
+          </div>
+        )}
       </div>
     </>
   );

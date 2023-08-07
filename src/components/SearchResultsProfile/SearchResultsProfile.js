@@ -2,8 +2,17 @@ import React, { useState } from "react";
 import { cardItems } from "../../utils/constants";
 import trashIcon from "../../images/trash.svg";
 import { handleDateFormat } from "../../utils/constants";
+import NewsCardList from "../NewsCardList/NewsCardList";
 
-function SearchResultsProfile({ visible }) {
+function SearchResultsProfile({
+  visible,
+  savedNewsArticles,
+  isOnProfile,
+  handleDeleteArticle,
+  handleSaveArticle,
+  keyword,
+  newsCards,
+}) {
   const searchCardsClassname =
     visible === 3 ? "search__cards" : "search__cards__active";
   const [isHovering, setIsHovering] = useState(-1);
@@ -13,7 +22,16 @@ function SearchResultsProfile({ visible }) {
       <div className="search__container">
         <h2 className="search__title">Search results</h2>
         <ul className={searchCardsClassname}>
-          {cardItems.articles.map((card, index) => (
+          <NewsCardList
+            newsCards={savedNewsArticles}
+            handleDeleteArticle={handleDeleteArticle}
+            handleSaveArticle={handleSaveArticle}
+            keyword={keyword}
+            visible={visible}
+            savedNewsArticles={savedNewsArticles}
+            isOnProfile={isOnProfile}
+          />
+          {/* {cardItems.articles.map((card, index) => (
             <div className="card" key={index}>
               <img
                 className="card__image"
@@ -33,6 +51,7 @@ function SearchResultsProfile({ visible }) {
                     : "card__signin__hidden"
                 }`}
               >
+                {}
                 <h3>Remove from saved</h3>
               </div>
               <div>
@@ -50,7 +69,7 @@ function SearchResultsProfile({ visible }) {
                 <h3 className="card__subititle-content">Tech</h3>
               </div>
             </div>
-          ))}
+          ))} */}
         </ul>
       </div>
     </div>

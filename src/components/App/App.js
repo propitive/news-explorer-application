@@ -29,6 +29,7 @@ function App() {
   const [selectedArticleId, setSelectedArticleId] = useState(null);
   const [isCheckingToken, setIsCheckingToken] = useState(true);
   const [keyword, setKeyword] = useState(null);
+  const [isOnProfile, setIsOnProfile] = useState(false);
 
   const history = useHistory();
   const token = localStorage.getItem("jwt");
@@ -101,6 +102,14 @@ function App() {
           console.log(err);
         });
     });
+  };
+
+  const handleProfileEnter = () => {
+    setIsOnProfile(true);
+  };
+
+  const handleProfileExit = () => {
+    setIsOnProfile(false);
   };
 
   const handleSaveArticle = (card) => {
@@ -197,6 +206,7 @@ function App() {
   const handleSignOutClick = () => {
     setUser(null);
     localStorage.clear();
+    handleProfileExit();
     history.push("/");
   };
 
@@ -242,6 +252,13 @@ function App() {
                 visible={visible}
                 handleVisibleReset={handleVisibleReset}
                 handleSignOutClick={handleSignOutClick}
+                savedNewsArticles={savedNewsArticles}
+                handleProfileExit={handleProfileExit}
+                isOnProfile={isOnProfile}
+                handleDeleteArticle={handleDeleteArticle}
+                handleSaveArticle={handleSaveArticle}
+                keyword={keyword}
+                newsCards={newsCards}
               />
             </Route>
             <Route path="/">
@@ -257,6 +274,7 @@ function App() {
                 handleSaveArticle={handleSaveArticle}
                 keyword={keyword}
                 savedNewsArticles={savedNewsArticles}
+                handleProfileEnter={handleProfileEnter}
               />
             </Route>
           </Switch>

@@ -14,6 +14,7 @@ function Home({
   handleSaveArticle,
   keyword,
   savedNewsArticles,
+  handleProfileEnter,
 }) {
   return (
     <>
@@ -21,6 +22,7 @@ function Home({
         handleSignInClick={handleSignInClick}
         handleSignOutClick={handleSignOutClick}
         handleFetchArticles={handleFetchArticles}
+        handleProfileEnter
       />
       <MainHome
         isLoading={isLoading}

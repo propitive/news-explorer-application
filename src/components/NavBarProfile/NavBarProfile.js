@@ -6,7 +6,11 @@ import toggleButtonBlack from "../../images/toggle-button-black.svg";
 import closeButton from "../../images/close-button.svg";
 import { Link } from "react-router-dom";
 
-function NavBarProfile({ handleVisibleReset, handleSignOutClick }) {
+function NavBarProfile({
+  handleVisibleReset,
+  handleSignOutClick,
+  handleProfileExit,
+}) {
   const currentUser = React.useContext(CurrentUserContext);
   const [isMenuHomeToggled, setIsMenuProfileToggled] = useState(false);
 
@@ -23,13 +27,18 @@ function NavBarProfile({ handleVisibleReset, handleSignOutClick }) {
     }
   };
 
+  const handleSwitchToHome = () => {
+    handleVisibleReset();
+    handleProfileExit();
+  };
+
   return (
     <>
       <section className="navbar-profile">
         <Link to="/" style={{ textDecoration: "none", alignSelf: "center" }}>
           <h2
             className="navbar-profile__title"
-            onClick={handleVisibleReset}
+            onClick={handleSwitchToHome}
             id="home"
           >
             NewsExplorer
@@ -51,7 +60,7 @@ function NavBarProfile({ handleVisibleReset, handleSignOutClick }) {
             >
               <button
                 className="navbar-profile__home"
-                onClick={handleVisibleReset}
+                onClick={handleSwitchToHome}
               >
                 Home
               </button>
@@ -99,7 +108,7 @@ function NavBarProfile({ handleVisibleReset, handleSignOutClick }) {
             >
               <button
                 className="menu-profile__home"
-                onClick={handleVisibleReset}
+                onClick={handleSwitchToHome}
               >
                 Home
               </button>

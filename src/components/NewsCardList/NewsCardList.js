@@ -7,6 +7,7 @@ function NewsCardList({
   keyword,
   visible,
   savedNewsArticles,
+  isOnProfile,
 }) {
   return (
     <>
@@ -19,6 +20,7 @@ function NewsCardList({
           keyword={keyword}
           index={index}
           savedNewsArticles={savedNewsArticles}
+          isOnProfile={isOnProfile}
         />
       ))}
     </>

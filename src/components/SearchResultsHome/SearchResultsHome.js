@@ -13,6 +13,7 @@ function SearchResultsHome({
   handleSaveArticle,
   keyword,
   savedNewsArticles,
+  isOnProfile,
 }) {
   const currentUser = React.useContext(CurrentUserContext);
 
@@ -44,6 +45,7 @@ function SearchResultsHome({
                 keyword={keyword}
                 visible={visible}
                 savedNewsArticles={savedNewsArticles}
+                isOnProfile={isOnProfile}
               />
               {/* {newsCards.slice(0, visible).map((card, index) => (
                 <div className="card" key={index}>
