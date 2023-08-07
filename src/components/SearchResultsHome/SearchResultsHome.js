@@ -19,6 +19,9 @@ function SearchResultsHome({
 
   const searchCardsClassname =
     visible === 3 ? "search__cards" : "search__cards__active";
+
+  const searchContainerClassname =
+    newsCards.length > 3 ? "search__container" : "search__container__no-button";
   // const [isHovering, setIsHovering] = useState(-1);
 
   // const handleBookMarkButtonClick = (evt) => {
@@ -35,7 +38,7 @@ function SearchResultsHome({
     <>
       {newsCards.length > 0 && (
         <div className="search">
-          <div className="search__container">
+          <div className={searchContainerClassname}>
             <h2 className="search__title">Search results</h2>
             <section className={searchCardsClassname}>
               <NewsCardList
@@ -100,7 +103,7 @@ function SearchResultsHome({
                 </div>
               ))} */}
             </section>
-            {visible === 3 && (
+            {visible === 3 && newsCards.length > 3 && (
               <button className="search__button" onClick={showMoreItems}>
                 Show more
               </button>
