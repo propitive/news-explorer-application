@@ -9,6 +9,7 @@ import Profile from "../Profile/Profile";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import SignInModal from "../SignInModal/SignInModal";
 import SuccessfulModal from "../SuccessfulModal/SuccessfulModal";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 import CurrentUserContext from "../../context/CurrentUserContext";
 
@@ -250,7 +251,7 @@ function App() {
       <div className="page">
         <div className="page__wrapper">
           <Switch>
-            <Route path="/saved-articles">
+            <ProtectedRoute currentUser={currentUser} path="/saved-articles">
               <Profile
                 isLoading={isLoading}
                 visible={visible}
@@ -265,7 +266,23 @@ function App() {
                 newsCards={newsCards}
                 handleProfileEnter={handleProfileEnter}
               />
-            </Route>
+            </ProtectedRoute>
+            {/* <Route path="/saved-articles">
+              <Profile
+                isLoading={isLoading}
+                visible={visible}
+                handleVisibleReset={handleVisibleReset}
+                handleSignOutClick={handleSignOutClick}
+                savedNewsArticles={savedNewsArticles}
+                handleProfileExit={handleProfileExit}
+                isOnProfile={isOnProfile}
+                handleDeleteArticle={handleDeleteArticle}
+                handleSaveArticle={handleSaveArticle}
+                keyword={keyword}
+                newsCards={newsCards}
+                handleProfileEnter={handleProfileEnter}
+              />
+            </Route> */}
             <Route path="/">
               <Home
                 isLoading={isLoading}
