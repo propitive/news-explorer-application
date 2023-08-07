@@ -20,6 +20,7 @@ function Profile({
         handleVisibleReset={handleVisibleReset}
         handleSignOutClick={handleSignOutClick}
         handleProfileExit={handleProfileExit}
+        savedNewsArticles={savedNewsArticles}
       />
       <MainProfile
         isLoading={isLoading}
