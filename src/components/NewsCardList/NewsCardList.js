@@ -9,9 +9,11 @@ function NewsCardList({
   savedNewsArticles,
   isOnProfile,
 }) {
+  const cardsVisibleToUser = isOnProfile ? savedNewsArticles.length : visible;
+
   return (
     <>
-      {newsCards.slice(0, visible).map((article, index) => (
+      {newsCards.slice(0, cardsVisibleToUser).map((article, index) => (
         <NewsCard
           key={article._id}
           cardInfo={article}
