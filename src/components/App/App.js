@@ -106,10 +106,12 @@ function App() {
 
   const handleProfileEnter = () => {
     setIsOnProfile(true);
+    console.log(`isOnProfile is ==> TRUE`);
   };
 
   const handleProfileExit = () => {
     setIsOnProfile(false);
+    console.log(`isOnProfile is ==> FALSE`);
   };
 
   const handleSaveArticle = (card) => {
@@ -181,8 +183,6 @@ function App() {
         }
       });
   };
-
-  console.log("This should be getting logged");
 
   const handleRegister = ({ name, avatar, email, password }) => {
     MainApi.signUp({ name, avatar, email, password })
@@ -261,6 +261,7 @@ function App() {
                 handleSaveArticle={handleSaveArticle}
                 keyword={keyword}
                 newsCards={newsCards}
+                handleProfileEnter={handleProfileEnter}
               />
             </Route>
             <Route path="/">

@@ -48,6 +48,10 @@ function NewsCard({
     }
   };
 
+  const handleTrashIconClick = () => {
+    handleDeleteArticle(card);
+  };
+
   const cardButtonClassname = isBookmarked
     ? "card__button card__button-active"
     : "card__button card__button-inactive";
@@ -86,6 +90,7 @@ function NewsCard({
             <button className="card__button">
               <img
                 className="card__bookmark"
+                onClick={handleTrashIconClick}
                 src={trashIcon}
                 onMouseEnter={() => setIsHovering(index)}
                 onMouseLeave={() => setIsHovering(-1)}

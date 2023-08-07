@@ -10,6 +10,7 @@ function MainProfile({
   handleSaveArticle,
   keyword,
   newsCards,
+  handleProfileEnter,
 }) {
   return (
     <>
@@ -22,6 +23,7 @@ function MainProfile({
         handleSaveArticle={handleSaveArticle}
         keyword={keyword}
         newsCards={newsCards}
+        handleProfileEnter={handleProfileEnter}
       />
     </>
   );

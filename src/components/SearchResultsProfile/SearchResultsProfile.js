@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { cardItems } from "../../utils/constants";
 import trashIcon from "../../images/trash.svg";
 import { handleDateFormat } from "../../utils/constants";
@@ -11,11 +11,17 @@ function SearchResultsProfile({
   handleDeleteArticle,
   handleSaveArticle,
   keyword,
+  handleProfileEnter,
   newsCards,
 }) {
   const searchCardsClassname =
     visible === 3 ? "search__cards" : "search__cards__active";
   const [isHovering, setIsHovering] = useState(-1);
+
+  useEffect(() => {
+    handleProfileEnter();
+    console.log("isOnProfile is ==> TRUE!");
+  }, []);
 
   return (
     <div className="search">
