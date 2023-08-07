@@ -111,6 +111,7 @@ function App() {
 
   const handleProfileExit = () => {
     setIsOnProfile(false);
+    setNewsCards({});
     console.log(`isOnProfile is ==> FALSE`);
   };
 
