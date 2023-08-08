@@ -15,7 +15,6 @@ function SearchResultsProfile({
 
   useEffect(() => {
     handleProfileEnter();
-    console.log("isOnProfile is ==> TRUE!");
   }, []);
 
   return (

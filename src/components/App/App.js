@@ -79,7 +79,6 @@ function App() {
     MainApi.getArticles(token)
       .then((data) => {
         setSavedNewsArticles(data.data);
-        console.log(data);
       })
       .catch((err) => {
         console.log(err);
@@ -88,8 +87,6 @@ function App() {
 
   const handleDeleteArticle = (card) => {
     MainApi.getArticles(token).then((data) => {
-      console.log(data);
-      console.log(data.data.length);
       const handleFindArticleId = data.data.some((article) => {
         return article.link === card.link;
       });
@@ -100,8 +97,6 @@ function App() {
         : undefined;
 
       setSelectedArticleId(articleBeingDeleted._id);
-      console.log(articleBeingDeleted._id);
-      console.log(selectedArticleId);
       MainApi.deleteArticle(articleBeingDeleted._id, token)
         .then(() => {
           const updatedSavedArticles = savedNewsArticles.filter(
@@ -122,7 +117,6 @@ function App() {
     setIsLoading(true);
     Api.search({ input })
       .then((data) => {
-        console.log(data);
         setNewsCards(data.articles);
         localStorage.setItem("articles", JSON.stringify(data.articles));
         localStorage.setItem("keyword", keyword);
@@ -138,13 +132,10 @@ function App() {
 
   const handleLogin = (inputValues) => {
     setIsLoading(true);
-    console.log("We are tying to log in now");
     MainApi.signIn(inputValues)
       .then((data) => {
-        console.log(data);
         if (data.token) {
           localStorage.setItem("jwt", data.token);
-          console.log("We are fetching articles");
           getUserArticles(data.token);
           setIsSignInModalOpen(false);
         } else setAuthError(data.message || "Invalid credentials");
@@ -167,8 +158,6 @@ function App() {
       .then((res) => {
         setIsRegisterModalOpen(false);
         setIsSuccessfulModalOpen(true);
-        console.log("it is going through handleRegister");
-        console.log(res);
       })
       .catch((err) => {
         if (String(err).includes("409")) {
@@ -185,13 +174,10 @@ function App() {
   const handleSaveArticle = (card) => {
     MainApi.saveArticle(card, token)
       .then((data) => {
-        console.log(data.data);
-        console.log(...savedNewsArticles);
         setSavedNewsArticles([...savedNewsArticles, data.data]);
         setSelectedArticleId(data.data._id);
       })
       .catch((err) => {
-        console.log(savedNewsArticles);
         console.log(err);
       });
   };
@@ -200,13 +186,11 @@ function App() {
 
   const handleProfileEnter = () => {
     setIsOnProfile(true);
-    console.log(`isOnProfile is ==> TRUE`);
   };
 
   const handleProfileExit = () => {
     setIsOnProfile(false);
     setNewsCards({});
-    console.log(`isOnProfile is ==> FALSE`);
   };
 
   const handleVisibleReset = () => {
@@ -216,8 +200,6 @@ function App() {
   const showMoreItems = () => {
     setVisible((prevValue) => prevValue + 3);
   };
-
-  console.log(isOnProfile);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
