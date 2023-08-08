@@ -2,7 +2,7 @@ import Api from "./NewsApi";
 
 const BASE_URL =
   process.env.NODE_ENV === "production"
-    ? "https://api.news-explorer.okzk.com/"
+    ? "https://api.news-explorer.okzk.com"
     : "http://localhost:3001";
 
 const MainApi = {
