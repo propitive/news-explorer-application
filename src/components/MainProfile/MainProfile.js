@@ -9,7 +9,6 @@ function MainProfile({
   handleDeleteArticle,
   handleSaveArticle,
   keyword,
-  newsCards,
   handleProfileEnter,
 }) {
   return (
@@ -22,7 +21,6 @@ function MainProfile({
         handleDeleteArticle={handleDeleteArticle}
         handleSaveArticle={handleSaveArticle}
         keyword={keyword}
-        newsCards={newsCards}
         handleProfileEnter={handleProfileEnter}
       />
     </>

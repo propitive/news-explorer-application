@@ -2,12 +2,6 @@ import React from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import { useForm } from "../../hooks/useForm";
-import {
-  RegisterValidation,
-  RegisterEmailValidation,
-  RegisterPasswordValidation,
-  RegisterNameValidation,
-} from "../../utils/validation";
 
 function RegisterModal({
   isOpen,

@@ -3,7 +3,6 @@ import CurrentUserContext from "../../context/CurrentUserContext";
 import { handleDateFormat } from "../../utils/constants";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import trashIcon from "../../images/trash.svg";
-import MainApi from "../../utils/MainApi";
 
 function NewsCard({
   cardInfo,

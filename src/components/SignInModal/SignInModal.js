@@ -2,11 +2,6 @@ import React from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import { useForm } from "../../hooks/useForm";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
-import {
-  SignInValidation,
-  SignInEmailValidation,
-  SignInPasswordValidation,
-} from "../../utils/validation";
 
 function SignInModal({
   isOpen,

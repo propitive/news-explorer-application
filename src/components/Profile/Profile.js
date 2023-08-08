@@ -12,7 +12,6 @@ function Profile({
   handleDeleteArticle,
   handleSaveArticle,
   keyword,
-  newsCards,
   handleProfileEnter,
 }) {
   return (
@@ -31,7 +30,6 @@ function Profile({
         handleDeleteArticle={handleDeleteArticle}
         handleSaveArticle={handleSaveArticle}
         keyword={keyword}
-        newsCards={newsCards}
         handleProfileEnter={handleProfileEnter}
       />
     </>

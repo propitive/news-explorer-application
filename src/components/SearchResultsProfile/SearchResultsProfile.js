@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { cardItems } from "../../utils/constants";
-import trashIcon from "../../images/trash.svg";
-import { handleDateFormat } from "../../utils/constants";
 import NewsCardList from "../NewsCardList/NewsCardList";
 
 function SearchResultsProfile({
@@ -12,11 +9,9 @@ function SearchResultsProfile({
   handleSaveArticle,
   keyword,
   handleProfileEnter,
-  newsCards,
 }) {
   const searchCardsClassname =
     visible === 3 ? "search__cards" : "search__cards__active";
-  const [isHovering, setIsHovering] = useState(-1);
 
   useEffect(() => {
     handleProfileEnter();

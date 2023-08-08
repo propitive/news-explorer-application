@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import CurrentUserContext from "../../context/CurrentUserContext";
 import NothingFound from "../NothingFound/NothingFound";
-import { handleDateFormat } from "../../utils/constants";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import NewsCardList from "../NewsCardList/NewsCardList";
 
 function SearchResultsHome({
@@ -15,8 +13,6 @@ function SearchResultsHome({
   savedNewsArticles,
   isOnProfile,
 }) {
-  const currentUser = React.useContext(CurrentUserContext);
-
   const searchCardsClassname =
     visible === 3 ? "search__cards" : "search__cards__active";
 

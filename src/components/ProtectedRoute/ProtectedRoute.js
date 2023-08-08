@@ -1,6 +1,5 @@
-import React, { Children, Component } from "react";
+import React from "react";
 import { Route, Redirect } from "react-router-dom";
-import { Navigate } from "react-router-dom";
 
 function ProtectedRoute({ currentUser, children, props }) {
   return (

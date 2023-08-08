@@ -251,7 +251,6 @@ function App() {
                 handleDeleteArticle={handleDeleteArticle}
                 handleSaveArticle={handleSaveArticle}
                 keyword={keyword}
-                newsCards={newsCards}
                 handleProfileEnter={handleProfileEnter}
               />
             </ProtectedRoute>
