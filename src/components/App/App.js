@@ -25,7 +25,6 @@ function App() {
   const [authError, setAuthError] = useState("");
   const [isSuccessfulModalOpen, setIsSuccessfulModalOpen] = useState(false);
   const [isNothingFound, setIsNothingFound] = useState(false);
-  // const [token, setToken] = useState(null);
   const [savedNewsArticles, setSavedNewsArticles] = useState([]);
   const [selectedArticleId, setSelectedArticleId] = useState(null);
   const [isCheckingToken, setIsCheckingToken] = useState(true);
@@ -123,9 +122,6 @@ function App() {
         console.log(...savedNewsArticles);
         setSavedNewsArticles([...savedNewsArticles, data.data]);
         setSelectedArticleId(data.data._id);
-        // console.log(
-        //   "Saved articles after saving: " + JSON.stringify(savedNewsArticles)
-        // );
       })
       .catch((err) => {
         console.log(savedNewsArticles);
@@ -175,7 +171,6 @@ function App() {
           localStorage.setItem("jwt", data.token);
           console.log("We are fetching articles");
           getUserArticles(data.token);
-          // isReloading(data.token);
           setIsSignInModalOpen(false);
         } else setAuthError(data.message || "Invalid credentials");
       })
@@ -195,7 +190,6 @@ function App() {
     setIsLoading(true);
     MainApi.signUp({ name, avatar, email, password })
       .then((res) => {
-        // handleLogin({ email, password });
         setIsRegisterModalOpen(false);
         setIsSuccessfulModalOpen(true);
         console.log("it is going through handleRegister");
@@ -227,23 +221,6 @@ function App() {
   const handleVisibleReset = () => {
     setVisible(3);
   };
-
-  // const isReloading = (token) => {
-  //   MainApi.checkToken(token)
-  //     .then((decoded) => {
-  //       console.log("this is decoded: ", decoded);
-  //       console.log("this is decoded.name: ", decoded.data.name);
-  //       setUser(decoded.data.name);
-  //       setIsRegisterModalOpen(false);
-  //       setIsSignInModalOpen(false);
-  //       setAuthError("");
-  //       setToken(token);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error checking token: ", error);
-  //       setAuthError("Error checking token");
-  //     });
-  // };
 
   const showMoreItems = () => {
     setVisible((prevValue) => prevValue + 3);
@@ -278,22 +255,6 @@ function App() {
                 handleProfileEnter={handleProfileEnter}
               />
             </ProtectedRoute>
-            {/* <Route path="/saved-articles">
-              <Profile
-                isLoading={isLoading}
-                visible={visible}
-                handleVisibleReset={handleVisibleReset}
-                handleSignOutClick={handleSignOutClick}
-                savedNewsArticles={savedNewsArticles}
-                handleProfileExit={handleProfileExit}
-                isOnProfile={isOnProfile}
-                handleDeleteArticle={handleDeleteArticle}
-                handleSaveArticle={handleSaveArticle}
-                keyword={keyword}
-                newsCards={newsCards}
-                handleProfileEnter={handleProfileEnter}
-              />
-            </Route> */}
             <Route path="/">
               <Home
                 isLoading={isLoading}

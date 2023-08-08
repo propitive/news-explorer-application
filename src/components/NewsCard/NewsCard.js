@@ -29,9 +29,6 @@ function NewsCard({
     id: cardInfo._id || cardInfo.id,
   };
 
-  //   const isBookmarked = handleIsBookmarked(card);
-  //   console.log(isBookmarked);
-
   const isBookmarked = savedNewsArticles.some(
     (article) => article.link === card.link
   );
@@ -39,12 +36,8 @@ function NewsCard({
   const handleBookMarkButtonClick = (evt) => {
     if (evt.target.classList.contains("card__button-active")) {
       handleDeleteArticle(card);
-      //   evt.target.classList.remove("card__button-active");
-      //   evt.target.classList.add("card__button-inactive");
     } else {
       handleSaveArticle(card);
-      //   evt.target.classList.add("card__button-active");
-      //   evt.target.classList.remove("card__button-inactive");
     }
   };
 
