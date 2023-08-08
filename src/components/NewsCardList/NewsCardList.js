@@ -20,7 +20,7 @@ function NewsCardList({
           handleSaveArticle={handleSaveArticle}
           index={index}
           isOnProfile={isOnProfile}
-          key={article._id}
+          key={index}
           keyword={keyword}
           savedNewsArticles={savedNewsArticles}
         />
