@@ -166,6 +166,7 @@ function App() {
   };
 
   const handleLogin = (inputValues) => {
+    setIsLoading(true);
     console.log("We are tying to log in now");
     MainApi.signIn(inputValues)
       .then((data) => {
@@ -184,10 +185,14 @@ function App() {
         } else {
           console.log(err);
         }
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
 
   const handleRegister = ({ name, avatar, email, password }) => {
+    setIsLoading(true);
     MainApi.signUp({ name, avatar, email, password })
       .then((res) => {
         // handleLogin({ email, password });
@@ -202,6 +207,9 @@ function App() {
         } else {
           console.log(err);
         }
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
 
@@ -315,6 +323,7 @@ function App() {
               }}
               isActive={true}
               handleRegister={handleRegister}
+              isLoading={isLoading}
             />
           )}
           {isSignInModalOpen && (
@@ -328,6 +337,7 @@ function App() {
               }}
               isActive={true}
               handleLogin={handleLogin}
+              isLoading={isLoading}
             />
           )}
           {isSuccessfulModalOpen && (

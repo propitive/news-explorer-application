@@ -14,6 +14,7 @@ function SignInModal({
   switchToRegister,
   isActive,
   handleLogin,
+  isLoading,
 }) {
   const {
     values,
@@ -55,7 +56,7 @@ function SignInModal({
       onClose={onClose}
       onSubmit={handleSubmit}
       title="Sign in"
-      buttonText="Sign in"
+      buttonText={isLoading ? "Signing in..." : "Sign in"}
       isValid={isFormValid}
     >
       <label className="signin__email-label">Email</label>

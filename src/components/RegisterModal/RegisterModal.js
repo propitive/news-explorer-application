@@ -15,6 +15,7 @@ function RegisterModal({
   switchToSignIn,
   isActive,
   handleRegister,
+  isLoading,
 }) {
   const {
     values,
@@ -58,7 +59,7 @@ function RegisterModal({
       onClose={onClose}
       onSubmit={handleSubmit}
       title="Sign up"
-      buttonText="Sign up"
+      buttonText={isLoading ? "Registering..." : "Sign up"}
       isValid={isFormValid}
     >
       <label className="register__email-label" htmlFor="email">
@@ -86,6 +87,7 @@ function RegisterModal({
       <label className="register__password-label">Password</label>
       <input
         className="register__password-input"
+        type="password"
         id="password"
         value={values.password}
         name="password"
