@@ -1,15 +1,15 @@
 import React from "react";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import { useForm } from "../../hooks/useForm";
-import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
 function SignInModal({
+  handleLogin,
+  isActive,
+  isLoading,
   isOpen,
   onClose,
   switchToRegister,
-  isActive,
-  handleLogin,
-  isLoading,
 }) {
   const {
     values,

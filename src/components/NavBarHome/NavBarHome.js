@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import CurrentUserContext from "../../context/CurrentUserContext";
+import closeButton from "../../images/close-button.svg";
 import logoutIcon from "../../images/logoutIcon.svg";
 import toggleButtonWhite from "../../images/toggle-button-white.svg";
-import closeButton from "../../images/close-button.svg";
-import { Link } from "react-router-dom";
 
 function NavBar({ handleSignInClick, handleSignOutClick, handleProfileEnter }) {
   const currentUser = React.useContext(CurrentUserContext);

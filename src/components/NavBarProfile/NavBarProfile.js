@@ -1,10 +1,10 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import CurrentUserContext from "../../context/CurrentUserContext";
+import closeButton from "../../images/close-button.svg";
 import logoutIcon from "../../images/logoutIcon.svg";
 import logoutIconBlack from "../../images/logoutIconBlack.svg";
 import toggleButtonBlack from "../../images/toggle-button-black.svg";
-import closeButton from "../../images/close-button.svg";
-import { Link } from "react-router-dom";
 
 function NavBarProfile({
   handleVisibleReset,

@@ -4,14 +4,14 @@ import NothingFound from "../NothingFound/NothingFound";
 import NewsCardList from "../NewsCardList/NewsCardList";
 
 function SearchResultsHome({
-  visible,
-  showMoreItems,
-  newsCards,
   handleDeleteArticle,
   handleSaveArticle,
-  keyword,
-  savedNewsArticles,
   isOnProfile,
+  keyword,
+  newsCards,
+  savedNewsArticles,
+  showMoreItems,
+  visible,
 }) {
   const searchCardsClassname =
     visible === 3 ? "search__cards" : "search__cards__active";
@@ -27,13 +27,13 @@ function SearchResultsHome({
             <h2 className="search__title">Search results</h2>
             <section className={searchCardsClassname}>
               <NewsCardList
-                newsCards={newsCards}
                 handleDeleteArticle={handleDeleteArticle}
                 handleSaveArticle={handleSaveArticle}
-                keyword={keyword}
-                visible={visible}
-                savedNewsArticles={savedNewsArticles}
                 isOnProfile={isOnProfile}
+                keyword={keyword}
+                newsCards={newsCards}
+                savedNewsArticles={savedNewsArticles}
+                visible={visible}
               />
             </section>
             {visible === 3 && newsCards.length > 3 && (

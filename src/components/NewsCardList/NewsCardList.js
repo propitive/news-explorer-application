@@ -1,13 +1,13 @@
 import NewsCard from "../NewsCard/NewsCard";
 
 function NewsCardList({
-  newsCards,
   handleDeleteArticle,
   handleSaveArticle,
-  keyword,
-  visible,
-  savedNewsArticles,
   isOnProfile,
+  keyword,
+  newsCards,
+  savedNewsArticles,
+  visible,
 }) {
   const cardsVisibleToUser = isOnProfile ? savedNewsArticles.length : visible;
 
@@ -15,14 +15,14 @@ function NewsCardList({
     <>
       {newsCards.slice(0, cardsVisibleToUser).map((article, index) => (
         <NewsCard
-          key={article._id}
           cardInfo={article}
           handleDeleteArticle={handleDeleteArticle}
           handleSaveArticle={handleSaveArticle}
-          keyword={keyword}
           index={index}
-          savedNewsArticles={savedNewsArticles}
           isOnProfile={isOnProfile}
+          key={article._id}
+          keyword={keyword}
+          savedNewsArticles={savedNewsArticles}
         />
       ))}
     </>

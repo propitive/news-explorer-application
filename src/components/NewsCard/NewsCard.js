@@ -1,17 +1,17 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import CurrentUserContext from "../../context/CurrentUserContext";
 import { handleDateFormat } from "../../utils/constants";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import trashIcon from "../../images/trash.svg";
 
 function NewsCard({
   cardInfo,
   handleDeleteArticle,
   handleSaveArticle,
-  keyword,
   index,
-  savedNewsArticles,
   isOnProfile,
+  keyword,
+  savedNewsArticles,
 }) {
   const currentUser = React.useContext(CurrentUserContext);
 

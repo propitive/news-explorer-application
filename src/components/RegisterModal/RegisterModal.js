@@ -1,15 +1,15 @@
 import React from "react";
-import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import { useForm } from "../../hooks/useForm";
 
 function RegisterModal({
+  handleRegister,
+  isActive,
   isOpen,
+  isLoading,
   onClose,
   switchToSignIn,
-  isActive,
-  handleRegister,
-  isLoading,
 }) {
   const {
     values,

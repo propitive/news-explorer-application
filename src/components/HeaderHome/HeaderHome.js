@@ -4,17 +4,17 @@ import NavBarHome from "../NavBarHome/NavBarHome";
 import SearchForm from "../SearchForm/SearchForm";
 
 function HeaderHome({
-  handleSignInClick,
-  handleSignOutClick,
   handleFetchArticles,
   handleProfileEnter,
+  handleSignInClick,
+  handleSignOutClick,
 }) {
   return (
     <header className="header-home">
       <NavBarHome
+        handleProfileEnter={handleProfileEnter}
         handleSignInClick={handleSignInClick}
         handleSignOutClick={handleSignOutClick}
-        handleProfileEnter={handleProfileEnter}
       />
       <div className="header-home__content">
         <div className="header-home__text">

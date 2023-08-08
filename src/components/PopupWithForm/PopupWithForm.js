@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 
 function PopupWithForm({
-  title,
-  name,
   buttonText,
-  onSubmit,
   children,
   isOpen,
-  onClose,
   isValid,
+  name,
+  onClose,
+  onSubmit,
+  title,
 }) {
   const buttonClassName = isValid
     ? "modal__button-submit modal__button-submit-valid"

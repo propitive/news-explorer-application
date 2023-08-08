@@ -5,38 +5,35 @@ import Api from "../../utils/NewsApi";
 import Footer from "../Footer/Footer";
 import Home from "../Home/Home";
 import MainApi from "../../utils/MainApi";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import Profile from "../Profile/Profile";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import SignInModal from "../SignInModal/SignInModal";
 import SuccessfulModal from "../SuccessfulModal/SuccessfulModal";
-import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 import CurrentUserContext from "../../context/CurrentUserContext";
 
-import "./App.css";
-
 function App() {
+  const [authError, setAuthError] = useState("");
   const [currentUser, setUser] = useState(null);
+  const [isOnProfile, setIsOnProfile] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [newsCards, setNewsCards] = useState({});
-  const [visible, setVisible] = useState(3);
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
   const [isSignInModalOpen, setIsSignInModalOpen] = useState(false);
-  const [authError, setAuthError] = useState("");
   const [isSuccessfulModalOpen, setIsSuccessfulModalOpen] = useState(false);
-  const [isNothingFound, setIsNothingFound] = useState(false);
+  const [keyword, setKeyword] = useState(null);
+  const [newsCards, setNewsCards] = useState({});
   const [savedNewsArticles, setSavedNewsArticles] = useState([]);
   const [selectedArticleId, setSelectedArticleId] = useState(null);
-  const [isCheckingToken, setIsCheckingToken] = useState(true);
-  const [keyword, setKeyword] = useState(null);
-  const [isOnProfile, setIsOnProfile] = useState(false);
+  const [visible, setVisible] = useState(3);
 
   const history = useHistory();
   const token = localStorage.getItem("jwt");
 
+  // effects
+
   useEffect(() => {
     if (token) {
-      setIsCheckingToken(true);
       MainApi.getUser(token)
         .then((data) => {
           setUser(data.data.name);
@@ -49,14 +46,34 @@ function App() {
           } else {
             console.error("Error checking token:", err);
           }
-        })
-        .finally(() => {
-          setIsCheckingToken(false);
         });
-    } else {
-      setIsCheckingToken(false);
     }
   }, [token]);
+
+  useEffect(() => {
+    setVisible(3);
+  }, []);
+
+  //modal functions
+
+  const handleCloseModals = () => {
+    setIsRegisterModalOpen(false);
+    setIsSignInModalOpen(false);
+    setIsSuccessfulModalOpen(false);
+  };
+
+  const handleSignInClick = () => {
+    setIsSignInModalOpen(true);
+  };
+
+  const handleSignOutClick = () => {
+    setUser(null);
+    localStorage.clear();
+    handleProfileExit();
+    history.push("/");
+  };
+
+  // api functions
 
   const getUserArticles = (token) => {
     MainApi.getArticles(token)
@@ -67,12 +84,6 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
-  };
-
-  const handleCloseModals = () => {
-    setIsRegisterModalOpen(false);
-    setIsSignInModalOpen(false);
-    setIsSuccessfulModalOpen(false);
   };
 
   const handleDeleteArticle = (card) => {
@@ -104,45 +115,10 @@ function App() {
     });
   };
 
-  const handleProfileEnter = () => {
-    setIsOnProfile(true);
-    console.log(`isOnProfile is ==> TRUE`);
-  };
-
-  const handleProfileExit = () => {
-    setIsOnProfile(false);
-    setNewsCards({});
-    console.log(`isOnProfile is ==> FALSE`);
-  };
-
-  const handleSaveArticle = (card) => {
-    MainApi.saveArticle(card, token)
-      .then((data) => {
-        console.log(data.data);
-        console.log(...savedNewsArticles);
-        setSavedNewsArticles([...savedNewsArticles, data.data]);
-        setSelectedArticleId(data.data._id);
-      })
-      .catch((err) => {
-        console.log(savedNewsArticles);
-        console.log(err);
-      });
-  };
-
-  const handleSetIsNotFound = (x) => {
-    setIsNothingFound(false);
-    if (x.length === 0) {
-      setIsNothingFound(true);
-    } else {
-      setIsNothingFound(false);
-    }
-  };
-
   const handleFetchArticles = (input) => {
     const keyword =
       input.charAt(0).toUpperCase() + input.replace(/ .*/, "").slice(1);
     setKeyword(keyword);
-    setIsNothingFound(false);
     setIsLoading(true);
     Api.search({ input })
       .then((data) => {
@@ -156,7 +132,6 @@ function App() {
       })
       .finally(() => {
         setIsLoading(false);
-        handleSetIsNotFound(newsCards);
         setVisible(3);
       });
   };
@@ -207,15 +182,31 @@ function App() {
       });
   };
 
-  const handleSignInClick = () => {
-    setIsSignInModalOpen(true);
+  const handleSaveArticle = (card) => {
+    MainApi.saveArticle(card, token)
+      .then((data) => {
+        console.log(data.data);
+        console.log(...savedNewsArticles);
+        setSavedNewsArticles([...savedNewsArticles, data.data]);
+        setSelectedArticleId(data.data._id);
+      })
+      .catch((err) => {
+        console.log(savedNewsArticles);
+        console.log(err);
+      });
   };
 
-  const handleSignOutClick = () => {
-    setUser(null);
-    localStorage.clear();
-    handleProfileExit();
-    history.push("/");
+  // button functions
+
+  const handleProfileEnter = () => {
+    setIsOnProfile(true);
+    console.log(`isOnProfile is ==> TRUE`);
+  };
+
+  const handleProfileExit = () => {
+    setIsOnProfile(false);
+    setNewsCards({});
+    console.log(`isOnProfile is ==> FALSE`);
   };
 
   const handleVisibleReset = () => {
@@ -226,12 +217,6 @@ function App() {
     setVisible((prevValue) => prevValue + 3);
   };
 
-  useEffect(() => {
-    setVisible(3);
-  }, []);
-
-  useEffect(() => {}, [setNewsCards]);
-
   console.log(isOnProfile);
 
   return (
@@ -241,63 +226,63 @@ function App() {
           <Switch>
             <ProtectedRoute currentUser={currentUser} path="/saved-articles">
               <Profile
-                isLoading={isLoading}
-                visible={visible}
-                handleVisibleReset={handleVisibleReset}
-                handleSignOutClick={handleSignOutClick}
-                savedNewsArticles={savedNewsArticles}
-                handleProfileExit={handleProfileExit}
-                isOnProfile={isOnProfile}
                 handleDeleteArticle={handleDeleteArticle}
-                handleSaveArticle={handleSaveArticle}
-                keyword={keyword}
                 handleProfileEnter={handleProfileEnter}
+                handleProfileExit={handleProfileExit}
+                handleSaveArticle={handleSaveArticle}
+                handleSignOutClick={handleSignOutClick}
+                handleVisibleReset={handleVisibleReset}
+                isLoading={isLoading}
+                isOnProfile={isOnProfile}
+                keyword={keyword}
+                savedNewsArticles={savedNewsArticles}
+                visible={visible}
               />
             </ProtectedRoute>
             <Route path="/">
               <Home
-                isLoading={isLoading}
-                visible={visible}
-                showMoreItems={showMoreItems}
+                handleDeleteArticle={handleDeleteArticle}
+                handleFetchArticles={handleFetchArticles}
+                handleProfileEnter={handleProfileEnter}
+                handleSaveArticle={handleSaveArticle}
                 handleSignInClick={handleSignInClick}
                 handleSignOutClick={handleSignOutClick}
-                handleFetchArticles={handleFetchArticles}
+                isLoading={isLoading}
                 newsCards={newsCards}
-                handleDeleteArticle={handleDeleteArticle}
-                handleSaveArticle={handleSaveArticle}
-                keyword={keyword}
                 savedNewsArticles={savedNewsArticles}
-                handleProfileEnter={handleProfileEnter}
+                showMoreItems={showMoreItems}
+                visible={visible}
+                keyword={keyword}
               />
             </Route>
           </Switch>
           <Footer />
           {isRegisterModalOpen && (
             <RegisterModal
+              authError={authError}
+              handleRegister={handleRegister}
+              isActive={true}
+              isLoading={isLoading}
               isOpen={isRegisterModalOpen}
               onClose={() => setIsRegisterModalOpen(false)}
-              authError={authError}
               switchToSignIn={() => {
                 setIsRegisterModalOpen(false);
                 setIsSignInModalOpen(true);
               }}
-              isActive={true}
-              handleRegister={handleRegister}
-              isLoading={isLoading}
             />
           )}
           {isSignInModalOpen && (
             <SignInModal
+              authError={authError}
+              handleLogin={handleLogin}
+              isActive={true}
+              isLoading={isLoading}
               isOpen={isSignInModalOpen}
               onClose={() => setIsSignInModalOpen(false)}
-              authError={authError}
               switchToRegister={() => {
                 setIsSignInModalOpen(false);
                 setIsRegisterModalOpen(true);
               }}
-              isActive={true}
-              handleLogin={handleLogin}
-              isLoading={isLoading}
             />
           )}
           {isSuccessfulModalOpen && (
