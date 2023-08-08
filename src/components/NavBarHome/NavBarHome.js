@@ -36,6 +36,12 @@ function NavBar({ handleSignInClick, handleSignOutClick, handleProfileEnter }) {
     handleSignOutClick();
   };
 
+  const handleSignInButtonClick = () => {
+    handleSignInClick();
+    handleToggleMenuNliDisappear();
+    handleToggleMenuLiDisappear();
+  };
+
   return (
     <>
       {currentUser === null ? (
@@ -65,7 +71,10 @@ function NavBar({ handleSignInClick, handleSignOutClick, handleProfileEnter }) {
                 disabled="disabled"
               ></button>
             </li>
-            <button className="navbar-nli__signin" onClick={handleSignInClick}>
+            <button
+              className="navbar-nli__signin"
+              onClick={handleSignInButtonClick}
+            >
               Sign in
             </button>
           </ul>
@@ -129,7 +138,10 @@ function NavBar({ handleSignInClick, handleSignOutClick, handleProfileEnter }) {
           </div>
           <div className="menu-nli__bottom">
             <h2 className="menu-nli__home">Home</h2>
-            <button className="menu-nli__signin" onClick={handleSignInClick}>
+            <button
+              className="menu-nli__signin"
+              onClick={handleSignInButtonClick}
+            >
               Sign in
             </button>
           </div>
