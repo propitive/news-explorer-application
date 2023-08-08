@@ -2,18 +2,36 @@ import HeaderProfile from "../HeaderProfile/HeaderProfile";
 import MainProfile from "../MainProfile/MainProfile";
 
 function Profile({
-  isLoading,
-  visible,
-  handleVisibleReset,
+  handleDeleteArticle,
+  handleProfileEnter,
+  handleProfileExit,
+  handleSaveArticle,
   handleSignOutClick,
+  handleVisibleReset,
+  isLoading,
+  isOnProfile,
+  keyword,
+  savedNewsArticles,
+  visible,
 }) {
   return (
     <>
       <HeaderProfile
-        handleVisibleReset={handleVisibleReset}
+        handleProfileExit={handleProfileExit}
         handleSignOutClick={handleSignOutClick}
+        handleVisibleReset={handleVisibleReset}
+        savedNewsArticles={savedNewsArticles}
       />
-      <MainProfile isLoading={isLoading} visible={visible} />
+      <MainProfile
+        handleDeleteArticle={handleDeleteArticle}
+        handleSaveArticle={handleSaveArticle}
+        handleProfileEnter={handleProfileEnter}
+        isLoading={isLoading}
+        isOnProfile={isOnProfile}
+        keyword={keyword}
+        savedNewsArticles={savedNewsArticles}
+        visible={visible}
+      />
     </>
   );
 }

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import CurrentUserContext from "../../context/CurrentUserContext";
+import closeButton from "../../images/close-button.svg";
 import logoutIcon from "../../images/logoutIcon.svg";
 import toggleButtonWhite from "../../images/toggle-button-white.svg";
-import closeButton from "../../images/close-button.svg";
-import { Link } from "react-router-dom";
 
-function NavBar({ handleSignInClick, handleSignOutClick }) {
+function NavBar({ handleSignInClick, handleSignOutClick, handleProfileEnter }) {
   const currentUser = React.useContext(CurrentUserContext);
   const [isMenuNliToggled, setIsMenuNliToggled] = useState(false);
   const [isMenuLiToggled, setIsMenuLiToggled] = useState(false);
@@ -98,7 +98,10 @@ function NavBar({ handleSignInClick, handleSignOutClick }) {
               to="/saved-articles"
               style={{ textDecoration: "none", alignSelf: "center" }}
             >
-              <button className="navbar-li__saved-articles">
+              <button
+                className="navbar-li__saved-articles"
+                onClick={handleProfileEnter}
+              >
                 Saved Articles
               </button>
             </Link>

@@ -55,11 +55,11 @@
   font-size: 16px;
   line-height: 20px;
   border-bottom: 20px;
-  padding-bottom: 9px;
-  padding-top: 13px;
   color: #2f71e5;
   font-size: 12px;
   font-weight: 400;
+  padding: 0;
+  margin-top: 30px;
 }
 
 .signin__password-input {
@@ -146,6 +146,8 @@
   }
   .signin__password-label {
     margin: 0 17px 0;
+    padding: 0;
+    margin-top: 30px;
   }
   .signin__password-input {
     margin: 0 17px 39px;

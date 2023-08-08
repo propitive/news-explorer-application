@@ -1,0 +1,69 @@
+.error-message {
+  margin: 0;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #f00;
+  font-weight: 400;
+  position: absolute;
+}
+
+.error-message__register-email {
+  top: 131px;
+}
+
+.error-message__register-password {
+  top: 219px;
+}
+
+.error-message__register-username {
+  bottom: 148px;
+}
+
+.error-message__signin-email {
+  top: 131px;
+}
+
+.error-message__signin-password {
+  top: 218px;
+}
+
+.error-message_content_api {
+  position: relative;
+  align-self: center;
+}
+
+@media screen and (max-width: 640px) {
+  .error-message_content_search-form {
+    top: 35px;
+    left: 16px;
+  }
+
+  .error-message__register-email {
+    top: 110px;
+    left: 18px;
+  }
+
+  .error-message__register-password {
+    top: 197px;
+    left: 18px;
+  }
+
+  .error-message__register-username {
+    top: 283px;
+    left: 18px;
+  }
+
+  .error-message__signin-email {
+    top: 110px;
+    left: 18px;
+  }
+
+  .error-message__signin-password {
+    top: 197px;
+    left: 18px;
+  }
+
+  .error-message_content_api {
+    margin-bottom: 5px;
+  }
+}

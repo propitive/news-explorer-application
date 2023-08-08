@@ -357,9 +357,6 @@
   justify-content: center;
 }
 
-@media screen and (max-width: 1327px) {
-}
-
 @media screen and (max-width: 1000px) {
   .navbar-nli {
     padding: 0 40px 0;

@@ -3,26 +3,36 @@ import MainHome from "../MainHome/MainHome";
 import About from "../About/About";
 
 function Home({
-  isLoading,
-  visible,
-  showMoreItems,
+  handleDeleteArticle,
+  handleFetchArticles,
+  handleProfileEnter,
+  handleSaveArticle,
   handleSignInClick,
   handleSignOutClick,
-  handleFetchArticles,
+  isLoading,
   newsCards,
+  savedNewsArticles,
+  showMoreItems,
+  visible,
+  keyword,
 }) {
   return (
     <>
       <HeaderHome
+        handleFetchArticles={handleFetchArticles}
+        handleProfileEnter={handleProfileEnter}
         handleSignInClick={handleSignInClick}
         handleSignOutClick={handleSignOutClick}
-        handleFetchArticles={handleFetchArticles}
       />
       <MainHome
+        handleDeleteArticle={handleDeleteArticle}
+        handleSaveArticle={handleSaveArticle}
         isLoading={isLoading}
-        visible={visible}
-        showMoreItems={showMoreItems}
+        keyword={keyword}
         newsCards={newsCards}
+        savedNewsArticles={savedNewsArticles}
+        showMoreItems={showMoreItems}
+        visible={visible}
       />
       {visible === 3 && <About />}
     </>
