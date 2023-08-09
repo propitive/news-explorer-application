@@ -3,6 +3,11 @@
 This is a node.js news application powered by Express that provides the function to find and save the latest articles on any topic!
 ![ScreenshotOfSearchResultsHome](/src/images/neHomePage.png)
 
+### Domain
+
+- Front end: [https://news-explorer.okzk.com/](https://news-explorer.okzk.com/)
+- Back end: [https://api.news-explorer.okzk.com/](https://api.news-explorer.okzk.com/)
+
 ## General info
 
 This project allows for users to search for news articles published from the day of the search up to fourteen days before. Users can seamlessly create an account in order to save any articles that may peak their interest.
@@ -21,10 +26,6 @@ Project is created with:
 - Create an account and sign in to your account
 - Bookmark articles to access them in your "Saved Articles" directory
 - Remove bookmarked articles from your "Saved Articles" directory
-
-## Setup
-
-Clone this repo to your desktop and run `npm install` to install all the dependencies.
 
 ## Usage
 
