@@ -32,3 +32,21 @@ Project is created with:
 After you clone this repo to your desktop, go to its root directory and run `npm install` to install its dependencies.
 
 Once the dependencies are installed, you can run `npm start` to start the application. You will then be able to access it at localhost:3000
+
+## Screenshots
+
+The applications offers a user-friendly, aesthetically-pleasing user interface that makes it easy for anyone to "pick up" my app and maneuver their way through the application.
+
+### Home Page When Not Signed In
+
+![ScreenshotOfHomePageWhenNotSignedIn](/src/images/neNliHome.png)
+
+When first coming in to the website, you will be welcomed by a header with a modern design. A search bar will appear in front of the user, with an visually appealing background warmly inviting the user to search for news artciles.
+
+### Aricles When Not Signed In
+
+![ScreenshotOfArticlesWhenNotSignIn](/src/images/neNliBookmarkHover.png)
+
+Articles related to what the user searches for will appear in groups of three. If the user wishes to see three more articles, clicking on the button labeled "Show more" will make three additional cards appear. When the user hovers over the bookmark button on an article, two things happen. Firstly, the bookmark icon becomes black. Secondly, a message appears beside the bookmark button advising the user to log in if the user wishes to bookmark an article.
+
+### Home Page When Signed In

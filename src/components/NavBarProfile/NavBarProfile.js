@@ -32,6 +32,12 @@ function NavBarProfile({
     handleProfileExit();
   };
 
+  const handleProfileExitClick = () => {
+    handleVisibleReset();
+    handleSignOutClick();
+    handleProfileExit();
+  };
+
   return (
     <>
       <section className="navbar-profile">
@@ -75,7 +81,7 @@ function NavBarProfile({
           </button>
           <button
             className="navbar-profile__logout"
-            onClick={handleSignOutClick}
+            onClick={handleProfileExitClick}
           >
             {currentUser}
             <img
@@ -116,7 +122,7 @@ function NavBarProfile({
             <h2 className="menu-profile__saved">Saved Articles</h2>
             <button
               className="menu-profile__signout"
-              onClick={handleSignOutClick}
+              onClick={handleProfileExitClick}
             >
               {currentUser}
               <img

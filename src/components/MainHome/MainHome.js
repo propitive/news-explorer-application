@@ -5,6 +5,7 @@ function MainHome({
   handleDeleteArticle,
   handleSaveArticle,
   isLoading,
+  isSearching,
   keyword,
   newsCards,
   savedNewsArticles,
@@ -13,7 +14,7 @@ function MainHome({
 }) {
   return (
     <>
-      {isLoading === true && <Preloader />}
+      {isSearching === true && <Preloader />}
       {isLoading === false && (
         <SearchResultsHome
           handleDeleteArticle={handleDeleteArticle}

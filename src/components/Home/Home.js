@@ -10,6 +10,7 @@ function Home({
   handleSignInClick,
   handleSignOutClick,
   isLoading,
+  isSearching,
   newsCards,
   savedNewsArticles,
   showMoreItems,
@@ -28,13 +29,14 @@ function Home({
         handleDeleteArticle={handleDeleteArticle}
         handleSaveArticle={handleSaveArticle}
         isLoading={isLoading}
+        isSearching={isSearching}
         keyword={keyword}
         newsCards={newsCards}
         savedNewsArticles={savedNewsArticles}
         showMoreItems={showMoreItems}
         visible={visible}
       />
-      {visible === 3 && <About />}
+      {(newsCards.length <= 3 || newsCards.length === undefined) && <About />}
     </>
   );
 }

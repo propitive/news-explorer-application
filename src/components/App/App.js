@@ -19,6 +19,7 @@ function App() {
   const [isOnProfile, setIsOnProfile] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
+  const [isSearching, setIsSearching] = useState(false);
   const [isSignInModalOpen, setIsSignInModalOpen] = useState(false);
   const [isSuccessfulModalOpen, setIsSuccessfulModalOpen] = useState(false);
   const [keyword, setKeyword] = useState(null);
@@ -69,7 +70,7 @@ function App() {
   const handleSignOutClick = () => {
     setUser(null);
     localStorage.clear();
-    handleProfileExit();
+    setIsOnProfile(false);
     history.push("/");
   };
 
@@ -115,17 +116,24 @@ function App() {
       input.charAt(0).toUpperCase() + input.replace(/ .*/, "").slice(1);
     setKeyword(keyword);
     setIsLoading(true);
+    setIsSearching(true);
     Api.search({ input })
       .then((data) => {
         setNewsCards(data.articles);
         localStorage.setItem("articles", JSON.stringify(data.articles));
         localStorage.setItem("keyword", keyword);
       })
-      .catch((error) => {
-        console.log(error);
+      .catch((err) => {
+        if (String(err).includes("400")) {
+          console.log("You need to type something in");
+          setNewsCards([]);
+        } else {
+          console.log(err);
+        }
       })
       .finally(() => {
         setIsLoading(false);
+        setIsSearching(false);
         setVisible(3);
       });
   };
@@ -200,7 +208,6 @@ function App() {
   const showMoreItems = () => {
     setVisible((prevValue) => prevValue + 3);
   };
-
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
@@ -230,6 +237,7 @@ function App() {
                 handleSignInClick={handleSignInClick}
                 handleSignOutClick={handleSignOutClick}
                 isLoading={isLoading}
+                isSearching={isSearching}
                 newsCards={newsCards}
                 savedNewsArticles={savedNewsArticles}
                 showMoreItems={showMoreItems}
