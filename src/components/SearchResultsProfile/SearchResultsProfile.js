@@ -20,7 +20,7 @@ function SearchResultsProfile({
   return (
     <div className="search">
       <div className="search__container">
-        <h2 className="search__title">Search results</h2>
+        <h2 className="search__title">Saved Articles</h2>
         <ul className={searchCardsClassname}>
           <NewsCardList
             handleDeleteArticle={handleDeleteArticle}

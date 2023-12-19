@@ -3,6 +3,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import CurrentUserContext from "../../context/CurrentUserContext";
 import { handleDateFormat } from "../../utils/constants";
 import trashIcon from "../../images/trash.svg";
+import newsIcon from "../../images/news.png";
 
 function NewsCard({
   cardInfo,
@@ -56,7 +57,12 @@ function NewsCard({
           style={{ textDecoration: "none", alignSelf: "center" }}
           target="_blank"
         >
-          <img className="card__image" src={card.image} alt={card.title} />
+          <img
+            className="card__image"
+            src={card.image ? card.image : newsIcon}
+            alt={card.title}
+            loading="lazy"
+          />
           <h3 className="card__date">
             {handleDateFormat(card.date.slice(0, 10))}
           </h3>
@@ -87,6 +93,7 @@ function NewsCard({
                 onMouseEnter={() => setIsHovering(index)}
                 onMouseLeave={() => setIsHovering(-1)}
                 alt="icon of bookmark"
+                loading="lazy"
               ></img>
             </button>
           ) : (
