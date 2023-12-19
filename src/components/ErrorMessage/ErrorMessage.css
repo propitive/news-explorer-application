@@ -27,6 +27,11 @@
   top: 218px;
 }
 
+.error-message__signin-incorrect-credentials {
+  bottom: 130px;
+  right: 145px;
+}
+
 .error-message_content_api {
   position: relative;
   align-self: center;
@@ -61,6 +66,14 @@
   .error-message__signin-password {
     top: 197px;
     left: 18px;
+  }
+
+  .error-message__signin-incorrect-credentials {
+    top: 215px;
+    left: 0;
+    right: 0;
+    width: 250px;
+    margin: 0 auto 0;
   }
 
   .error-message_content_api {

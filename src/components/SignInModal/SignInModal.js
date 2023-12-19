@@ -6,6 +6,7 @@ import { useForm } from "../../hooks/useForm";
 function SignInModal({
   handleLogin,
   isActive,
+  isIncorrectCredentials,
   isLoading,
   isOpen,
   onClose,
@@ -93,6 +94,12 @@ function SignInModal({
         <ErrorMessage
           errorMessage={"Invalid password"}
           className={`error-message error-message__signin-password`}
+        />
+      )}
+      {isIncorrectCredentials && (
+        <ErrorMessage
+          errorMessage={"Incorrect username and/or password"}
+          className={`error-message error-message__signin-incorrect-credentials`}
         />
       )}
       <p className="signin__switch" onClick={switchToRegister}>

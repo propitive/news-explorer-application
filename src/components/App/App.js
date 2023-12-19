@@ -16,6 +16,7 @@ import CurrentUserContext from "../../context/CurrentUserContext";
 function App() {
   const [authError, setAuthError] = useState("");
   const [currentUser, setUser] = useState(null);
+  const [isIncorrectCredentials, setIsIncorrectCredentials] = useState(false);
   const [isOnProfile, setIsOnProfile] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
@@ -151,6 +152,7 @@ function App() {
       .catch((err) => {
         if (String(err).includes("401") || String(err).includes("400")) {
           console.log("Incorrect email or password");
+          setIsIncorrectCredentials(true);
         } else {
           console.log(err);
         }
@@ -266,6 +268,7 @@ function App() {
               authError={authError}
               handleLogin={handleLogin}
               isActive={true}
+              isIncorrectCredentials={isIncorrectCredentials}
               isLoading={isLoading}
               isOpen={isSignInModalOpen}
               onClose={() => setIsSignInModalOpen(false)}
