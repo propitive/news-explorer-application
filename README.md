@@ -48,5 +48,3 @@ When first coming in to the website, you will be welcomed by a header with a mod
 ![ScreenshotOfArticlesWhenNotSignIn](/src/images/neNliBookmarkHover.png)
 
 Articles related to what the user searches for will appear in groups of three. If the user wishes to see three more articles, clicking on the button labeled "Show more" will make three additional cards appear. When the user hovers over the bookmark button on an article, two things happen. Firstly, the bookmark icon becomes black. Secondly, a message appears beside the bookmark button advising the user to log in if the user wishes to bookmark an article.
-
-### Home Page When Signed In
